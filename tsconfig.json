@@ -6,7 +6,11 @@
     "module": "commonjs",
     "target": "es2016",
     "jsx": "react",
-    "allowSyntheticDefaultImports": false
+    "lib": ["es6", "dom"],
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true
   },
   "exclude": [
     "node_modules",

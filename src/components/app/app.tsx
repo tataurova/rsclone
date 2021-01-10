@@ -12,7 +12,7 @@ import {
   Toolbar,
   Typography,
 } from '@material-ui/core';
-import Footer from '../footer/Footer';
+// import Footer from '../footer/Footer';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,151 +41,152 @@ const useStyles = makeStyles((theme) => ({
 const App = () => {
   const classes = useStyles();
   return (
-      <>
-        <AppBar position='fixed'>
-          <Container fixed>
-            <Toolbar>
-              <Typography className={classes.menuButton}>Logo</Typography>
-              <Breadcrumbs aria-label="breadcrumb" className={classes.menuButton}>
-                <Link color="inherit" href="#">
-                  Пропали
-                </Link>
-                <Link color="inherit" href="#">
-                  Ищут родственников
-                </Link>
-                <Link color="inherit" href="#">
-                  Активные поиски
-                </Link>
-                <Link color="inherit" href="#">
-                  Закрытые поиски
-                </Link>
-              </Breadcrumbs>
-              <Box mr={3}>
-                <Button variant="outlined" color="inherit">Ru/En</Button>
-              </Box>
-              <Box mr={3}>
-                <Button variant="contained" color="secondary">Log in</Button>
-              </Box>
-              <Button variant="contained" color="secondary">Dark/Light</Button>
+      <div>
+        helloWorld
+        {/*<AppBar position='fixed'>*/}
+        {/*  <Container fixed>*/}
+        {/*    <Toolbar>*/}
+        {/*      <Typography className={classes.menuButton}>Logo</Typography>*/}
+        {/*      <Breadcrumbs aria-label="breadcrumb" className={classes.menuButton}>*/}
+        {/*        <Link color="inherit" href="#">*/}
+        {/*          Пропали*/}
+        {/*        </Link>*/}
+        {/*        <Link color="inherit" href="#">*/}
+        {/*          Ищут родственников*/}
+        {/*        </Link>*/}
+        {/*        <Link color="inherit" href="#">*/}
+        {/*          Активные поиски*/}
+        {/*        </Link>*/}
+        {/*        <Link color="inherit" href="#">*/}
+        {/*          Закрытые поиски*/}
+        {/*        </Link>*/}
+        {/*      </Breadcrumbs>*/}
+        {/*      <Box mr={3}>*/}
+        {/*        <Button variant="outlined" color="inherit">Ru/En</Button>*/}
+        {/*      </Box>*/}
+        {/*      <Box mr={3}>*/}
+        {/*        <Button variant="contained" color="secondary">Log in</Button>*/}
+        {/*      </Box>*/}
+        {/*      <Button variant="contained" color="secondary">Dark/Light</Button>*/}
 
-            </Toolbar>
+        {/*    </Toolbar>*/}
 
-          </Container>
-        </AppBar>
-        <main>
-          <Paper className={classes.mainSectionPost}
-                 style={{backgroundImage: 'url(https://source.unsplash.com/random)'}}>
-            <Container fixed>
+        {/*  </Container>*/}
+        {/*</AppBar>*/}
+        {/*<main>*/}
+        {/*  <Paper className={classes.mainSectionPost}*/}
+        {/*         style={{backgroundImage: 'url(https://source.unsplash.com/random)'}}>*/}
+        {/*    <Container fixed>*/}
 
-              <Grid container>
-                <Grid item md={8}>
+        {/*      <Grid container>*/}
+        {/*        <Grid item md={8}>*/}
 
-                  <div className={classes.mainSectionPostContent}>
+        {/*          <div className={classes.mainSectionPostContent}>*/}
 
-                    <Typography
-                        component='h1'
-                        variant='h3'
-                        color='inherit'
-                        gutterBottom
-                    >Пропали</Typography>
-                    <Typography
-                        variant='h5'
-                        color='inherit'
-                        paragraph
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Accusamus ad beatae
-                      cum ducimus earum
-                      fugiat illo impedit, incidunt inventore iure
-                      maxime modi odit quibusdam quidem,
-                      quisquam
-                      reprehenderit, velit vero vitae?
-                    </Typography>
-                    <Button variant='contained' color='secondary'>
-                      Button
-                    </Button>
-                  </div>
-                </Grid>
-              </Grid>
-            </Container>
-          </Paper>
-          <Paper className={classes.mainSectionPost}
-                 style={{backgroundImage: 'url(https://source.unsplash.com/random)'}}>
-            <Container fixed>
+        {/*            <Typography*/}
+        {/*                component='h1'*/}
+        {/*                variant='h3'*/}
+        {/*                color='inherit'*/}
+        {/*                gutterBottom*/}
+        {/*            >Пропали</Typography>*/}
+        {/*            <Typography*/}
+        {/*                variant='h5'*/}
+        {/*                color='inherit'*/}
+        {/*                paragraph*/}
+        {/*            >*/}
+        {/*              Lorem ipsum dolor sit amet, consectetur adipisicing elit.*/}
+        {/*              Accusamus ad beatae*/}
+        {/*              cum ducimus earum*/}
+        {/*              fugiat illo impedit, incidunt inventore iure*/}
+        {/*              maxime modi odit quibusdam quidem,*/}
+        {/*              quisquam*/}
+        {/*              reprehenderit, velit vero vitae?*/}
+        {/*            </Typography>*/}
+        {/*            <Button variant='contained' color='secondary'>*/}
+        {/*              Button*/}
+        {/*            </Button>*/}
+        {/*          </div>*/}
+        {/*        </Grid>*/}
+        {/*      </Grid>*/}
+        {/*    </Container>*/}
+        {/*  </Paper>*/}
+        {/*  <Paper className={classes.mainSectionPost}*/}
+        {/*         style={{backgroundImage: 'url(https://source.unsplash.com/random)'}}>*/}
+        {/*    <Container fixed>*/}
 
-              <Grid container>
-                <Grid item md={8}>
+        {/*      <Grid container>*/}
+        {/*        <Grid item md={8}>*/}
 
-                  <div className={classes.mainSectionPostContent}>
+        {/*          <div className={classes.mainSectionPostContent}>*/}
 
-                    <Typography
-                        component='h1'
-                        variant='h3'
-                        color='inherit'
-                        gutterBottom
-                    >Ищут родственников</Typography>
-                    <Typography
-                        variant='h5'
-                        color='inherit'
-                        paragraph
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Accusamus ad beatae
-                      cum ducimus earum
-                      fugiat illo impedit, incidunt inventore iure maxime modi
-                      odit quibusdam quidem,
-                      quisquam
-                      reprehenderit, velit vero vitae?
-                    </Typography>
-                    <Button variant='contained' color='secondary'>
-                      Button
-                    </Button>
-                  </div>
-                </Grid>
-              </Grid>
-            </Container>
-          </Paper>
-          <Paper className={classes.mainSectionPost}
-                 style={{backgroundImage: 'url(https://source.unsplash.com/random)'}}>
-            <Container fixed>
+        {/*            <Typography*/}
+        {/*                component='h1'*/}
+        {/*                variant='h3'*/}
+        {/*                color='inherit'*/}
+        {/*                gutterBottom*/}
+        {/*            >Ищут родственников</Typography>*/}
+        {/*            <Typography*/}
+        {/*                variant='h5'*/}
+        {/*                color='inherit'*/}
+        {/*                paragraph*/}
+        {/*            >*/}
+        {/*              Lorem ipsum dolor sit amet, consectetur adipisicing elit.*/}
+        {/*              Accusamus ad beatae*/}
+        {/*              cum ducimus earum*/}
+        {/*              fugiat illo impedit, incidunt inventore iure maxime modi*/}
+        {/*              odit quibusdam quidem,*/}
+        {/*              quisquam*/}
+        {/*              reprehenderit, velit vero vitae?*/}
+        {/*            </Typography>*/}
+        {/*            <Button variant='contained' color='secondary'>*/}
+        {/*              Button*/}
+        {/*            </Button>*/}
+        {/*          </div>*/}
+        {/*        </Grid>*/}
+        {/*      </Grid>*/}
+        {/*    </Container>*/}
+        {/*  </Paper>*/}
+        {/*  <Paper className={classes.mainSectionPost}*/}
+        {/*         style={{backgroundImage: 'url(https://source.unsplash.com/random)'}}>*/}
+        {/*    <Container fixed>*/}
 
-              <Grid container>
-                <Grid item md={8}>
+        {/*      <Grid container>*/}
+        {/*        <Grid item md={8}>*/}
 
-                  <div className={classes.mainSectionPostContent}>
+        {/*          <div className={classes.mainSectionPostContent}>*/}
 
-                    <Typography
-                        component='h1'
-                        variant='h3'
-                        color='inherit'
-                        gutterBottom
-                    >Активные поиски</Typography>
-                    <Typography
-                        variant='h5'
-                        color='inherit'
-                        paragraph
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Accusamus ad beatae
-                      cum ducimus earum
-                      fugiat illo impedit, incidunt inventore iure maxime modi
-                      odit quibusdam quidem,
-                      quisquam
-                      reprehenderit, velit vero vitae?
-                    </Typography>
-                    <Button variant='contained' color='secondary'>
-                      Button
-                    </Button>
-                  </div>
-                </Grid>
-              </Grid>
-            </Container>
-          </Paper>
-        </main>
-        <footer>
-          <Footer/>
-        </footer>
-      </>
+        {/*            <Typography*/}
+        {/*                component='h1'*/}
+        {/*                variant='h3'*/}
+        {/*                color='inherit'*/}
+        {/*                gutterBottom*/}
+        {/*            >Активные поиски</Typography>*/}
+        {/*            <Typography*/}
+        {/*                variant='h5'*/}
+        {/*                color='inherit'*/}
+        {/*                paragraph*/}
+        {/*            >*/}
+        {/*              Lorem ipsum dolor sit amet, consectetur adipisicing elit.*/}
+        {/*              Accusamus ad beatae*/}
+        {/*              cum ducimus earum*/}
+        {/*              fugiat illo impedit, incidunt inventore iure maxime modi*/}
+        {/*              odit quibusdam quidem,*/}
+        {/*              quisquam*/}
+        {/*              reprehenderit, velit vero vitae?*/}
+        {/*            </Typography>*/}
+        {/*            <Button variant='contained' color='secondary'>*/}
+        {/*              Button*/}
+        {/*            </Button>*/}
+        {/*          </div>*/}
+        {/*        </Grid>*/}
+        {/*      </Grid>*/}
+        {/*    </Container>*/}
+        {/*  </Paper>*/}
+        {/*</main>*/}
+        {/*<footer>*/}
+        {/*  <Footer/>*/}
+        {/*</footer>*/}
+      </div>
   );
 };
 

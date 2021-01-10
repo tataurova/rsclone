@@ -13,9 +13,9 @@ function Footer() {
                 <p>Inform</p>
             </div>
             <ul className={style.account}>
-                <AccountGitHub autor='Olga Tataurova' adress='https://github.com/tataurova/'/>
-                <AccountGitHub autor='Leonid Shuliak' adress='https://github.com/shuliakleonid/'/>
-                <AccountGitHub autor='Andrei Padyslenkau' adress='https://github.com/andreizayaz'/>
+                <AccountGitHub autor='Olga Tataurova' address='https://github.com/tataurova/'/>
+                <AccountGitHub autor='Leonid Shuliak' address='https://github.com/shuliakleonid/'/>
+                <AccountGitHub autor='Andrei Padyslenkau' address='https://github.com/andreizayaz'/>
             </ul>
             <div className={style.logo}>
                 <a href="https://rs.school/js/" target="_blank">

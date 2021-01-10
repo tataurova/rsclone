@@ -16,8 +16,12 @@ plugins: ['react']
 settings:
   react:
     version: '16'
+  import/resolver: {
+    typescript: {}
+  }
 
 rules:
   comma-dangle:
     - warn
     - always-multiline
+  import/extensions: 'off'

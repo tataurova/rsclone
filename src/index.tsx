@@ -1,11 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/app/app.jsx';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import App from './components/app/app';
 import '../style/normalize.css';
+
 
 const init = () => {
   ReactDOM.render(
-      <App />,
+      <App/>,
       document.querySelector('#root')
   );
 };

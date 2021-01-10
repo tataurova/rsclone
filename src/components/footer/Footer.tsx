@@ -1,7 +1,6 @@
 import React from 'react';
-
+import AccountGitHub from './accountGitHub/AccountGitHub';
 import style from './Footer.module.css';
-import AccountGitHub from './accountGitHub/AccountGitHub.jsx';
 
 function Footer() {
   return (

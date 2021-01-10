@@ -1,7 +1,7 @@
 const path = require(`path`);
 
 module.exports = {
-    entry: `./src/index.js`,
+    entry: `./src/index.tsx`,
     output: {
         filename: `bundle.js`,
         path: path.join(__dirname, `public`)
@@ -29,7 +29,7 @@ module.exports = {
                         options: {
                             importLoaders: 1,
                             modules: {
-                                localIdentName: "[name]__[local]___[hash:base64:5]",
+                                localIdentName: '[name]__[local]___[hash:base64:5]',
                             },
                         }
                     }
@@ -43,8 +43,15 @@ module.exports = {
                     'css-loader'
                 ],
                 exclude: /\.module\.css$/
+            },
+            {
+                test: /\.(tsx|ts)?$/,
+                loader: `ts-loader`
             }
         ],
+    },
+    resolve: {
+        extensions: [`.ts`, `.tsx`, `.js`, `json`]
     },
     devtool: 'source-map',
 };

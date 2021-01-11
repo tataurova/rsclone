@@ -11,7 +11,7 @@ import {
   Toolbar,
   Typography,
 } from '@material-ui/core';
-import Footer from '../footer/Footer';
+import Footer from '../footer/footer';
 
 const useStyles = makeStyles((theme) => ({
   root: {

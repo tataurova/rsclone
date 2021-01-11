@@ -1,15 +1,14 @@
 import * as React from 'react';
 
-type AccountType={
+type AccountType = {
   address: string;
   author: string;
 }
 
-function AccountGitHub(props: AccountType) {
-  return (
-        <li>
+const AccountGithub = (props: AccountType) => (
+    <li>
         <a href={props.address} target="_blank" rel="noreferrer" > {props.author} </a>
-        </li>
-  );
-}
-export default AccountGitHub;
+    </li>
+);
+
+export default AccountGithub;

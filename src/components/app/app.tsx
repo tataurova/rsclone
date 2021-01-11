@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import {
   AppBar,
   Box,
@@ -11,8 +11,7 @@ import {
   Toolbar,
   Typography,
 } from '@material-ui/core';
-import Footer from '../footer/Footer';
-
+import Brightness4Icon from '@material-ui/icons/Brightness4';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -59,13 +58,17 @@ const App = () => {
                   Закрытые поиски
                 </Link>
               </Breadcrumbs>
+
               <Box mr={3}>
-                <Button variant="outlined" color="inherit">Ru/En</Button>
+                <Button variant="outlined" color="secondary">
+                  RU
+                </Button>
               </Box>
               <Box mr={3}>
-                <Button variant="contained" color="secondary">Log in</Button>
+                <Brightness4Icon/>
               </Box>
-              <Button variant="contained" color="secondary">Dark/Light</Button>
+              <Button variant="contained" color="secondary">Log in</Button>
+
 
             </Toolbar>
 
@@ -73,7 +76,7 @@ const App = () => {
         </AppBar>
         <main>
           <Paper className={classes.mainSectionPost}
-                 style={{ backgroundImage: 'url(https://source.unsplash.com/random)' }}>
+                 style={{backgroundImage: 'url(https://source.unsplash.com/random)'}}>
             <Container fixed>
 
               <Grid container>
@@ -109,7 +112,7 @@ const App = () => {
             </Container>
           </Paper>
           <Paper className={classes.mainSectionPost}
-                 style={{ backgroundImage: 'url(https://source.unsplash.com/random)' }}>
+                 style={{backgroundImage: 'url(https://source.unsplash.com/random)'}}>
             <Container fixed>
 
               <Grid container>
@@ -145,7 +148,7 @@ const App = () => {
             </Container>
           </Paper>
           <Paper className={classes.mainSectionPost}
-                 style={{ backgroundImage: 'url(https://source.unsplash.com/random)' }}>
+                 style={{backgroundImage: 'url(https://source.unsplash.com/random)'}}>
             <Container fixed>
 
               <Grid container>
@@ -182,7 +185,7 @@ const App = () => {
           </Paper>
         </main>
         <footer>
-          <Footer/>
+
         </footer>
       </>
   );

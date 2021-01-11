@@ -11,7 +11,9 @@ import {
   Toolbar,
   Typography,
 } from '@material-ui/core';
+
 import Brightness4Icon from '@material-ui/icons/Brightness4';
+import Footer from '../footer/footer';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,

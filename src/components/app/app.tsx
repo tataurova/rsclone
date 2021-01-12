@@ -4,22 +4,23 @@ import history from '../../history';
 import Main from '../main/main';
 import CardPage from '../card-page/card-page';
 import NotFound from '../not-found/not-found';
+import LoginPage from '../login/login';
 import { PageName } from '../../const';
 
 const App = () => (
       <BrowserRouter history={history}>
         <Switch>
-          <Route exact path='/'>
-            <Main />
+          <Route exact path={PageName.MAIN} render={() => <Main />}>
           </Route>
-          <Route exact path='/gone'>
-            <CardPage />
+          <Route exact path={PageName.GONE} render={() => <CardPage />}>
           </Route>
-          <Route path={PageName.LOOKING_RELATIVES} render={() => <Main />}>
+          <Route exact path={PageName.LOOKING_RELATIVES} render={() => <Main />}>
           </Route>
-          <Route path={PageName.ACTIVE_SEARCHES} render={() => <Main />}>
+          <Route exact path={PageName.ACTIVE_SEARCHES} render={() => <Main />}>
           </Route>
-          <Route path={PageName.CLOSED_SEARCHES} render={() => <Main />}>
+          <Route exact path={PageName.CLOSED_SEARCHES} render={() => <Main />}>
+          </Route>
+          <Route exact path={PageName.LOGIN} render={() => <LoginPage />}>
           </Route>
           <Route render={() => <NotFound />}>
           </Route>

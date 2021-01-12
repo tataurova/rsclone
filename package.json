@@ -2,7 +2,6 @@
   "name": "rsclone",
   "version": "1.0.0",
   "description": "RSSchool app",
-  "main": "main.js",
   "scripts": {
     "eslint": "npm run eslint.ts",
     "eslint.ts": "eslint --config .eslintrc-ts.yml --ext .tsx src/",
@@ -14,8 +13,10 @@
   "dependencies": {
     "@material-ui/core": "4.11.2",
     "@material-ui/icons": "4.11.2",
+    "history": "5.0.0",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "react-router-dom": "5.2.0"
   },
   "devDependencies": {
     "@babel/core": "7.12.10",

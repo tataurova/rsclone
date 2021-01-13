@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { Breadcrumbs, Link } from '@material-ui/core';
+import { Breadcrumbs } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
+import { PageName } from '../../const';
 
 const useStyles = makeStyles((theme) => ({
   menuButton: {
@@ -9,21 +11,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Nav = () => {
+const Nav: React.FunctionComponent = () => {
   const styles = useStyles();
 
   return (
       <Breadcrumbs className={styles.menuButton} aria-label="breadcrumb">
-        <Link color="inherit" href="#">
+        <Link to={PageName.GONE}>
           Пропали
         </Link>
-        <Link color="inherit" href="#">
+        <Link to={PageName.LOOKING_RELATIVES}>
           Ищут родственников
         </Link>
-        <Link color="inherit" href="#">
+        <Link to={PageName.ACTIVE_SEARCHES}>
           Активные поиски
         </Link>
-        <Link color="inherit" href="#">
+        <Link to={PageName.CLOSED_SEARCHES}>
           Закрытые поиски
         </Link>
       </Breadcrumbs>

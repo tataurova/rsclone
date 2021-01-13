@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Box } from '@material-ui/core';
 import AccountGithub from '../account-github/account-github';
-import SettingsFooter from '../footer-settings/footter-settings';
+import SettingsFooter from '../footer-settings/footer-settings';
 
 const Footer = () => {
   const styles = {

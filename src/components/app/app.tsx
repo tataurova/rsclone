@@ -6,6 +6,7 @@ import CardPage from '../card-page/card-page';
 import NotFound from '../not-found/not-found';
 import LoginPage from '../login/login';
 import { PageName } from '../../const';
+import SearchingProfile from '../search-gone/search-gone-profile';
 
 const App = () => (
       <BrowserRouter history={history}>
@@ -14,7 +15,7 @@ const App = () => (
           </Route>
           <Route exact path={PageName.GONE} render={() => <CardPage />}>
           </Route>
-          <Route exact path={PageName.LOOKING_RELATIVES} render={() => <Main />}>
+          <Route exact path={PageName.LOOKING_RELATIVES} render={() => <SearchingProfile />}>
           </Route>
           <Route exact path={PageName.ACTIVE_SEARCHES} render={() => <Main />}>
           </Route>

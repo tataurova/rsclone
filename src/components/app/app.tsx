@@ -1,57 +1,82 @@
 import * as React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Box, Button, Container, Grid, Paper, Toolbar, Typography } from '@material-ui/core';
+import {makeStyles} from '@material-ui/core/styles';
+import {AppBar, Box, Button, Container, Toolbar, Typography} from '@material-ui/core';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
 import Footer from '../footer/footer';
 import Nav from '../nav/nav';
+import SearchingProfile from '../search-gone/search-gone-profile';
+import data from '../../mock.js'
+
+
+export type ArrayCardType = Array<CardType>;
+export type CardType = {
+    id: number
+    image: string
+    name: string
+    city: string
+    birth: string
+    age: string
+    missing: string
+    sign: string
+    close: string
+    with: string
+}
+const dataCard: ArrayCardType = data;
+
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(1),
-    flexGrow: 1,
-  },
-  mainSectionPost: {
-    position: 'relative',
-    color: theme.palette.common.white,
-    marginTop: theme.spacing(8),
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-  },
-  mainSectionPostContent: {
-    position: 'relative',
-    padding: theme.spacing(9),
+    root: {
+        flexGrow: 1,
+    },
+    menuButton: {
+        marginRight: theme.spacing(1),
+        flexGrow: 1,
+    },
+    mainSectionPost: {
+        position: 'relative',
+        color: theme.palette.common.white,
+        marginTop: theme.spacing(8),
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+    },
+    mainSectionPostContent: {
+        position: 'relative',
+        padding: theme.spacing(9),
 
-  },
+    },
 
 }));
 
 const App = () => {
-  const classes = useStyles();
-  return (
-      <>
-        <AppBar position='fixed'>
-          <Container fixed>
-            <Toolbar>
-              <Typography className={classes.menuButton}>Logo</Typography>
-              <Nav/>
-              <Box mr={3}>
-                <Button variant="outlined" color="secondary">
-                  RU
-                </Button>
-              </Box>
-              <Box mr={3}>
-                <Brightness4Icon/>
-              </Box>
-              <Button variant="contained" color="secondary">Log in</Button>
-            </Toolbar>
-          </Container>
-        </AppBar>
-        <main>
-          <Paper className={classes.mainSectionPost}
+    const classes = useStyles();
+    return (
+        <>
+            <AppBar position='fixed'>
+                <Container fixed>
+                    <Toolbar>
+                        <Typography className={classes.menuButton}>Logo</Typography>
+                        <Nav/>
+                        <Box mr={3}>
+                            <Button variant="contained" color="secondary"> Поиск </Button>
+                        </Box>
+                        <Box mr={3}>
+                            <Button variant="outlined" color="secondary">
+                                RU
+                            </Button>
+                        </Box>
+                        <Box mr={3}>
+                            <Brightness4Icon/>
+                        </Box>
+                        <Button variant="contained" color="secondary">Log in</Button>
+                    </Toolbar>
+                </Container>
+            </AppBar>
+            <main>
+                <SearchingProfile
+                    data={dataCard}
+                />
+                {/* <Paper className={classes.mainSectionPost}
                  style={{ backgroundImage: 'url(https://source.unsplash.com/random)' }}>
             <Container fixed>
 
@@ -158,13 +183,13 @@ const App = () => {
                 </Grid>
               </Grid>
             </Container>
-          </Paper>
-        </main>
-        <footer>
-          <Footer/>
-        </footer>
-      </>
-  );
+          </Paper>*/}
+            </main>
+            <footer>
+                <Footer/>
+            </footer>
+        </>
+    );
 };
 
 export default App;

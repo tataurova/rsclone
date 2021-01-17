@@ -22,7 +22,7 @@ const onNoResponse = () => {
 
 const api = createAPI(onUnauthorized, onNoResponse);
 
-export const store = createStore(
+const store = createStore(
   reducer,
   composeWithDevTools(
     applyMiddleware(thunk.withExtraArgument(api))

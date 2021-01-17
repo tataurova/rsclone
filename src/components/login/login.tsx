@@ -4,13 +4,17 @@ import Footer from '../footer/footer';
 
 const bg = require('../../../public/assets/img/bg.jpg');
 
-const LoginPage = () => (
-    <>
-        <Header />
-        <img src={ bg.default } alt={'test'}/>
-        <h2>LoginPage</h2>
-        <Footer />
-    </>
+interface Props {
+    page: string;
+}
+
+const LoginPage: React.FunctionComponent<Props> = ({ page }: Props) => (
+        <>
+            <Header page={page}/>
+            <img src={ bg.default } alt={'test'}/>
+            <h2>LoginPage</h2>
+            <Footer />
+        </>
 );
 
 export default LoginPage;

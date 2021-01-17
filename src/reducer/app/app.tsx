@@ -1,7 +1,7 @@
 import { extend } from '../../utils/common';
 
 const initialState = {
-  page: '',
+  page: '0',
 };
 
 const ActionType = {
@@ -9,9 +9,9 @@ const ActionType = {
 };
 
 export const ActionCreator = {
-  changePage: (city) => ({
+  changePage: (page) => ({
     type: ActionType.CHANGE_PAGE,
-    payload: city,
+    payload: page,
   }),
 };
 
@@ -19,7 +19,7 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionType.CHANGE_PAGE:
       return extend(state, {
-        city: action.payload,
+        page: action.payload,
       });
   }
 

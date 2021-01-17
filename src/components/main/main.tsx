@@ -29,12 +29,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Main = () => {
+interface Props {
+    page: string;
+}
+
+const Main: React.FunctionComponent<Props> = ({ page }: Props) => {
   const classes = useStyles();
 
   return (
         <>
-            <Header />
+            <Header page={page} />
             <main>
                 <Paper className={classes.mainSectionPost}
                        style={{ backgroundImage: 'url(https://source.unsplash.com/random)' }}>

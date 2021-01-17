@@ -1,4 +1,4 @@
-const data = [
+export const data = [
   {
     id: 1,
     image: 'http://lorempixel.com/280/220/people',
@@ -121,4 +121,126 @@ const data = [
   },
 ];
 
-export default data;
+// export const getAllRecords = [
+//   {
+//     id: 1,
+//     status: 'Поиск на месте',
+//     city: 'Санкт-Петербург',
+//     name: 'Петр',
+//     age: '30',
+//     date: '12-01-2020',
+//     coordinator: 'Вжик',
+//     people: [{
+//       name: 'Саша',
+//       status: 'way',
+//     }, {
+//       name: 'Катя',
+//       status: 'place',
+//     }, {
+//       name: 'Рома',
+//       status: 'place',
+//     }, {
+//       name: 'Илья',
+//       status: 'way',
+//     }]
+//   },
+//   {
+//     id: 2,
+//     status: 'Поиск на месте',
+//     city: 'Колпино',
+//     name: 'Фекла',
+//     age: '200',
+//     date: '10-01-2020',
+//     coordinator: 'Чип',
+//     people: [{
+//       name: 'Саша',
+//       status: 'way',
+//     }, {
+//       name: 'Катя',
+//       status: 'place',
+//     }, {
+//       name: 'Рома',
+//       status: 'place',
+//     }, {
+//       name: 'Илья',
+//       status: 'way',
+//     }]
+//   },
+//   {
+//     id: 3,
+//     status: 'Стоп. Проверка информации',
+//     city: 'Минск',
+//     name: 'Аркадий',
+//     age: '100',
+//     date: '01-01-2021',
+//     coordinator: 'Космос',
+//     people: [{
+//       name: 'Саша',
+//       status: 'way',
+//     }, {
+//       name: 'Катя',
+//       status: 'place',
+//     }, {
+//       name: 'Рома',
+//       status: 'place',
+//     }, {
+//       name: 'Илья',
+//       status: 'way',
+//     }]
+//   },
+//   {
+//     id: 4,
+//     status: 'Поиск на месте',
+//     city: 'Москва',
+//     name: 'Владимир',
+//     age: '3000',
+//     date: '12-06-2020',
+//     coordinator: 'Лиса',
+//     people: [{
+//       name: 'Саша',
+//       status: 'way',
+//     }, {
+//       name: 'Катя',
+//       status: 'place',
+//     }, {
+//       name: 'Рома',
+//       status: 'place',
+//     }, {
+//       name: 'Илья',
+//       status: 'way',
+//     }]
+//   },
+//   {
+//     id: 5,
+//     status: 'Резерв',
+//     city: 'Санкт-Петербург',
+//     name: 'Петр',
+//     age: '30',
+//     date: '12-01-2020',
+//     coordinator: 'Вжик',
+//     people: [],
+//   },
+//   {
+//     id: 6,
+//     status: 'Поиск на месте',
+//     city: 'Киев',
+//     name: 'Анна',
+//     age: '123',
+//     date: '12-01-2020',
+//     coordinator: 'Вжик',
+//     people: [{
+//       name: 'Саша',
+//       status: 'way',
+//     }, {
+//       name: 'Катя',
+//       status: 'place',
+//     }, {
+//       name: 'Рома',
+//       status: 'place',
+//     }, {
+//       name: 'Илья',
+//       status: 'way',
+//     }]
+//   },
+// ];
+

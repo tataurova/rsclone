@@ -4,9 +4,13 @@ import Footer from '../footer/footer';
 
 const bg = require('../../../public/assets/img/bg.jpg');
 
-const NotFound = () => (
+interface Props {
+    page: string;
+}
+
+const NotFound: React.FunctionComponent<Props> = ({ page }: Props) => (
         <>
-            <Header />
+            <Header page={page}/>
             <img src={ bg.default } alt={'test'}/>
             <h2>Not Found 404</h2>
             <Footer />

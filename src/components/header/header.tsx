@@ -1,22 +1,17 @@
 import * as React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import {
-  AppBar, Box, Button, Container, Toolbar, Typography,
+  AppBar, Box, Button, Container, Toolbar,
 } from '@material-ui/core';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
-import { makeStyles } from '@material-ui/core/styles';
 import Nav from '../nav/nav';
 import { PageName } from '../../const';
 
-const useStyles = makeStyles((theme) => ({
-  menuButton: {
-    marginRight: theme.spacing(1),
-    flexGrow: 1,
-  },
-}));
+interface Props {
+    page: string;
+}
 
-const Header = () => {
-  const classes = useStyles();
+const Header: React.FunctionComponent<Props> = ({ page }: Props) => {
   const history = useHistory();
 
   function handleClick() {
@@ -26,10 +21,9 @@ const Header = () => {
         <AppBar position='fixed'>
             <Container fixed>
                 <Toolbar>
-                    <Link to={PageName.MAIN}>
-                        <Typography className={classes.menuButton}>Logo</Typography>
-                    </Link>
-                    <Nav/>
+                    <Nav
+                        page={page}
+                    />
                     <Box mr={3}>
                         <Button variant="outlined" color="secondary">
                             RU

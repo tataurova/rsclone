@@ -4,8 +4,235 @@ import { PageName, SHOW_ERROR_TIMEOUT } from '../../const';
 const initialState = {
   gonePeople: [],
   lookingRelativesPeople: [],
-  activeSearches: [],
-  closedSearches: [],
+  activeSearches: [
+    {
+      id: 1,
+      status: 'Поиск на месте',
+      city: 'Санкт-Петербург',
+      name: 'Петр',
+      age: '30',
+      date: '12-01-2020',
+      coordinator: 'Чиж',
+      people: [{
+        name: 'Саша',
+        status: 'way',
+        transport: 'car',
+        places: '1',
+        time: '12:00',
+        district: 'Василеостровский',
+      }, {
+        name: 'Катя',
+        status: 'place',
+        transport: 'own',
+        places: '0',
+        time: '19:00',
+        district: 'Василеостровский',
+      }, {
+        name: 'Рома',
+        status: 'place',
+        transport: 'need',
+        places: '0',
+        time: '2:00',
+        district: 'Калининский',
+      }, {
+        name: 'Илья',
+        status: 'way',
+        transport: 'own',
+        places: '0',
+        time: '15:00',
+        district: 'Выборгский',
+      }, {
+        name: 'Саша',
+        status: 'way',
+        transport: 'car',
+        places: '1',
+        time: '12:00',
+        district: 'Василеостровский',
+      }, {
+        name: 'Катя',
+        status: 'place',
+        transport: 'own',
+        places: '0',
+        time: '19:00',
+        district: 'Василеостровский',
+      }, {
+        name: 'Рома',
+        status: 'place',
+        transport: 'need',
+        places: '0',
+        time: '2:00',
+        district: 'Калининский',
+      }, {
+        name: 'Илья',
+        status: 'way',
+        transport: 'own',
+        places: '0',
+        time: '15:00',
+        district: 'Выборгский',
+      }],
+    }, {
+      id: 3,
+      status: 'Стоп. Проверка информации',
+      city: 'Минск',
+      name: 'Аркадий',
+      age: '100',
+      date: '01-01-2021',
+      coordinator: 'Чип',
+      people: [{
+        name: 'Саша',
+        status: 'way',
+        transport: 'car',
+        places: '1',
+        time: '12:00',
+        district: 'Василеостровский',
+      }, {
+        name: 'Катя',
+        status: 'place',
+        transport: 'own',
+        places: '0',
+        time: '19:00',
+        district: 'Василеостровский',
+      }, {
+        name: 'Рома',
+        status: 'place',
+        transport: 'need',
+        places: '0',
+        time: '2:00',
+        district: 'Калининский',
+      }, {
+        name: 'Илья',
+        status: 'way',
+        transport: 'own',
+        places: '0',
+        time: '15:00',
+        district: 'Выборгский',
+      }],
+    },
+    {
+      id: 4,
+      status: 'Поиск на месте',
+      city: 'Москва',
+      name: 'Владимир',
+      age: '3000',
+      date: '12-06-2020',
+      coordinator: 'Дейл',
+      people: [{
+        name: 'Саша',
+        status: 'way',
+        transport: 'car',
+        places: '1',
+        time: '12:00',
+        district: 'Василеостровский',
+      }, {
+        name: 'Катя',
+        status: 'place',
+        transport: 'own',
+        places: '0',
+        time: '19:00',
+        district: 'Василеостровский',
+      }, {
+        name: 'Рома',
+        status: 'place',
+        transport: 'need',
+        places: '0',
+        time: '2:00',
+        district: 'Калининский',
+      }, {
+        name: 'Илья',
+        status: 'way',
+        transport: 'own',
+        places: '0',
+        time: '15:00',
+        district: 'Выборгский',
+      }],
+    },
+    {
+      id: 5,
+      status: 'Резерв',
+      city: 'Санкт-Петербург',
+      name: 'Петр',
+      age: '30',
+      date: '12-01-2020',
+      coordinator: 'Чи',
+      people: [],
+    },
+    {
+      id: 6,
+      status: 'Поиск на месте',
+      city: 'Киев',
+      name: 'Анна',
+      age: '123',
+      date: '12-01-2020',
+      coordinator: 'Кат',
+      people: [{
+        name: 'Саша',
+        status: 'way',
+        transport: 'car',
+        places: '1',
+        time: '12:00',
+        district: 'Василеостровский',
+      }, {
+        name: 'Катя',
+        status: 'place',
+        transport: 'own',
+        places: '0',
+        time: '19:00',
+        district: 'Василеостровский',
+      }, {
+        name: 'Рома',
+        status: 'place',
+        transport: 'need',
+        places: '0',
+        time: '2:00',
+        district: 'Калининский',
+      }, {
+        name: 'Илья',
+        status: 'way',
+        transport: 'own',
+        places: '0',
+        time: '15:00',
+        district: 'Выборгский',
+      }],
+    },
+  ],
+  closedSearches: [{
+    id: 2,
+    status: 'Архив',
+    city: 'Колпино',
+    name: 'Фекла',
+    age: '200',
+    date: '10-01-2020',
+    coordinator: 'Чиж',
+    people: [{
+      name: 'Саша',
+      status: 'way',
+      transport: 'car',
+      places: '1',
+      time: '12:00',
+      district: 'Василеостровский',
+    }, {
+      name: 'Катя',
+      status: 'place',
+      transport: 'own',
+      places: '0',
+      time: '19:00',
+      district: 'Василеостровский',
+    }, {
+      name: 'Рома',
+      status: 'place',
+      transport: 'need',
+      places: '0',
+      time: '2:00',
+      district: 'Калининский',
+    }, {
+      name: 'Илья',
+      status: 'way',
+      transport: 'own',
+      places: '0',
+      time: '15:00',
+      district: 'Выборгский',
+    }],
+  }],
   isFetching: false,
   error: false,
 };
@@ -17,6 +244,8 @@ const ActionType = {
   LOAD_CLOSED_SEARCHES: 'LOAD_CLOSED_SEARCHES',
   SET_FETCHING_STATUS: 'SET_FETCHING_STATUS',
   WRITE_ERROR: 'WRITE_ERROR',
+  ADD_ACTIVE_SEARCHES: 'ADD_ACTIVE_SEARCHES',
+  ADD_CLOSED_SEARCHES: 'ADD_CLOSED_SEARCHES',
 };
 
 const ActionCreator = {
@@ -43,6 +272,14 @@ const ActionCreator = {
   writeError: (error) => ({
     type: ActionType.WRITE_ERROR,
     payload: error,
+  }),
+  onAddActiveSearches: (searches) => ({
+    type: ActionType.ADD_ACTIVE_SEARCHES,
+    payload: searches,
+  }),
+  onAddClosedSearches: (searches) => ({
+    type: ActionType.ADD_CLOSED_SEARCHES,
+    payload: searches,
   }),
 };
 
@@ -126,6 +363,14 @@ const reducer = (state = initialState, action) => {
     case ActionType.LOAD_CLOSED_SEARCHES:
       return extend(state, {
         favoriteOffers: action.payload,
+      });
+    case ActionType.ADD_ACTIVE_SEARCHES:
+      return extend(state, {
+        activeSearches: action.payload,
+      });
+    case ActionType.ADD_CLOSED_SEARCHES:
+      return extend(state, {
+        closedSearches: action.payload,
       });
   }
 

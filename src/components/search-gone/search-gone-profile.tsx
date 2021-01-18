@@ -4,7 +4,7 @@ import { Box, Container } from '@material-ui/core';
 import CardProfile from '../card-profile/card-profile';
 import Header from '../header/header';
 import Footer from '../footer/footer';
-import data from '../../mock.js';
+import { data } from '../../mock';
 import SearchCard from '../search-cadr-element/search-card';
 import FilterCard from '../filter-card-element/filter-card';
 
@@ -23,7 +23,11 @@ export type CardType = {
 }
 const dataCard: ArrayCardType = data;
 
-const SearchingProfile = () => {
+interface Props {
+    page: string;
+}
+
+const SearchingProfile: React.FunctionComponent<Props> = ({ page }: Props) => {
   const mappedCardProfile = dataCard.map((t) => <CardProfile
             key={t.id}
             id={t.id}
@@ -40,7 +44,7 @@ const SearchingProfile = () => {
 
   return (
         <>
-            <Header/>
+            <Header page={page}/>
             <Box>
                 <Container>
                     <Box

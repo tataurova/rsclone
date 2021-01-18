@@ -4,21 +4,21 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import { Box } from '@material-ui/core';
+import {Box} from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 
 const SearchCard = () => {
-  const [open, setOpen] = React.useState(false);
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
+    const [open, setOpen] = React.useState(false);
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+    const handleClose = () => {
+        setOpen(false);
+    };
 
-  return (
+    return (
         <div>
-            <Button onClick={handleClickOpen}>Поиск</Button>
+            <Button variant='outlined' onClick={handleClickOpen} >Поиск</Button>
             <Dialog disableBackdropClick disableEscapeKeyDown open={open} onClose={handleClose}>
                 <DialogTitle>Поиск</DialogTitle>
                 <DialogContent>
@@ -27,26 +27,31 @@ const SearchCard = () => {
                             <TextField
                                 id="outlined-full-width"
                                 label="ФИО"
-                                style={{ margin: 8 }}
+                                style={{margin: 8}}
                                 placeholder="Фамилия Имя Отчество"
                                 helperText="Введите полное имя и оичество"
                                 fullWidth
                                 margin="normal"
                                 InputLabelProps={{
-                                  shrink: true,
+                                    shrink: true,
                                 }}
-                                variant="outlined"
-                            />
+                                variant="outlined"/>
+<Box component='span' mr={2} ml={1}>
                             <TextField
                                 id="outlined-number"
                                 label="Возраст"
                                 type="number"
                                 InputLabelProps={{
-                                  shrink: true,
+                                    shrink: true,
                                 }}
-                                variant="outlined"
-                            />
-                            <TextField id="outlined-search" label="Город" type="search" variant="outlined"/>
+                                variant="outlined"/>
+</Box>
+                            <TextField
+                                id="outlined-search"
+                                label="Город"
+                                defaultValue=" "
+                                type="search"
+                                variant="outlined"/>
                         </Box>
                     </form>
                 </DialogContent>
@@ -60,6 +65,6 @@ const SearchCard = () => {
                 </DialogActions>
             </Dialog>
         </div>
-  );
+    );
 };
 export default SearchCard;

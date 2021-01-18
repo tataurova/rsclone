@@ -25,3 +25,6 @@ rules:
     - warn
     - always-multiline
   import/extensions: 'off'
+  default-case: 'off'
+  max-len: 'off'
+  no-param-reassign: 'off'

@@ -1,11 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+//const bodyParser = require("body-parser");
 
 require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT || 1337;
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -42,10 +43,14 @@ app.listen(port, () => {
 let HumanLost = require('./models/Human-lost');
 let HumanLookingRelatives = require('./models/Human-looking-relatives');
 
+const user = require("./routes/user");
+
+app.use("/user", user);
+
 app.route('/').get(async (req, res) => {
         try {
-            const peopleLost = await HumanLost.find();
-            const peopleLookingForRelatives = await HumanLookingRelatives.find();
+            const peopleLost = await HumanLost.find().lean();
+            const peopleLookingForRelatives = await HumanLookingRelatives.find().lean();
 
             const result = peopleLost.concat(peopleLookingForRelatives);
 

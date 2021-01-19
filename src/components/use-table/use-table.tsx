@@ -1,27 +1,10 @@
 import * as React from 'react';
 import { useState } from 'react';
 import {
-  Table, TableHead, TableRow, TablePagination, TableCell, TableSortLabel, makeStyles,
+  Table, TableHead, TableRow, TablePagination, TableCell, TableSortLabel,
 } from '@material-ui/core';
 import { Searches, HeadCell } from '../../types';
-
-const useStyles = makeStyles((theme) => ({
-  table: {
-    marginTop: theme.spacing(3),
-    '& thead th': {
-      fontWeight: '600',
-      color: theme.palette.primary.main,
-      backgroundColor: theme.palette.primary.light,
-    },
-    '& tbody td': {
-      fontWeight: '300',
-    },
-    '& tbody tr:hover': {
-      backgroundColor: '#fffbf2',
-      cursor: 'pointer',
-    },
-  },
-}));
+import useStyles from './use-table.styles';
 
 interface Props {
   searches: Array<Searches>;
@@ -45,9 +28,9 @@ export function useTable(props: Props) {
   const [order, setOrder] = useState<'asc' | 'desc'>('asc');
   const [orderBy, setOrderBy] = useState<string | undefined>();
 
-  const TblContainer: React.FunctionComponent<PropsContainer> = (props: PropsContainer) => (
+  const TblContainer: React.FunctionComponent<PropsContainer> = (containerProps: PropsContainer) => (
         <Table className={classes.table}>
-            {props.children}
+            {containerProps.children}
         </Table>
   );
   const TblHead = () => {
@@ -60,7 +43,7 @@ export function useTable(props: Props) {
     return (<TableHead>
             <TableRow>
                 {
-                    headCells.map((headCell) => (<TableCell key={headCell.id} sortDirection={orderBy === headCell.id
+                    headCells.map((headCell, i) => (<TableCell key={i} sortDirection={orderBy === headCell.id
                       ? order
                       : false}>
                         {headCell.disableSorting ? headCell.label

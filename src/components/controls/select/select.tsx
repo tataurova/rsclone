@@ -9,7 +9,7 @@ interface Props {
     value: string;
     error: null | string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    options: any[];
+    options: string[];
 }
 
 const Select: React.FunctionComponent<Props> = ({

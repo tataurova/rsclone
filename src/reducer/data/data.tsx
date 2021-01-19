@@ -1,238 +1,12 @@
 import { extend } from '../../utils/common';
-import { PageName, SHOW_ERROR_TIMEOUT } from '../../const';
+import { RouteName, SHOW_ERROR_TIMEOUT } from '../../const';
+import { mockActiveSearches, mockClosedSearches } from '../../mock';
 
 const initialState = {
   gonePeople: [],
   lookingRelativesPeople: [],
-  activeSearches: [
-    {
-      id: 1,
-      status: 'Поиск на месте',
-      city: 'Санкт-Петербург',
-      name: 'Петр',
-      age: '30',
-      date: '12-01-2020',
-      coordinator: 'Чиж',
-      people: [{
-        name: 'Саша',
-        status: 'way',
-        transport: 'car',
-        places: '1',
-        time: '12:00',
-        district: 'Василеостровский',
-      }, {
-        name: 'Катя',
-        status: 'place',
-        transport: 'own',
-        places: '0',
-        time: '19:00',
-        district: 'Василеостровский',
-      }, {
-        name: 'Рома',
-        status: 'place',
-        transport: 'need',
-        places: '0',
-        time: '2:00',
-        district: 'Калининский',
-      }, {
-        name: 'Илья',
-        status: 'way',
-        transport: 'own',
-        places: '0',
-        time: '15:00',
-        district: 'Выборгский',
-      }, {
-        name: 'Саша',
-        status: 'way',
-        transport: 'car',
-        places: '1',
-        time: '12:00',
-        district: 'Василеостровский',
-      }, {
-        name: 'Катя',
-        status: 'place',
-        transport: 'own',
-        places: '0',
-        time: '19:00',
-        district: 'Василеостровский',
-      }, {
-        name: 'Рома',
-        status: 'place',
-        transport: 'need',
-        places: '0',
-        time: '2:00',
-        district: 'Калининский',
-      }, {
-        name: 'Илья',
-        status: 'way',
-        transport: 'own',
-        places: '0',
-        time: '15:00',
-        district: 'Выборгский',
-      }],
-    }, {
-      id: 3,
-      status: 'Стоп. Проверка информации',
-      city: 'Минск',
-      name: 'Аркадий',
-      age: '100',
-      date: '01-01-2021',
-      coordinator: 'Чип',
-      people: [{
-        name: 'Саша',
-        status: 'way',
-        transport: 'car',
-        places: '1',
-        time: '12:00',
-        district: 'Василеостровский',
-      }, {
-        name: 'Катя',
-        status: 'place',
-        transport: 'own',
-        places: '0',
-        time: '19:00',
-        district: 'Василеостровский',
-      }, {
-        name: 'Рома',
-        status: 'place',
-        transport: 'need',
-        places: '0',
-        time: '2:00',
-        district: 'Калининский',
-      }, {
-        name: 'Илья',
-        status: 'way',
-        transport: 'own',
-        places: '0',
-        time: '15:00',
-        district: 'Выборгский',
-      }],
-    },
-    {
-      id: 4,
-      status: 'Поиск на месте',
-      city: 'Москва',
-      name: 'Владимир',
-      age: '3000',
-      date: '12-06-2020',
-      coordinator: 'Дейл',
-      people: [{
-        name: 'Саша',
-        status: 'way',
-        transport: 'car',
-        places: '1',
-        time: '12:00',
-        district: 'Василеостровский',
-      }, {
-        name: 'Катя',
-        status: 'place',
-        transport: 'own',
-        places: '0',
-        time: '19:00',
-        district: 'Василеостровский',
-      }, {
-        name: 'Рома',
-        status: 'place',
-        transport: 'need',
-        places: '0',
-        time: '2:00',
-        district: 'Калининский',
-      }, {
-        name: 'Илья',
-        status: 'way',
-        transport: 'own',
-        places: '0',
-        time: '15:00',
-        district: 'Выборгский',
-      }],
-    },
-    {
-      id: 5,
-      status: 'Резерв',
-      city: 'Санкт-Петербург',
-      name: 'Петр',
-      age: '30',
-      date: '12-01-2020',
-      coordinator: 'Чи',
-      people: [],
-    },
-    {
-      id: 6,
-      status: 'Поиск на месте',
-      city: 'Киев',
-      name: 'Анна',
-      age: '123',
-      date: '12-01-2020',
-      coordinator: 'Кат',
-      people: [{
-        name: 'Саша',
-        status: 'way',
-        transport: 'car',
-        places: '1',
-        time: '12:00',
-        district: 'Василеостровский',
-      }, {
-        name: 'Катя',
-        status: 'place',
-        transport: 'own',
-        places: '0',
-        time: '19:00',
-        district: 'Василеостровский',
-      }, {
-        name: 'Рома',
-        status: 'place',
-        transport: 'need',
-        places: '0',
-        time: '2:00',
-        district: 'Калининский',
-      }, {
-        name: 'Илья',
-        status: 'way',
-        transport: 'own',
-        places: '0',
-        time: '15:00',
-        district: 'Выборгский',
-      }],
-    },
-  ],
-  closedSearches: [{
-    id: 2,
-    status: 'Архив',
-    city: 'Колпино',
-    name: 'Фекла',
-    age: '200',
-    date: '10-01-2020',
-    coordinator: 'Чиж',
-    people: [{
-      name: 'Саша',
-      status: 'way',
-      transport: 'car',
-      places: '1',
-      time: '12:00',
-      district: 'Василеостровский',
-    }, {
-      name: 'Катя',
-      status: 'place',
-      transport: 'own',
-      places: '0',
-      time: '19:00',
-      district: 'Василеостровский',
-    }, {
-      name: 'Рома',
-      status: 'place',
-      transport: 'need',
-      places: '0',
-      time: '2:00',
-      district: 'Калининский',
-    }, {
-      name: 'Илья',
-      status: 'way',
-      transport: 'own',
-      places: '0',
-      time: '15:00',
-      district: 'Выборгский',
-    }],
-  }],
+  activeSearches: mockActiveSearches,
+  closedSearches: mockClosedSearches,
   isFetching: false,
   error: false,
 };
@@ -286,7 +60,7 @@ const ActionCreator = {
 const Operation = {
   loadGonePeople: () => (dispatch, getState, api) => {
     dispatch(ActionCreator.setFetchingStatus(true));
-    return api.get(PageName.GONE)
+    return api.get(RouteName.GONE)
       .then((gonePeople) => {
         dispatch(ActionCreator.setFetchingStatus(false));
         dispatch(ActionCreator.writeError(initialState.error));
@@ -300,7 +74,7 @@ const Operation = {
   },
   loadLookingRelativesPeople: () => (dispatch, getState, api) => {
     dispatch(ActionCreator.setFetchingStatus(true));
-    return api.get(PageName.LOOKING_RELATIVES)
+    return api.get(RouteName.LOOKING_RELATIVES)
       .then((gonePeople) => {
         dispatch(ActionCreator.setFetchingStatus(false));
         dispatch(ActionCreator.writeError(initialState.error));
@@ -314,7 +88,7 @@ const Operation = {
   },
   loadActiveSearches: () => (dispatch, getState, api) => {
     dispatch(ActionCreator.setFetchingStatus(true));
-    return api.get(PageName.ACTIVE_SEARCHES)
+    return api.get(RouteName.ACTIVE_SEARCHES)
       .then((gonePeople) => {
         dispatch(ActionCreator.setFetchingStatus(false));
         dispatch(ActionCreator.writeError(initialState.error));
@@ -328,7 +102,7 @@ const Operation = {
   },
   loadClosedSearches: () => (dispatch, getState, api) => {
     dispatch(ActionCreator.setFetchingStatus(true));
-    return api.get(PageName.CLOSED_SEARCHES)
+    return api.get(RouteName.CLOSED_SEARCHES)
       .then((gonePeople) => {
         dispatch(ActionCreator.setFetchingStatus(false));
         dispatch(ActionCreator.writeError(initialState.error));

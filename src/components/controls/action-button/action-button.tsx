@@ -1,24 +1,6 @@
 import * as React from 'react';
-import { Button, makeStyles } from '@material-ui/core';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    minWidth: 0,
-    margin: theme.spacing(0.5),
-  },
-  secondary: {
-    backgroundColor: theme.palette.secondary.light,
-    '& .MuiButton-label': {
-      color: theme.palette.secondary.main,
-    },
-  },
-  primary: {
-    backgroundColor: theme.palette.primary.light,
-    '& .MuiButton-label': {
-      color: theme.palette.primary.main,
-    },
-  },
-}));
+import { Button } from '@material-ui/core';
+import useStyles from './action-button.styles';
 
 const ActionButton = (props) => {
   const { color, children, onClick } = props;

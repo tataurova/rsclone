@@ -1,76 +1,65 @@
 import * as React from 'react';
 import { useState } from 'react';
 import {
-  TableBody, TableRow, TableCell, Box, Toolbar, InputAdornment,
+  Box, Toolbar, InputAdornment,
 } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import { Search } from '@material-ui/icons';
 import AddIcon from '@material-ui/icons/Add';
-import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import { connect } from 'react-redux';
+import useStyles from './active-searches-page.styles';
 import Header from '../header/header';
 import Footer from '../footer/footer';
 import { useTable } from '../use-table/use-table';
-import { headCells } from '../../const';
+import {
+  headCells, SearchStatusName, PageName,
+} from '../../const';
 import Input from '../controls/input/input';
 import Button from '../controls/button/button';
-import ActionButton from '../controls/action-button/action-button';
 import Popup from '../popup/popup';
 import SearchForm from '../search-form/search-form';
 import NameSpace from '../../reducer/name-space';
 import { Searches } from '../../types';
 import { ActionCreator } from '../../reducer/data/data';
+import SearchesTableBody from '../active-searches-page-table/active-searches-page-table';
 
-const addRecord = (data, dataArray) => {
-  data.id = dataArray.length;
+const createFullRecord = (data, id) => {
+  data.id = id;
   data.people = [];
-  dataArray.push(data);
-  return dataArray;
+  return data;
 };
 
 const updateRecord = (data, activeSearches, closedSearches) => {
   const allRecords = [...activeSearches, ...closedSearches];
-  const index = allRecords.findIndex((record) => record.id === data.id);
+  const index = allRecords.findIndex(({ id }) => id === data.id);
   allRecords[index] = { ...data };
-  activeSearches = allRecords.filter((el) => el.status !== 'Архив');
-  closedSearches = allRecords.filter((el) => el.status === 'Архив');
+  activeSearches = allRecords.filter(({ status }) => status !== SearchStatusName.ARCHIVE);
+  closedSearches = allRecords.filter(({ status }) => status === SearchStatusName.ARCHIVE);
   return {
     active: activeSearches,
     closed: closedSearches,
   };
 };
 
-const filterFoo = (obj, value) => obj.name.toLowerCase().includes(value)
-        || obj.city.toLowerCase().includes(value)
-        || obj.status.toLowerCase().includes(value)
-        || obj.coordinator.toLowerCase().includes(value);
-
-const useStyles = makeStyles(() => ({
-  root: {
-    marginTop: '100px',
-  },
-  searchInput: {
-    width: '75%',
-  },
-  newButton: {
-    position: 'absolute',
-    right: '10px',
-  },
-}));
+const filterSearches = ({
+  name, city, status, coordinator,
+}, value) => name.toLowerCase().includes(value)
+    || city.toLowerCase().includes(value)
+    || status.toLowerCase().includes(value)
+    || coordinator.toLowerCase().includes(value);
 
 interface Props {
     page: string;
     activeSearches: Searches[];
     closedSearches: Searches[];
-    onAddActiveSearches: (...args: any[]) => void;
-    onAddClosedSearches: (...args: any[]) => void;
+    onAddActiveSearches: (arg: Searches[]) => void;
+    onAddClosedSearches: (arg: Searches[]) => void;
 }
 
 const ActiveSearchesPage: React.FunctionComponent<Props> = ({
   page, activeSearches, closedSearches, onAddActiveSearches, onAddClosedSearches,
 }: Props) => {
   const classes = useStyles();
-  const searches = page === '4' ? closedSearches : activeSearches;
+  const searches = page === PageName.CLOSED_SEARCHES ? closedSearches : activeSearches;
 
   const [recordForEdit, setRecordForEdit] = useState(null);
   const [filterFn, setFilterFn] = useState({ fn: (items) => items });
@@ -82,23 +71,25 @@ const ActiveSearchesPage: React.FunctionComponent<Props> = ({
   } = useTable({ searches, headCells, filterFn });
 
   const handleSearch = (evt) => {
-    const { target } = evt;
+    const { target: { value } } = evt;
     setFilterFn({
       fn: (items) => {
-        if (target.value === '') {
+        if (value === '') {
           return items;
         }
-        return items.filter((el) => filterFoo(el, target.value));
+        return items.filter((el) => filterSearches(el, value));
       },
     });
   };
 
   const addOrEdit = (employee, resetForm) => {
     if (employee.id === 0) {
-      if (employee.status === 'Архив') {
-        onAddClosedSearches(addRecord(employee, closedSearches));
+      if (employee.status === SearchStatusName.ARCHIVE) {
+        closedSearches.push(createFullRecord(employee, closedSearches.length));
+        onAddClosedSearches(closedSearches);
       } else {
-        onAddActiveSearches(addRecord(employee, activeSearches));
+        activeSearches.push(createFullRecord(employee, activeSearches.length));
+        onAddActiveSearches(activeSearches);
       }
     } else {
       const allSearches = updateRecord(employee, activeSearches, closedSearches);
@@ -117,15 +108,14 @@ const ActiveSearchesPage: React.FunctionComponent<Props> = ({
   };
 
   return (
-        <>
+        <React.Fragment>
             <Header
                 page={page}
             />
             <Box className={classes.root}>
-                {page !== '4' && <Toolbar>
+                {page !== PageName.CLOSED_SEARCHES && <Toolbar>
                     <Input
                         label={'Поиск'}
-                        // className={classes.searchInput}
                         onChange={(evt) => handleSearch(evt)}
                         InputProps={{
                           startAdornment: (<InputAdornment position="start">
@@ -145,27 +135,10 @@ const ActiveSearchesPage: React.FunctionComponent<Props> = ({
                 </Toolbar>}
                 <TblContainer>
                     <TblHead />
-                    <TableBody>
-                        {
-                            recordsAfterPagingAndSorting().map((item, i) => (<TableRow key={i}>
-                                <TableCell>{item.status}</TableCell>
-                                <TableCell>{item.city}</TableCell>
-                                <TableCell>{item.name}</TableCell>
-                                <TableCell>{item.age}</TableCell>
-                                <TableCell>{typeof item.date !== 'string' ? item.date.toString() : item.date}</TableCell>
-                                <TableCell>{item.coordinator}</TableCell>
-                                <TableCell>{item.people.length > 0 && item.people.filter((el) => el.status === 'place' || el.status === 'way').length}</TableCell>
-                                <TableCell>
-                                    <ActionButton
-                                        color ={'primary'}
-                                        onClick={() => openInPopup(item)}>
-                                        <EditOutlinedIcon fontSize={'small'} />
-                                    </ActionButton>
-                                </TableCell>
-                            </TableRow>
-                            ))
-                    }
-                    </TableBody>
+                    <SearchesTableBody
+                        recordsAfterPagingAndSorting={recordsAfterPagingAndSorting}
+                        openInPopup={openInPopup}
+                    />
                 </TblContainer>
                 <TblPagination />
                 <Popup
@@ -180,7 +153,7 @@ const ActiveSearchesPage: React.FunctionComponent<Props> = ({
                 </Popup>
             </Box>
             <Footer />
-        </>
+        </React.Fragment>
   );
 };
 

@@ -1,9 +1,9 @@
 import axios from 'axios';
-import { MAX_TIMEOUT, PageName, Error } from './const';
+import { MAX_TIMEOUT, RouteName, Error } from './const';
 
 export const createAPI = (onUnauthorized, onNoResponse) => {
   const api = axios.create({
-    baseURL: PageName.MAIN,
+    baseURL: RouteName.MAIN,
     timeout: MAX_TIMEOUT,
     withCredentials: true,
   });

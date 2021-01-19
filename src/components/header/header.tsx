@@ -5,7 +5,7 @@ import {
 } from '@material-ui/core';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
 import Nav from '../nav/nav';
-import { PageName } from '../../const';
+import { RouteName } from '../../const';
 
 interface Props {
     page: string;
@@ -15,7 +15,7 @@ const Header: React.FunctionComponent<Props> = ({ page }: Props) => {
   const history = useHistory();
 
   function handleClick() {
-    history.push(PageName.LOGIN);
+    history.push(RouteName.LOGIN);
   }
   return (
         <AppBar position='fixed'>

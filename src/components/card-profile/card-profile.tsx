@@ -18,12 +18,11 @@ const useStyles = makeStyles(() => createStyles({
     height: 0,
     paddingTop: '56.25%', // 16:9
   },
-
   values: {
     display: 'flex',
     alignItems: 'center',
     textAlign: 'end',
-    width: '250px',
+    maxWidth: '250px',
   },
 }),);
 
@@ -31,14 +30,12 @@ const CardProfile = (props: CardType) => {
   const classes = useStyles();
 
   return (
-
         <Grid item xs={12} sm={6} md={4}>
             <Card className={classes.root}>
                 <CardMedia
                     className={classes.media}
                     image={props.image}
-                    title={props.name}
-                />
+                    title={props.name}/>
                 <CardContent>
                     <Box>
                         <Typography variant="h6">
@@ -82,7 +79,7 @@ const CardProfile = (props: CardType) => {
                 </CardContent>
             </Card>
         </Grid>
-
   );
 };
+
 export default CardProfile;

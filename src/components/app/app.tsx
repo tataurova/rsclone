@@ -12,12 +12,12 @@ import ActiveSearchesPage from '../active-searches-page/active-searches-page';
 import { ActionCreator } from '../../reducer/app/app';
 
 interface Props {
-  onLoadByRoute: (args: string) => void;
+    onLoadByRoute: (args: string) => void;
 }
 
 const App: React.FunctionComponent<Props> = (props: Props) => {
-  const { onLoadByRoute } = props;
-
+    const { onLoadByRoute } = props;
+  
   return (
       <BrowserRouter history={history}>
         <Switch>
@@ -62,9 +62,9 @@ const App: React.FunctionComponent<Props> = (props: Props) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  onLoadByRoute(page) {
-    dispatch(ActionCreator.changePage(page));
-  },
+    onLoadByRoute(page) {
+        dispatch(ActionCreator.changePage(page));
+    },
 });
 
 export default connect(null, mapDispatchToProps)(App);

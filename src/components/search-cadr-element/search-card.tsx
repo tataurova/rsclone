@@ -6,8 +6,13 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { Box } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
+import { ChangeEvent } from 'react';
 
-const SearchCard = () => {
+type SearchCardType={
+    searchName: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+}
+
+const SearchCard = (props: any) => {
   const [open, setOpen] = React.useState(false);
   const handleClickOpen = () => {
     setOpen(true);
@@ -18,13 +23,14 @@ const SearchCard = () => {
 
   return (
         <div>
-            <Button onClick={handleClickOpen}>Поиск</Button>
+            <Button variant='outlined' onClick={handleClickOpen}>Поиск</Button>
             <Dialog disableBackdropClick disableEscapeKeyDown open={open} onClose={handleClose}>
                 <DialogTitle>Поиск</DialogTitle>
                 <DialogContent>
                     <form noValidate autoComplete="off">
                         <Box>
                             <TextField
+                                onChange={props.searchName}
                                 id="outlined-full-width"
                                 label="ФИО"
                                 style={{ margin: 8 }}
@@ -35,18 +41,25 @@ const SearchCard = () => {
                                 InputLabelProps={{
                                   shrink: true,
                                 }}
-                                variant="outlined"
-                            />
+                                variant="outlined"/>
+                            <Box component='span' mr={2} ml={1}>
+                                <TextField
+                                    onChange={props.searchAge}
+                                    id="outlined-number"
+                                    label="Возраст"
+                                    type="number"
+                                    InputLabelProps={{
+                                      shrink: true,
+                                    }}
+                                    variant="outlined"/>
+                            </Box>
                             <TextField
-                                id="outlined-number"
-                                label="Возраст"
-                                type="number"
-                                InputLabelProps={{
-                                  shrink: true,
-                                }}
-                                variant="outlined"
-                            />
-                            <TextField id="outlined-search" label="Город" type="search" variant="outlined"/>
+                                onChange={props.searchCity}
+                                id="outlined-search"
+                                label="Город"
+                                defaultValue=""
+                                type="search"
+                                variant="outlined"/>
                         </Box>
                     </form>
                 </DialogContent>

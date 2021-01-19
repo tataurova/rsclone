@@ -16,7 +16,7 @@ interface Props {
 }
 
 const App: React.FunctionComponent<Props> = (props: Props) => {
-    const { onLoadByRoute } = props;
+    const {onLoadByRoute} = props;
 
     return (
         <BrowserRouter history={history}>
@@ -38,12 +38,12 @@ const App: React.FunctionComponent<Props> = (props: Props) => {
                 </Route>
                 <Route exact path={RouteName.ACTIVE_SEARCHES} render={() => {
                     onLoadByRoute(PageName.ACTIVE_SEARCHES);
-                    return <ActiveSearchesPage />;
+                    return <ActiveSearchesPage/>;
                 }}>
                 </Route>
                 <Route exact path={RouteName.CLOSED_SEARCHES} render={() => {
                     onLoadByRoute(PageName.CLOSED_SEARCHES);
-                    return <ActiveSearchesPage />;
+                    return <ActiveSearchesPage/>;
                 }}>
                 </Route>
                 <Route exact path={RouteName.LOGIN} render={() => {

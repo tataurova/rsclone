@@ -1,11 +1,11 @@
-interface Searcher {
+export interface Searcher {
     name: string,
     status: string,
     transport: string,
     places: string,
     time: string,
     district: string,
-};
+}
 
 export interface Searches {
     id: number,
@@ -16,7 +16,7 @@ export interface Searches {
     date: string | Date,
     coordinator: string,
     people: Searcher[],
-};
+}
 
 export interface HeadCell {
     id: string,

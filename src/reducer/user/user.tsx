@@ -1,4 +1,4 @@
-import { AuthorizationStatus, PageName } from '../../const';
+import { AuthorizationStatus, RouteName } from '../../const';
 import { extend } from '../../utils/common';
 
 const initialState = {
@@ -38,7 +38,7 @@ const reducer = (state = initialState, action) => {
 };
 
 const Operation = {
-  checkAuth: () => (dispatch, getState, api) => api.get(PageName.LOGIN)
+  checkAuth: () => (dispatch, getState, api) => api.get(RouteName.LOGIN)
     .then((answer) => {
       dispatch(ActionCreator.requireAuthorization(AuthorizationStatus.AUTH));
       return answer;
@@ -47,7 +47,7 @@ const Operation = {
       dispatch(ActionCreator.writeUser(answer.data.email));
     }),
 
-  login: (authData) => (dispatch, getState, api) => api.post(PageName.LOGIN, {
+  login: (authData) => (dispatch, getState, api) => api.post(RouteName.LOGIN, {
     email: authData.login,
     password: authData.password,
   })

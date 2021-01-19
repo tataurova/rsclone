@@ -6,14 +6,6 @@ export const RouteName = {
   ACTIVE_SEARCHES: '/active-searches',
   CLOSED_SEARCHES: '/closed-searches',
 };
-export const PageName = {
-  MAIN: '/',
-  LOGIN: '/login',
-  GONE: '/gone',
-  LOOKING_RELATIVES: '/looking-relatives',
-  ACTIVE_SEARCHES: '/active-searches',
-  CLOSED_SEARCHES: '/closed-searches',
-};
 
 export const AuthorizationStatus = {
   AUTH: 'AUTH',
@@ -58,5 +50,30 @@ export const TransportStatus = {
   need: 'Нужна машина',
 };
 
+export const WayStatus = {
+  WAY: 'way',
+};
+
+export const TransportName = {
+  CAR: 'car',
+};
+
+export const PageName = {
+  MAIN: '0',
+  GONE: '1',
+  LOOKING_RELATIVES: '2',
+  ACTIVE_SEARCHES: '3',
+  CLOSED_SEARCHES: '4',
+};
+
+export const SearchStatusName = {
+  ARCHIVE: 'Архив',
+}
+
+export const NOT_HOME_PLACES = ['place', 'way'];
+export const FORM_FIELDS = ['city', 'name', 'age', 'coordinator', 'status', 'date'];
+
 export const MAX_TIMEOUT = 5000;
 export const SHOW_ERROR_TIMEOUT = 3000;
+
+export const HOVER_TABLE_COLOR = '#fffbf2';

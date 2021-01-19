@@ -1,20 +1,10 @@
 import * as React from 'react';
 import {
-  Dialog, DialogTitle, DialogContent, makeStyles, Typography,
+  Dialog, DialogTitle, DialogContent, Typography,
 } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import ActionButton from '../controls/action-button/action-button';
-
-const useStyles = makeStyles((theme) => ({
-  dialogWrapper: {
-    padding: theme.spacing(2),
-    position: 'absolute',
-    top: '-16px',
-  },
-  dialogTitle: {
-    paddingRight: '0px',
-  },
-}));
+import useStyles from './popup.styles';
 
 interface Props {
     title: string;
@@ -31,8 +21,8 @@ const Popup: React.FunctionComponent<Props> = ({
   return (
         <Dialog open={openPopup} maxWidth="md" classes={{ paper: classes.dialogWrapper }}>
             <DialogTitle className={classes.dialogTitle}>
-                <div style={{ display: 'flex' }}>
-                    <Typography variant="h6" component="div" style={{ flexGrow: 1 }}>
+                <div className={classes.titleButtonWrapper}>
+                    <Typography variant="h6" component="div" className={classes.header}>
                         {title}
                     </Typography>
                     <ActionButton

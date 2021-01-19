@@ -6,7 +6,7 @@ interface Props {
     name: string;
     label: string;
     value: string | Date;
-    onChange: (...args: any[]) => void;
+    onChange: (evt: { target: { name: keyof Props ; value: string } } | React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const DatePicker: React.FunctionComponent<Props> = ({
@@ -27,7 +27,6 @@ const DatePicker: React.FunctionComponent<Props> = ({
                                 name={name}
                                 value={value}
                                 onChange={(date) => onChange(convertToDefEventPara(name, date))}
-
             />
         </MuiPickersUtilsProvider>
   );

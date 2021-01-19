@@ -6,65 +6,65 @@ import Main from '../main/main';
 import CardPage from '../card-page/card-page';
 import NotFound from '../not-found/not-found';
 import LoginPage from '../login/login';
-import { PageName } from '../../const';
+import { RouteName, PageName } from '../../const';
 import SearchingProfile from '../search-gone/search-gone-profile';
 import ActiveSearchesPage from '../active-searches-page/active-searches-page';
 import { ActionCreator } from '../../reducer/app/app';
 
 interface Props {
-  onLoadByRoute: (args: string) => void;
+    onLoadByRoute: (args: string) => void;
 }
 
 const App: React.FunctionComponent<Props> = (props: Props) => {
-  const { onLoadByRoute } = props;
+    const { onLoadByRoute } = props;
 
-  return (
-      <BrowserRouter history={history}>
-        <Switch>
-          <Route exact path={PageName.MAIN} render={() => {
-            onLoadByRoute('0');
-            return <Main page={'0'}/>;
-          }}>
-          </Route>
-          <Route exact path={PageName.GONE} render={() => {
-            onLoadByRoute('1');
-            return <CardPage page={'1'}/>;
-          }}>
-          </Route>
-          <Route exact path={PageName.LOOKING_RELATIVES} render={() => {
-            onLoadByRoute('2');
-            return <SearchingProfile page={'2'}/>;
-          }}>
-          </Route>
-          <Route exact path={PageName.ACTIVE_SEARCHES} render={() => {
-            onLoadByRoute('3');
-            return <ActiveSearchesPage />;
-          }}>
-          </Route>
-          <Route exact path={PageName.CLOSED_SEARCHES} render={() => {
-            onLoadByRoute('4');
-            return <ActiveSearchesPage />;
-          }}>
-          </Route>
-          <Route exact path={PageName.LOGIN} render={() => {
-            onLoadByRoute('0');
-            return <LoginPage page={'0'}/>;
-          }}>
-          </Route>
-          <Route render={() => {
-            onLoadByRoute('0');
-            return <NotFound page={'0'}/>;
-          }}>
-          </Route>
-        </Switch>
-      </BrowserRouter>
-  );
+    return (
+        <BrowserRouter history={history}>
+            <Switch>
+                <Route exact path={RouteName.MAIN} render={() => {
+                    onLoadByRoute(PageName.MAIN);
+                    return <Main page={PageName.MAIN}/>;
+                }}>
+                </Route>
+                <Route exact path={RouteName.GONE} render={() => {
+                    onLoadByRoute(PageName.GONE);
+                    return <CardPage page={PageName.GONE}/>;
+                }}>
+                </Route>
+                <Route exact path={RouteName.LOOKING_RELATIVES} render={() => {
+                    onLoadByRoute(PageName.LOOKING_RELATIVES);
+                    return <SearchingProfile page={PageName.LOOKING_RELATIVES}/>;
+                }}>
+                </Route>
+                <Route exact path={RouteName.ACTIVE_SEARCHES} render={() => {
+                    onLoadByRoute(PageName.ACTIVE_SEARCHES);
+                    return <ActiveSearchesPage />;
+                }}>
+                </Route>
+                <Route exact path={RouteName.CLOSED_SEARCHES} render={() => {
+                    onLoadByRoute(PageName.CLOSED_SEARCHES);
+                    return <ActiveSearchesPage />;
+                }}>
+                </Route>
+                <Route exact path={RouteName.LOGIN} render={() => {
+                    onLoadByRoute(PageName.MAIN);
+                    return <LoginPage page={PageName.MAIN}/>;
+                }}>
+                </Route>
+                <Route render={() => {
+                    onLoadByRoute(PageName.MAIN);
+                    return <NotFound page={PageName.MAIN}/>;
+                }}>
+                </Route>
+            </Switch>
+        </BrowserRouter>
+    );
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  onLoadByRoute(page) {
-    dispatch(ActionCreator.changePage(page));
-  },
+    onLoadByRoute(page) {
+        dispatch(ActionCreator.changePage(page));
+    },
 });
 
 export default connect(null, mapDispatchToProps)(App);

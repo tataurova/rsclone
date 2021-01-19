@@ -125,7 +125,6 @@ const ActiveSearchesPage: React.FunctionComponent<Props> = ({
                 {page !== '4' && <Toolbar>
                     <Input
                         label={'Поиск'}
-                        // className={classes.searchInput}
                         onChange={(evt) => handleSearch(evt)}
                         InputProps={{
                           startAdornment: (<InputAdornment position="start">

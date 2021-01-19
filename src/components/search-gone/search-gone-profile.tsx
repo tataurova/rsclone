@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { ChangeEvent, useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import { Box, Container } from '@material-ui/core';
 import CardProfile from '../card-profile/card-profile';
@@ -28,7 +29,27 @@ interface Props {
 }
 
 const SearchingProfile: React.FunctionComponent<Props> = ({ page }: Props) => {
-  const mappedCardProfile = dataCard.map((t) => <CardProfile
+  const [searchTerm, setSearchTerm] = useState('');
+  const ageFilterValue = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setSearchTerm(e.target.value.trim());
+  };
+  const cityFilterValue = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setSearchTerm(e.currentTarget.value.trim());
+  };
+  const nameFilterValue = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setSearchTerm(e.currentTarget.value.trim());
+  };
+  const mappedCardProfile = dataCard
+    .filter((valAge) => {
+      if (searchTerm === '') {
+        return valAge;
+      } if (valAge.age.includes(searchTerm)
+                || valAge.city.toLowerCase().includes(searchTerm.toLowerCase())
+                || valAge.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+        return valAge;
+      }
+    })
+    .map((t) => <CardProfile
             key={t.id}
             id={t.id}
             image={t.image}
@@ -53,8 +74,15 @@ const SearchingProfile: React.FunctionComponent<Props> = ({ page }: Props) => {
                         mt={10}
                         mb={2}
                     >
-                        <SearchCard/>
-                        <FilterCard/>
+                        <SearchCard
+                            searchName={nameFilterValue}
+                            searchAge={ageFilterValue}
+                            searchCity={cityFilterValue}
+
+                        />
+                        <FilterCard
+                            filterAge={ageFilterValue}
+                            filterCity={cityFilterValue}/>
                     </Box>
 
                     <Grid container justify={'space-between'} spacing={8}>

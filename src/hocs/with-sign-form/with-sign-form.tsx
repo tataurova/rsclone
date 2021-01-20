@@ -1,28 +1,31 @@
 import * as React from 'react';
+import { NAME_MIN_LENGTH, LoginInput } from '../../const';
 import { extend } from '../../utils/common';
-import { LOGIN_MIN_LENGTH, PASSWORD_MIN_LENGTH, LoginInput } from '../../const';
+import {
+  isLoginEmpty,
+  isLoginValid,
+  isPasswordEmpty,
+  isPasswordValid,
+} from '../with-authentication/with-authentication';
 
-export const isLoginValid = (input, evt) => input.current.validity.valid && evt.target.value.length >= LOGIN_MIN_LENGTH;
-
-export const isPasswordValid = (input, evt) => input.current.validity.valid && evt.target.value.length >= PASSWORD_MIN_LENGTH;
-
-export const isFormValid = (state) => state.loginValid === true && state.passwordValid === true;
-
-export const isLoginEmpty = (state) => state.loginValid === null;
-
-export const isPasswordEmpty = (state) => state.passwordValid === null;
+const isNameValid = (input, evt) => input.current.validity.valid && evt.target.value.length >= NAME_MIN_LENGTH;
+const isFormValid = (state) => state.nameValid === true && state.loginValid === true && state.passwordValid === true;
+const isNameEmpty = (state) => state.nameValid === null;
 
 interface Props {
-    onSubmitForm: ({ login, password }: {login: string; password: string}) => void;
+    onSubmitForm: ({ name, login, password }: {name: string; login: string; password: string}) => void;
 }
 
 interface State {
+    nameValid: null | string;
     loginValid: null | string;
     passwordValid: null | string;
 }
 
-const withAuthentication = (Component) => {
-  class WithAuthentication extends React.PureComponent<Props, State> {
+const withSignUp = (Component) => {
+  class WithSignUp extends React.PureComponent<Props, State> {
+        private nameRef: React.RefObject<HTMLInputElement>;
+
         private loginRef: React.RefObject<HTMLInputElement>;
 
         private passwordRef: React.RefObject<HTMLInputElement>;
@@ -33,10 +36,12 @@ const withAuthentication = (Component) => {
           this.handleSubmit = this.handleSubmit.bind(this);
 
           this.state = {
+            nameValid: null,
             loginValid: null,
             passwordValid: null,
           };
 
+          this.nameRef = React.createRef();
           this.loginRef = React.createRef();
           this.passwordRef = React.createRef();
         }
@@ -44,6 +49,9 @@ const withAuthentication = (Component) => {
         handleChange(evt) {
           evt.preventDefault();
           const { name } = evt.target;
+          if (name === LoginInput.NAME) {
+            this.setState(extend(this.state, { nameValid: isNameValid(this.nameRef, evt) }));
+          }
           if (name === LoginInput.EMAIL) {
             this.setState(extend(this.state, { loginValid: isLoginValid(this.loginRef, evt) }));
           }
@@ -60,9 +68,13 @@ const withAuthentication = (Component) => {
           if (isPasswordEmpty(this.state)) {
             this.setState(extend(this.state, { passwordValid: false }));
           }
+          if (isNameEmpty(this.state)) {
+            this.setState(extend(this.state, { nameValid: false }));
+          }
           if (isFormValid(this.state)) {
             const { onSubmitForm } = this.props;
             onSubmitForm({
+              name: this.nameRef.current.value,
               login: this.loginRef.current.value,
               password: this.passwordRef.current.value,
             });
@@ -74,13 +86,14 @@ const withAuthentication = (Component) => {
                 state = {this.state}
                 onChange = {this.handleChange}
                 onSubmit = {this.handleSubmit}
+                nameRef = {this.nameRef}
                 loginRef = {this.loginRef}
                 passwordRef = {this.passwordRef}
                 {...this.props}
             />;
         }
   }
-  return WithAuthentication;
+  return WithSignUp;
 };
 
-export default withAuthentication;
+export default withSignUp;

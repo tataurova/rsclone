@@ -1,4 +1,5 @@
-import { AuthorizationStatus, RouteName } from '../../const';
+import { ActionCreator as AppCreator } from '../app/app';
+import { AuthorizationStatus, RouteName, PageName } from '../../const';
 import { extend } from '../../utils/common';
 
 const initialState = {
@@ -54,6 +55,17 @@ const Operation = {
     .then((response) => {
       dispatch(ActionCreator.requireAuthorization(AuthorizationStatus.AUTH));
       dispatch(ActionCreator.writeUser(response.data.email));
+    }),
+  signup: (signData) => (dispatch, getState, api) => api.post(RouteName.SIGN_UP, {
+    name: signData.name,
+    email: signData.login,
+    password: signData.password,
+  })
+    .then(() => {
+      dispatch(AppCreator.changePage(PageName.MAIN));
+    })
+    .catch(() => {
+      dispatch(AppCreator.changePage(PageName.MAIN));
     }),
 };
 

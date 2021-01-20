@@ -9,12 +9,10 @@ const bg = require('../../../public/assets/img/bg.jpg');
 
 interface Props {
     loadGonePeople: () => void;
-    authorizationStatus: string;
     page: string;
 }
 
-const CardPage: React.FunctionComponent<Props> = function CardPage({ loadGonePeople, authorizationStatus, page }: Props) {
-  console.log(loadGonePeople(), authorizationStatus);
+const CardPage: React.FunctionComponent<Props> = function CardPage({ loadGonePeople, page }: Props) {
   return (
         <>
             <Header page={page}/>

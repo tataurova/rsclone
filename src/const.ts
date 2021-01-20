@@ -1,6 +1,7 @@
 export const RouteName = {
   MAIN: '/',
   LOGIN: '/login',
+  SIGN_UP: '/sign-up',
   GONE: '/gone',
   LOOKING_RELATIVES: '/looking-relatives',
   ACTIVE_SEARCHES: '/active-searches',
@@ -64,9 +65,12 @@ export const PageName = {
   LOOKING_RELATIVES: '2',
   ACTIVE_SEARCHES: '3',
   CLOSED_SEARCHES: '4',
+  LOGIN: '5',
+  SIGN_UP: '6',
 };
 
 export const LoginInput = {
+  NAME: 'name',
   EMAIL: `email`,
   PASSWORD: `password`,
 };
@@ -82,5 +86,6 @@ export const MAX_TIMEOUT = 5000;
 export const SHOW_ERROR_TIMEOUT = 3000;
 export const LOGIN_MIN_LENGTH = 5;
 export const PASSWORD_MIN_LENGTH = 5;
+export const NAME_MIN_LENGTH = 2;
 
 export const HOVER_TABLE_COLOR = '#fffbf2';

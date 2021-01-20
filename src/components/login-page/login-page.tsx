@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -8,8 +7,9 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
 import useStyles from './login-page.styles';
-import { Operation as UserOperation } from '../../reducer/user/user';
+import { RouteName } from '../../const';
 
 interface Props {
     state: {
@@ -77,6 +77,13 @@ const LoginPage: React.FunctionComponent<Props> = ({
                         >
                             Войти
                         </Button>
+                        <Grid container>
+                            <Grid item>
+                                <Link href={RouteName.SIGN_UP} variant="body2">
+                                    {'Нет аккаунта? Зарегистрироваться'}
+                                </Link>
+                            </Grid>
+                        </Grid>
                     </form>
                 </div>
             </Grid>
@@ -84,10 +91,4 @@ const LoginPage: React.FunctionComponent<Props> = ({
   );
 };
 
-export const mapDispatchToProps = (dispatch) => ({
-  onSubmitClick(authData) {
-    dispatch(UserOperation.login(authData));
-  },
-});
-
-export default connect(null, mapDispatchToProps)(LoginPage);
+export default LoginPage;

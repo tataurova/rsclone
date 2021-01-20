@@ -1,7 +1,7 @@
 import * as React from 'react';
 import TextField from '@material-ui/core/TextField';
 import { Box } from '@material-ui/core';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent } from 'react';
 
 type FilterCardType = {
     filterAge: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;

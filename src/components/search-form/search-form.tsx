@@ -65,7 +65,7 @@ const SearchForm: React.FunctionComponent<Props> = ({ addOrEdit, recordForEdit }
       });
     }
   }, [recordForEdit]);
-    console.log(values);
+
   return (
         <>
             <Form onSubmit={handleSubmit}>

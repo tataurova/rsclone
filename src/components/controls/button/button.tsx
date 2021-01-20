@@ -10,7 +10,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Button = (props) => {
+interface Props {
+  type?: 'button' | 'reset' | 'submit';
+  text?: string;
+  size?: 'large' | 'medium' | 'small';
+  color?: 'default' | 'inherit' | 'primary' | 'secondary';
+  variant?: 'contained' | 'outlined' | 'text';
+  onClick?: () => void;
+  startIcon?: React.ReactNode;
+  className?: string;
+}
+
+const Button: React.FunctionComponent<Props> = (props: Props) => {
   const {
     text, size, color, variant, onClick, ...other
   } = props;

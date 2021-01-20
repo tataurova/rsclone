@@ -8,7 +8,7 @@ import { Box } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import { ChangeEvent } from 'react';
 
-type SearchCardType={
+type SearchCardType = {
     searchName: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 }
 

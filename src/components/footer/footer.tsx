@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Box } from '@material-ui/core';
 import AccountGithub from '../account-github/account-github';
-import SettingsFooter from '../footer-settings/footer-settings';
 
 const Footer = () => {
   const styles = {
@@ -22,9 +21,6 @@ const Footer = () => {
           <AccountGithub author='Olga Tataurova' address='https://github.com/tataurova/'/>
           <AccountGithub author='Leonid Shuliak' address='https://github.com/shuliakleonid/'/>
           <AccountGithub author='Andrei Padyslenkau' address='https://github.com/andreizayaz'/>
-        </Box>
-        <Box>
-          <SettingsFooter/>
         </Box>
         <Box>
           <a href="https://rs.school/js/" target="_blank" rel="noreferrer">

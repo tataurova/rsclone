@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
@@ -9,22 +8,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Grid from '@material-ui/core/Grid';
 import { Box, ListSubheader } from '@material-ui/core';
 import { CardType } from '../search-gone/search-gone-profile';
-
-const useStyles = makeStyles(() => createStyles({
-  root: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 0,
-    paddingTop: '56.25%', // 16:9
-  },
-  values: {
-    display: 'flex',
-    alignItems: 'center',
-    textAlign: 'end',
-    maxWidth: '250px',
-  },
-}),);
+import useStyles from './card-profile.styles';
 
 const CardProfile = (props: CardType) => {
   const classes = useStyles();

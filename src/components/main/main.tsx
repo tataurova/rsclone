@@ -2,32 +2,9 @@ import * as React from 'react';
 import {
   Button, Container, Grid, Paper, Typography,
 } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import Footer from '../footer/footer';
 import Header from '../header/header';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(1),
-    flexGrow: 1,
-  },
-  mainSectionPost: {
-    position: 'relative',
-    color: theme.palette.common.white,
-    marginTop: theme.spacing(8),
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-  },
-  mainSectionPostContent: {
-    position: 'relative',
-    padding: theme.spacing(9),
-
-  },
-}));
+import useStyles from './main.styles';
 
 interface Props {
     page: string;
@@ -149,9 +126,7 @@ const Main: React.FunctionComponent<Props> = ({ page }: Props) => {
                     </Container>
                 </Paper>
             </main>
-            <footer>
                 <Footer/>
-            </footer>
             </>
   );
 };

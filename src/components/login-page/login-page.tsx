@@ -41,7 +41,7 @@ const LoginPage: React.FunctionComponent<Props> = ({
                     </Typography>
                     <form className={classes.form} method="post" onSubmit={onSubmitForm}>
                         <TextField
-                            InputProps={state.loginValid === false && { className: classes.notValidInput }}
+                            InputProps={state.loginValid === false ? { className: classes.notValidInput } : {}}
                             variant="outlined"
                             margin="normal"
                             required
@@ -55,7 +55,7 @@ const LoginPage: React.FunctionComponent<Props> = ({
                             onChange={onChange}
                         />
                         <TextField
-                            InputProps={state.passwordValid === false && { className: classes.notValidInput }}
+                            InputProps={state.passwordValid === false ? { className: classes.notValidInput } : {}}
                             variant="outlined"
                             margin="normal"
                             required
@@ -81,6 +81,13 @@ const LoginPage: React.FunctionComponent<Props> = ({
                             <Grid item>
                                 <Link href={RouteName.SIGN_UP} variant="body2">
                                     {'Нет аккаунта? Зарегистрироваться'}
+                                </Link>
+                            </Grid>
+                        </Grid>
+                        <Grid container>
+                            <Grid item>
+                                <Link href={RouteName.MAIN} variant="body2">
+                                    {'На главную'}
                                 </Link>
                             </Grid>
                         </Grid>

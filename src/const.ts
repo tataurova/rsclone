@@ -8,6 +8,18 @@ export const RouteName = {
   CLOSED_SEARCHES: '/closed-searches',
 };
 
+export const MenuItemText = {
+  MAIN: 'Главная',
+  GONE: 'Пропали',
+  LOOKING_RELATIVES: 'Ищут родственников',
+  ACTIVE_SEARCHES: 'Активные поиски',
+  CLOSED_SEARCHES: 'Закрытые поиски',
+  STATISTIC: 'Статистика',
+  LANGUAGE: 'Язык',
+  EXIT: 'Выйти',
+  ENTER: 'Войти',
+};
+
 export const AuthorizationStatus = {
   AUTH: 'AUTH',
   NO_AUTH: 'NO_AUTH',
@@ -68,6 +80,14 @@ export const PageName = {
   LOGIN: '5',
   SIGN_UP: '6',
 };
+
+export const ActiveMenuItemName = {
+  '0': 'Главная',
+  '1': 'Пропали',
+  '2': 'Ищут родственников',
+  '3': 'Активные поиски',
+  '4': 'Закрытые поиски',
+}
 
 export const LoginInput = {
   NAME: 'name',

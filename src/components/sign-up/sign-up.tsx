@@ -43,7 +43,7 @@ const SignUp: React.FunctionComponent<Props> = ({
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
                             <TextField
-                                InputProps={state.nameValid === false && { className: classes.notValidInput }}
+                                InputProps={state.nameValid === false ? { className: classes.notValidInput } : {}}
                                 autoComplete="fname"
                                 name="firstName"
                                 variant="outlined"
@@ -58,7 +58,7 @@ const SignUp: React.FunctionComponent<Props> = ({
                         </Grid>
                         <Grid item xs={12}>
                             <TextField
-                                InputProps={state.loginValid === false && { className: classes.notValidInput }}
+                                InputProps={state.loginValid === false ? { className: classes.notValidInput } : {}}
                                 variant="outlined"
                                 required
                                 fullWidth
@@ -72,7 +72,7 @@ const SignUp: React.FunctionComponent<Props> = ({
                         </Grid>
                         <Grid item xs={12}>
                             <TextField
-                                InputProps={state.passwordValid === false && { className: classes.notValidInput }}
+                                InputProps={state.passwordValid === false ? { className: classes.notValidInput } : {}}
                                 variant="outlined"
                                 required
                                 fullWidth
@@ -95,13 +95,21 @@ const SignUp: React.FunctionComponent<Props> = ({
                     >
                         Зарегистрироваться
                     </Button>
-                    <Grid container justify="flex-end">
+                    <Grid container>
                         <Grid item>
                             <Link href={RouteName.LOGIN} variant="body2">
                                 Уже есть аккаунт? Войти
                             </Link>
                         </Grid>
                     </Grid>
+                    <Grid container>
+                        <Grid item>
+                            <Link href={RouteName.MAIN} variant="body2">
+                                На главную
+                            </Link>
+                        </Grid>
+                    </Grid>
+
                 </form>
             </div>
         </Container>

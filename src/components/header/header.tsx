@@ -2,12 +2,18 @@ import * as React from 'react';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {
-  AppBar, Box, Button, Container, Toolbar,
+  AppBar, Button, Toolbar,
 } from '@material-ui/core';
-import Brightness4Icon from '@material-ui/icons/Brightness4';
-import Nav from '../nav/nav';
-import { AuthorizationStatus, RouteName } from '../../const';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import Drawer from '@material-ui/core/Drawer';
 import NameSpace from '../../reducer/name-space';
+import {
+  AuthorizationStatus, RouteName, MenuItemText, ActiveMenuItemName,
+} from '../../const';
+import Nav from '../nav/nav';
+import useStyles from './header.styles';
 
 interface Props {
     page: string;
@@ -15,30 +21,45 @@ interface Props {
 }
 
 const Header: React.FunctionComponent<Props> = ({ page, authorizationStatus }: Props) => {
+  const classes = useStyles();
   const history = useHistory();
-
   function handleClick() {
     history.push(RouteName.LOGIN);
   }
+  const [state, setState] = React.useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
   return (
-        <AppBar position='fixed'>
-            <Container fixed>
+        <div className={classes.root}>
+            <AppBar position="static">
                 <Toolbar>
-                    <Nav
-                        page={page}
-                    />
-                    <Box mr={3}>
-                        <Button variant="outlined" color="secondary">
-                            RU
-                        </Button>
-                    </Box>
-                    <Box mr={3}>
-                        <Brightness4Icon/>
-                    </Box>
-                    <Button variant="contained" color="secondary" onClick={handleClick}>{authorizationStatus === AuthorizationStatus.AUTH ? 'Выйти' : 'Войти'}</Button>
+                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                        <React.Fragment key={'left'}>
+                            <MenuIcon onClick={toggleDrawer('left', true)}/>
+                            <Drawer anchor={'left'} open={state.left} onClose={toggleDrawer('left', false)}>
+                                <Nav page={page}/>
+                            </Drawer>
+                        </React.Fragment>
+                    </IconButton>
+                    <Typography variant="h6" className={classes.title}>
+                        {ActiveMenuItemName[page]}
+                    </Typography>
+                    <Button color="inherit" onClick={handleClick}>{authorizationStatus === AuthorizationStatus.AUTH ? MenuItemText.EXIT : MenuItemText.ENTER}</Button>
                 </Toolbar>
-            </Container>
-        </AppBar>
+            </AppBar>
+        </div>
   );
 };
 

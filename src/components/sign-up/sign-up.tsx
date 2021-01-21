@@ -39,7 +39,7 @@ const SignUp: React.FunctionComponent<Props> = ({
                 <Typography component="h1" variant="h5">
                     Регистрация
                 </Typography>
-                <form className={classes.form} method="post" onSubmit={onSubmitForm}>
+                <form className={classes.form} onSubmit={(evt) => evt.preventDefault()}>
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
                             <TextField
@@ -92,6 +92,7 @@ const SignUp: React.FunctionComponent<Props> = ({
                         variant="contained"
                         color="primary"
                         className={classes.submit}
+                        onClick={onSubmitForm}
                     >
                         Зарегистрироваться
                     </Button>

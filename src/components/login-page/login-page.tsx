@@ -39,7 +39,7 @@ const LoginPage: React.FunctionComponent<Props> = ({
                     <Typography component="h1" variant="h5">
                         Войти
                     </Typography>
-                    <form className={classes.form} method="post" onSubmit={onSubmitForm}>
+                    <form className={classes.form} onSubmit={(evt) => evt.preventDefault()}>
                         <TextField
                             InputProps={state.loginValid === false ? { className: classes.notValidInput } : {}}
                             variant="outlined"
@@ -74,6 +74,7 @@ const LoginPage: React.FunctionComponent<Props> = ({
                             variant="contained"
                             color="primary"
                             className={classes.submit}
+                            onClick={onSubmitForm}
                         >
                             Войти
                         </Button>

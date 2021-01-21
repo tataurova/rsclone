@@ -6,6 +6,7 @@ export const RouteName = {
   LOOKING_RELATIVES: '/looking-relatives',
   ACTIVE_SEARCHES: '/active-searches',
   CLOSED_SEARCHES: '/closed-searches',
+  BASE_SERVER: 'http://localhost:5000',
 };
 
 export const MenuItemText = {

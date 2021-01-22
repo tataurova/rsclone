@@ -6,6 +6,7 @@ import {
 import { Search } from '@material-ui/icons';
 import AddIcon from '@material-ui/icons/Add';
 import { connect } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import useStyles from './active-searches-page.styles';
 import Header from '../header/header';
 import Footer from '../footer/footer';
@@ -64,7 +65,8 @@ const ActiveSearchesPage: React.FunctionComponent<Props> = ({
   const [recordForEdit, setRecordForEdit] = useState(null);
   const [filterFn, setFilterFn] = useState({ fn: (items) => items });
   const [openPopup, setOpenPopup] = useState(false);
-  const [titlePopup, setTitlePopup] = useState('Добавление поиска');
+  const [titlePopup, setTitlePopup] = useState('Adding a search');
+  const { t } = useTranslation();
 
   const {
     TblContainer, TblHead, TblPagination, recordsAfterPagingAndSorting,
@@ -104,7 +106,7 @@ const ActiveSearchesPage: React.FunctionComponent<Props> = ({
   const openInPopup = (item) => {
     setRecordForEdit(item);
     setOpenPopup(true);
-    setTitlePopup('Изменение поиска');
+    setTitlePopup('Changing the search');
   };
 
   return (
@@ -113,9 +115,9 @@ const ActiveSearchesPage: React.FunctionComponent<Props> = ({
                 page={page}
             />
             <Box className={classes.root}>
-                {page !== PageName.CLOSED_SEARCHES && <Toolbar>
+                {page !== PageName.CLOSED_SEARCHES && <Toolbar className={classes.height}>
                     <Input
-                        label={'Поиск'}
+                        label={t('Search')}
                         onChange={(evt) => handleSearch(evt)}
                         InputProps={{
                           startAdornment: (<InputAdornment position="start">
@@ -124,12 +126,12 @@ const ActiveSearchesPage: React.FunctionComponent<Props> = ({
                         }}
                         />
                         <Button
-                            text={'Добавить'}
+                            text={t('Add')}
                             variant={'outlined'}
                             startIcon={<AddIcon />}
                             className={classes.newButton}
                             onClick={() => {
-                              setOpenPopup(true); setRecordForEdit(null); setTitlePopup('Добавление поиска');
+                              setOpenPopup(true); setRecordForEdit(null); setTitlePopup('Adding a search');
                             }}
                         />
                 </Toolbar>}

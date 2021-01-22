@@ -3,6 +3,7 @@ import {
   Dialog, DialogTitle, DialogContent, Typography,
 } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
+import { useTranslation } from 'react-i18next';
 import ActionButton from '../controls/action-button/action-button';
 import useStyles from './popup.styles';
 
@@ -17,13 +18,14 @@ const Popup: React.FunctionComponent<Props> = ({
   title, children, openPopup, setOpenPopup,
 }: Props) => {
   const classes = useStyles();
+  const { t } = useTranslation();
 
   return (
         <Dialog open={openPopup} maxWidth="md" classes={{ paper: classes.dialogWrapper }}>
             <DialogTitle className={classes.dialogTitle}>
                 <div className={classes.titleButtonWrapper}>
                     <Typography variant="h6" component="div" className={classes.header}>
-                        {title}
+                        {t(title)}
                     </Typography>
                     <ActionButton
                         color="secondary"

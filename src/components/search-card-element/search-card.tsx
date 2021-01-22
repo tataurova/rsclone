@@ -7,6 +7,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import { Box } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import { ChangeEvent } from 'react';
+import { useTranslation } from 'react-i18next';
 
 type SearchCardType = {
     searchName: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
@@ -14,6 +15,8 @@ type SearchCardType = {
 
 const SearchCard = (props: any) => {
   const [open, setOpen] = React.useState(false);
+  const { t } = useTranslation();
+
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -23,19 +26,19 @@ const SearchCard = (props: any) => {
 
   return (
         <div>
-            <Button variant='outlined' onClick={handleClickOpen}>Поиск</Button>
+            <Button variant='outlined' onClick={handleClickOpen}>{t('Search')}</Button>
             <Dialog disableBackdropClick disableEscapeKeyDown open={open} onClose={handleClose}>
-                <DialogTitle>Поиск</DialogTitle>
+                <DialogTitle>{t('Search')}</DialogTitle>
                 <DialogContent>
                     <form noValidate autoComplete="off">
                         <Box>
                             <TextField
                                 onChange={props.searchName}
                                 id="outlined-full-width"
-                                label="ФИО"
+                                label={t('Name')}
                                 style={{ margin: 8 }}
-                                placeholder="Фамилия Имя Отчество"
-                                helperText="Введите полное имя и оичество"
+                                placeholder={t('First name Last name')}
+                                helperText={t('Enter full name and surname')}
                                 fullWidth
                                 margin="normal"
                                 InputLabelProps={{
@@ -46,7 +49,7 @@ const SearchCard = (props: any) => {
                                 <TextField
                                     onChange={props.searchAge}
                                     id="outlined-number"
-                                    label="Возраст"
+                                    label={t('Age')}
                                     type="number"
                                     InputLabelProps={{
                                       shrink: true,
@@ -56,7 +59,7 @@ const SearchCard = (props: any) => {
                             <TextField
                                 onChange={props.searchCity}
                                 id="outlined-search"
-                                label="Город"
+                                label={t('City')}
                                 defaultValue=""
                                 type="search"
                                 variant="outlined"/>
@@ -65,10 +68,10 @@ const SearchCard = (props: any) => {
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color="primary">
-                        Cancel
+                        {t('Cancel')}
                     </Button>
                     <Button onClick={handleClose} color="primary">
-                        Ok
+                        {t('Ok')}
                     </Button>
                 </DialogActions>
             </Dialog>

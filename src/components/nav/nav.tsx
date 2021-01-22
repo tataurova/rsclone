@@ -13,15 +13,22 @@ import PriorityHighIcon from '@material-ui/icons/PriorityHigh';
 import ArchiveIcon from '@material-ui/icons/Archive';
 import ShowChartIcon from '@material-ui/icons/ShowChart';
 import LanguageIcon from '@material-ui/icons/Language';
+import { useTranslation } from 'react-i18next';
 import { RouteName, PageName, MenuItemText } from '../../const';
 import NameSpace from '../../reducer/name-space';
 import { ActionCreator } from '../../reducer/app/app';
 import useStyles from './nav.styles';
+import i18n from '../../i18n';
 
 interface Props {
     onMenuClick: (arg: string) => void;
     page: string;
 }
+
+const changeLanguage = (lang) => {
+  localStorage.setItem('language', lang);
+  i18n.changeLanguage(lang);
+};
 
 const Nav: React.FunctionComponent<Props> = ({ onMenuClick, page }: Props) => {
   const history = useHistory();
@@ -44,6 +51,7 @@ const Nav: React.FunctionComponent<Props> = ({ onMenuClick, page }: Props) => {
 
     setState({ ...state, [anchor]: open });
   };
+  const { t } = useTranslation();
 
   return (<div
             className={classes.list}
@@ -59,7 +67,7 @@ const Nav: React.FunctionComponent<Props> = ({ onMenuClick, page }: Props) => {
                     className={page === PageName.MAIN ? classes.active : ''}
                 >
                     <ListItemIcon><HomeIcon/></ListItemIcon>
-                    <ListItemText primary={MenuItemText.MAIN} />
+                    <ListItemText primary={t(MenuItemText.MAIN)} />
                 </ListItem>
                 <ListItem
                     button
@@ -67,7 +75,7 @@ const Nav: React.FunctionComponent<Props> = ({ onMenuClick, page }: Props) => {
                     className={page === PageName.GONE ? classes.active : ''}
                 >
                     <ListItemIcon><FaceIcon/></ListItemIcon>
-                    <ListItemText primary={MenuItemText.GONE} />
+                    <ListItemText primary={t(MenuItemText.GONE)} />
                 </ListItem>
                 <ListItem
                     button
@@ -75,7 +83,7 @@ const Nav: React.FunctionComponent<Props> = ({ onMenuClick, page }: Props) => {
                     className={page === PageName.LOOKING_RELATIVES ? classes.active : ''}
                 >
                     <ListItemIcon><EmojiPeopleIcon/></ListItemIcon>
-                    <ListItemText primary={MenuItemText.LOOKING_RELATIVES} />
+                    <ListItemText primary={t(MenuItemText.LOOKING_RELATIVES)} />
                 </ListItem>
                 <ListItem
                     button
@@ -83,7 +91,7 @@ const Nav: React.FunctionComponent<Props> = ({ onMenuClick, page }: Props) => {
                     className={page === PageName.ACTIVE_SEARCHES ? classes.active : ''}
                 >
                     <ListItemIcon><PriorityHighIcon/></ListItemIcon>
-                    <ListItemText primary={MenuItemText.ACTIVE_SEARCHES} />
+                    <ListItemText primary={t(MenuItemText.ACTIVE_SEARCHES)} />
                 </ListItem>
                 <ListItem
                     button
@@ -91,18 +99,18 @@ const Nav: React.FunctionComponent<Props> = ({ onMenuClick, page }: Props) => {
                     className={page === PageName.CLOSED_SEARCHES ? classes.active : ''}
                 >
                     <ListItemIcon><ArchiveIcon/></ListItemIcon>
-                <ListItemText primary={MenuItemText.CLOSED_SEARCHES} />
+                <ListItemText primary={t(MenuItemText.CLOSED_SEARCHES)} />
                 </ListItem>
             </List>
             <Divider />
             <List>
                 <ListItem button>
                     <ListItemIcon><ShowChartIcon/></ListItemIcon>
-                    <ListItemText primary={MenuItemText.STATISTIC} />
+                    <ListItemText primary={t(MenuItemText.STATISTICS)} />
                 </ListItem>
-                <ListItem button>
+                <ListItem button onClick={() => changeLanguage(localStorage.getItem('language') === 'en' ? 'ru' : 'en')}>
                     <ListItemIcon><LanguageIcon/></ListItemIcon>
-                    <ListItemText primary={MenuItemText.LANGUAGE} />
+                    <ListItemText primary={t(MenuItemText.LANGUAGE)} />
                 </ListItem>
             </List>
         </div>

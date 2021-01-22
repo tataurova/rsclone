@@ -6,7 +6,7 @@ import CardProfile from '../card-profile/card-profile';
 import Header from '../header/header';
 import Footer from '../footer/footer';
 import { data } from '../../mock';
-import SearchCard from '../search-cadr-element/search-card';
+import SearchCard from '../search-card-element/search-card';
 import FilterCard from '../filter-card-element/filter-card';
 
 type ArrayCardType = Array<CardType>;
@@ -30,6 +30,7 @@ interface Props {
 
 const SearchingProfile: React.FunctionComponent<Props> = ({ page }: Props) => {
   const [searchTerm, setSearchTerm] = useState('');
+
   const ageFilterValue = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setSearchTerm(e.target.value.trim());
   };

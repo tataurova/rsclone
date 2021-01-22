@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { useEffect } from 'react';
 import { Grid } from '@material-ui/core';
+import { useTranslation } from 'react-i18next';
 import Controls from '../controls/controls';
 import Form, { useForm } from '../use-form/use-form';
 import PopupTable from '../popup-table/popup-table';
-import { getStatusCollection, FORM_FIELDS } from '../../const';
+import { statusSelectItems, FORM_FIELDS } from '../../const';
+import { helperForTranslate } from '../../utils/common';
 import { Searches } from '../../types';
 
 const initialFValues = {
@@ -23,6 +25,8 @@ interface Props {
 }
 
 const SearchForm: React.FunctionComponent<Props> = ({ addOrEdit, recordForEdit }: Props) => {
+  const { t } = useTranslation();
+
   const validate = (fieldValues = values) => {
     const temp = { ...errors };
 
@@ -53,6 +57,7 @@ const SearchForm: React.FunctionComponent<Props> = ({ addOrEdit, recordForEdit }
 
   const handleSubmit = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault();
+
     if (validate()) {
       addOrEdit(values, resetForm);
     }
@@ -72,21 +77,21 @@ const SearchForm: React.FunctionComponent<Props> = ({ addOrEdit, recordForEdit }
                 <Grid container>
                     <Grid item xs={6}>
                         <Controls.Input
-                            label="Город"
+                            label={t('City')}
                             name="city"
                             value={values.city}
                             onChange={handleInputChange}
                             error={errors.city}
                         />
                         <Controls.Input
-                            label="ФИО"
+                            label={t('Name')}
                             name="name"
                             value={values.name}
                             onChange={handleInputChange}
                             error={errors.name}
                         />
                         <Controls.Input
-                            label="Возраст"
+                            label={t('Age')}
                             name="age"
                             value={values.age}
                             onChange={handleInputChange}
@@ -95,28 +100,28 @@ const SearchForm: React.FunctionComponent<Props> = ({ addOrEdit, recordForEdit }
                         <div>
                             <Controls.Button
                                 type="submit"
-                                text="Применить" />
+                                text={'Submit'} />
                         </div>
                     </Grid>
                     <Grid item xs={6}>
                         <Controls.Input
-                            label="Координатор"
+                            label={t('Coordinator')}
                             name="coordinator"
                             value={values.coordinator}
                             onChange={handleInputChange}
                             error={errors.coordinator}
                         />
                         <Controls.Select
-                            label="Статус"
+                            label={t('Status')}
                             name="status"
-                            value={values.status}
+                            value={t(helperForTranslate(values.status))}
                             onChange={handleInputChange}
-                            options={getStatusCollection}
+                            options={statusSelectItems}
                             error={errors.status}
                         />
                         <Controls.DatePicker
+                            label={'Date'}
                             name="date"
-                            label="Дата"
                             value={values.date}
                             onChange={handleInputChange}
                         />

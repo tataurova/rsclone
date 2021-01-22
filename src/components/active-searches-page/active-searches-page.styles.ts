@@ -13,4 +13,7 @@ export default makeStyles(() => ({
         position: 'absolute',
         right: '10px',
     },
+    height: {
+        minHeight: '65px',
+    }
 }));

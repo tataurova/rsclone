@@ -7,11 +7,13 @@ import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
 import Grid from '@material-ui/core/Grid';
 import { Box, ListSubheader } from '@material-ui/core';
+import { useTranslation } from 'react-i18next';
 import { CardType } from '../search-gone/search-gone-profile';
 import useStyles from './card-profile.styles';
 
 const CardProfile = (props: CardType) => {
   const classes = useStyles();
+  const { t } = useTranslation();
 
   return (
         <Grid item xs={12} sm={6} md={4}>
@@ -27,33 +29,33 @@ const CardProfile = (props: CardType) => {
                         </Typography>
                         <div>
                             <List className={classes.values}
-                                  subheader={<ListSubheader>Город</ListSubheader>}>
+                                  subheader={<ListSubheader>{t('City')}</ListSubheader>}>
                                 <ListItemText primary={props.city}/>
                             </List>
                             <List className={classes.values}
-                                  subheader={<ListSubheader>Год рождения</ListSubheader>}>
+                                  subheader={<ListSubheader>{t('Year of birth')}</ListSubheader>}>
                                 <ListItemText primary={props.birth}/>
                             </List>
                             <List className={classes.values}
-                                  subheader={<ListSubheader>Количество лет</ListSubheader>}>
+                                  subheader={<ListSubheader>{t('Age')}</ListSubheader>}>
                                 <ListItemText primary={props.age}/>
                             </List>
                             <List className={classes.values}
-                                  subheader={<ListSubheader>Дата пропажи</ListSubheader>}>
+                                  subheader={<ListSubheader>{t('Date of loss')}</ListSubheader>}>
                                 <ListItemText primary={props.missing}/>
                             </List>
                             <List className={classes.values}
-                                  subheader={<ListSubheader>Приметы</ListSubheader>}/>
+                                  subheader={<ListSubheader>{t('Signs')}</ListSubheader>}/>
                             <Box width="100%">
                                 {props.sign}
                             </Box>
                             <List className={classes.values}
-                                  subheader={<ListSubheader>Одежда</ListSubheader>}/>
+                                  subheader={<ListSubheader>{t('Clothes')}</ListSubheader>}/>
                             <Box>
                                 {props.close}
                             </Box>
                             <List className={classes.values}
-                                  subheader={<ListSubheader>Было с cобой</ListSubheader>}/>
+                                  subheader={<ListSubheader>{t('Had taken')}</ListSubheader>}/>
                             <Box>
                                 {props.with}
                             </Box>

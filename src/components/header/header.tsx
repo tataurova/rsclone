@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Drawer from '@material-ui/core/Drawer';
+import { useTranslation } from 'react-i18next';
 import NameSpace from '../../reducer/name-space';
 import {
   AuthorizationStatus, RouteName, MenuItemText, ActiveMenuItemName,
@@ -32,6 +33,7 @@ const Header: React.FunctionComponent<Props> = ({ page, authorizationStatus }: P
     bottom: false,
     right: false,
   });
+  const { t } = useTranslation();
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -54,9 +56,9 @@ const Header: React.FunctionComponent<Props> = ({ page, authorizationStatus }: P
                         </React.Fragment>
                     </IconButton>
                     <Typography variant="h6" className={classes.title}>
-                        {ActiveMenuItemName[page]}
+                        {t(ActiveMenuItemName[page])}
                     </Typography>
-                    <Button color="inherit" onClick={handleClick}>{authorizationStatus === AuthorizationStatus.AUTH ? MenuItemText.EXIT : MenuItemText.ENTER}</Button>
+                    <Button color="inherit" onClick={handleClick}>{authorizationStatus === AuthorizationStatus.AUTH ? `${t(MenuItemText.LOGOUT)}` : `${t(MenuItemText.LOGIN)}`}</Button>
                 </Toolbar>
             </AppBar>
         </div>

@@ -10,6 +10,7 @@ import reducer from './reducer/reducer';
 import { ActionCreator as DataActionCreator } from './reducer/data/data';
 import { Operation as UserOperation, ActionCreator, AuthorizationStatus } from './reducer/user/user';
 import { SHOW_ERROR_TIMEOUT } from './const';
+import './i18n';
 
 const onUnauthorized = () => {
   store.dispatch(ActionCreator.requireAuthorization(AuthorizationStatus.NO_AUTH));

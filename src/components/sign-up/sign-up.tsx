@@ -8,6 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import { useTranslation } from 'react-i18next';
 import useStyles from './sign-up.styles';
 import { RouteName } from '../../const';
 
@@ -28,6 +29,7 @@ const SignUp: React.FunctionComponent<Props> = ({
   state, onSubmitForm, onChange, nameRef, loginRef, passwordRef,
 }: Props) => {
   const classes = useStyles();
+  const { t } = useTranslation();
 
   return (
         <Container component="main" maxWidth="xs">
@@ -37,7 +39,7 @@ const SignUp: React.FunctionComponent<Props> = ({
                     <LockOutlinedIcon />
                 </Avatar>
                 <Typography component="h1" variant="h5">
-                    Регистрация
+                    {t('Registration')}
                 </Typography>
                 <form className={classes.form} onSubmit={(evt) => evt.preventDefault()}>
                     <Grid container spacing={2}>
@@ -50,7 +52,7 @@ const SignUp: React.FunctionComponent<Props> = ({
                                 required
                                 fullWidth
                                 id="firstName"
-                                label="Имя"
+                                label={t('Name')}
                                 autoFocus
                                 onChange={onChange}
                                 inputRef={nameRef}
@@ -63,7 +65,7 @@ const SignUp: React.FunctionComponent<Props> = ({
                                 required
                                 fullWidth
                                 id="email"
-                                label="Электронная почта"
+                                label={t('Email')}
                                 name="email"
                                 autoComplete="email"
                                 onChange={onChange}
@@ -77,7 +79,7 @@ const SignUp: React.FunctionComponent<Props> = ({
                                 required
                                 fullWidth
                                 name="password"
-                                label="Пароль"
+                                label={t('Password')}
                                 type="password"
                                 id="password"
                                 autoComplete="current-password"
@@ -94,19 +96,19 @@ const SignUp: React.FunctionComponent<Props> = ({
                         className={classes.submit}
                         onClick={onSubmitForm}
                     >
-                        Зарегистрироваться
+                        {t('Register')}
                     </Button>
                     <Grid container>
                         <Grid item>
                             <Link href={RouteName.LOGIN} variant="body2">
-                                Уже есть аккаунт? Войти
+                                {t('Already have an account? Login')}
                             </Link>
                         </Grid>
                     </Grid>
                     <Grid container>
                         <Grid item>
                             <Link href={RouteName.MAIN} variant="body2">
-                                На главную
+                                {t('Go to the main page')}
                             </Link>
                         </Grid>
                     </Grid>

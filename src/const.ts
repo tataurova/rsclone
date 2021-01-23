@@ -41,7 +41,7 @@ export const headCells = [
   { id: 'age', label: 'Age' },
   { id: 'date', label: 'Date' },
   { id: 'coordinator', label: 'Coordinator' },
-  { id: 'People on the search', label: 'People on the search' },
+  { id: 'people on the search', label: 'People on the search' },
   { id: 'actions', label: 'Actions', disableSorting: true },
 ];
 

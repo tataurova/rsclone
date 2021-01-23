@@ -48,7 +48,7 @@ export function useTable(props: Props) {
                     headCells.map((headCell, i) => (<TableCell key={i} sortDirection={orderBy === headCell.id
                       ? order
                       : false}>
-                        {headCell.disableSorting ? headCell.label
+                        {headCell.disableSorting ? t(headCell.label)
                           : <TableSortLabel
                                 active={orderBy === headCell.id}
                                 direction={orderBy === headCell.id ? order : 'asc'}

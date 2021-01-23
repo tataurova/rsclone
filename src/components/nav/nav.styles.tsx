@@ -10,4 +10,8 @@ export default makeStyles((theme) => ({
   active: {
     backgroundColor: theme.palette.action.selected,
   },
+  lang: {
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    color: '#3f51b5',
+  },
 }));

@@ -1,6 +1,5 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import Link from "@material-ui/core/Link";
 import * as React from "react";
 
 const resources = {
@@ -69,6 +68,65 @@ const resources = {
             "Local search": "Local search",
             "Stop. Information verification": "Stop. Information verification",
             "Archive": "Archive",
+        }
+    },
+
+    ja: {
+        translation: {
+            "Login": "エンター",
+            "Logout": "ログアウト",
+            "Main": "メイン",
+            "Gone": "ゴーン",
+            "Looking relatives": "親戚探し",
+            "Active searches": "アクティブな検索",
+            "Closed searches": "クローズド検索",
+            "Statistics": "統計",
+            "Language": "言語",
+            "Olga Tataurova": "オルガ-タタウロワ",
+            "Leonid Shuliak": "レオニード-シュリアック",
+            "Andrei Podyslenkau": "アンドレイ-ポドゥスレンコ",
+            "If you get lost in the woods": "森の中で迷子になったら",
+            "If you get lost in the forest and do not see suitable landmarks, it is best to go out on the water and move downstream. The stream will definitely lead to the river, the river - to the people. If you get lost and know that you will be searched for, stay in one place and make a fire so the search engines will be easier to navigate.": "あなたが森の中で迷子になり、適切なランドマークが見えない場合は、水の上に出て下流に移動するのが最善です。 ストリームは間違いなく川、川につながります-人々に。 あなたが迷子になり、あなたが検索されることを知っている場合は、一つの場所に滞在し、検索エンジンがナビゲートしやすくなるように火を作る。",
+            "Rules of behavior of the child, if he is lost": "彼が失われた場合、子供の行動のルール",
+            "If the child realized that he was left alone, but his mother was just there, you need to call her loudly. The most important rule that you need to teach your baby do not agree to the suggestions of strangers to go look for parents. However, it is important that the child can ask for help from the seller, representatives of the security service or the police": "子供が一人で放置されていることに気づいたが、母親がちょうどそこにいた場合は、大声で彼女に電話する必要があります。 あなたの赤ちゃんを教えるために必要な最も重要なルールは、親を探しに行く見知らぬ人の提案に同意しません。 しかし、子供が売り手、セキュリティサービスの代表者、または警察から助けを求めることができることが重要です",
+            "Rules that will help the elderly": "高齢者を助けるルール",
+            "If a person has problems with orientation and sense of space, they should always have identification documents or a special bracelet with their name and address engraved on it. Before leaving, a person should warn where he is going and when he will return approximately. You need to take your phone with you and put it in your inner pocket. When an elderly person has a phone with them, it is possible to keep in touch with them or track their location using a GPS signal.": "人が向きや空間の感覚に問題がある場合は、常に身分証明書または名前と住所が刻まれた特別なブレスレットを持っている必要があります。 出発する前に、人はどこに行くのか、いつ戻るのかを警告する必要があります。 めるために必要な電話にて無料でお届け致します。を取れるように内側のポケットです。 高齢者が電話を持っているときは、GPS信号を使用して連絡を取り合ったり、位置を追跡したりすることができます。",
+            "Leave a request": "リクエストを残す",
+            "Email": "メール",
+            "Password": "パスワード",
+            "No account? Register": "アカウントなし？ レジスタ",
+            "Go to the main page": "メインページに移動する",
+            "Name": "名前",
+            "Register": "レジスタ",
+            "Already have an account? Login": "既にネットワインのアカウント? ログイン",
+            "Search": "検索",
+            "Add": "追加",
+            "Rows per page": "ページごとの行",
+            "from": "から",
+            "Status": "ステータス",
+            "City": "シティ",
+            "Age": "年齢",
+            "Date": "日付",
+            "Coordinator": "コーディネ",
+            "People on the search": "検索している人",
+            "Actions": "アクション",
+            "Submit": "送信",
+            "Adding a search": "検索を追加する",
+            "Changing the search": "検索を変更する",
+            "Reserve": "リザーブ",
+            "Local search": "ローカル検索",
+            "Stop. Information verification": "止まれ！. 情報検証",
+            "Archive": "アーカイブ",
+            "First name Last name": "名姓",
+            "Enter full name and surname": "フルネームと姓を入力します",
+            "Cancel": "キャンセル",
+            "Ok": "送信",
+            "Registration": "登録",
+            "Year of birth": "生年",
+            "Date of loss": "損失の日付",
+            "Signs": "サイン",
+            "Clothes": "服",
+            "Had taken": "撮影していた",
         }
     }
 };

@@ -25,7 +25,14 @@ interface Props {
     page: string;
 }
 
-const changeLanguage = (lang) => {
+const MapLanguage = {
+  ru: 'en',
+  en: 'ja',
+  ja: 'ru',
+};
+
+const changeLanguage = () => {
+  const lang = MapLanguage[localStorage.getItem('language')];
   localStorage.setItem('language', lang);
   i18n.changeLanguage(lang);
 };
@@ -108,9 +115,10 @@ const Nav: React.FunctionComponent<Props> = ({ onMenuClick, page }: Props) => {
                     <ListItemIcon><ShowChartIcon/></ListItemIcon>
                     <ListItemText primary={t(MenuItemText.STATISTICS)} />
                 </ListItem>
-                <ListItem button onClick={() => changeLanguage(localStorage.getItem('language') === 'en' ? 'ru' : 'en')}>
+                <ListItem button onClick={() => changeLanguage()}>
                     <ListItemIcon><LanguageIcon/></ListItemIcon>
                     <ListItemText primary={t(MenuItemText.LANGUAGE)} />
+                    <span className={classes.lang}>{i18n.language.toUpperCase()}</span>
                 </ListItem>
             </List>
         </div>

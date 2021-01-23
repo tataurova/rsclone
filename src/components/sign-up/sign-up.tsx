@@ -18,7 +18,7 @@ interface Props {
         loginValid: boolean;
         passwordValid: boolean;
     };
-    onSubmitForm: () => void;
+    onSubmit: () => void;
     onChange: () => void;
     nameRef: React.RefObject<HTMLInputElement>;
     loginRef: React.RefObject<HTMLInputElement>;
@@ -26,7 +26,7 @@ interface Props {
 }
 
 const SignUp: React.FunctionComponent<Props> = ({
-  state, onSubmitForm, onChange, nameRef, loginRef, passwordRef,
+  state, onSubmit, onChange, nameRef, loginRef, passwordRef,
 }: Props) => {
   const classes = useStyles();
   const { t } = useTranslation();
@@ -41,13 +41,13 @@ const SignUp: React.FunctionComponent<Props> = ({
                 <Typography component="h1" variant="h5">
                     {t('Registration')}
                 </Typography>
-                <form className={classes.form} onSubmit={(evt) => evt.preventDefault()}>
+                <form className={classes.form} onSubmit={onSubmit}>
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
                             <TextField
                                 InputProps={state.nameValid === false ? { className: classes.notValidInput } : {}}
                                 autoComplete="fname"
-                                name="firstName"
+                                name="name"
                                 variant="outlined"
                                 required
                                 fullWidth
@@ -94,7 +94,6 @@ const SignUp: React.FunctionComponent<Props> = ({
                         variant="contained"
                         color="primary"
                         className={classes.submit}
-                        onClick={onSubmitForm}
                     >
                         {t('Register')}
                     </Button>

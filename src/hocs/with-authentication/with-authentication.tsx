@@ -62,6 +62,7 @@ const withAuthentication = (Component) => {
           }
           if (isFormValid(this.state)) {
             const { onSubmitForm } = this.props;
+
             onSubmitForm({
               login: this.loginRef.current.value,
               password: this.passwordRef.current.value,

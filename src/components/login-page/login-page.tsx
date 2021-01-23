@@ -17,14 +17,14 @@ interface Props {
         loginValid: boolean;
         passwordValid: boolean;
     };
-    onSubmitForm: () => void;
+    onSubmit: () => void;
     onChange: () => void;
     loginRef: React.RefObject<HTMLInputElement>;
     passwordRef: React.RefObject<HTMLInputElement>;
 }
 
 const LoginPage: React.FunctionComponent<Props> = ({
-  state, onSubmitForm, onChange, loginRef, passwordRef,
+  state, onSubmit, onChange, loginRef, passwordRef,
 }: Props) => {
   const classes = useStyles();
   const { t } = useTranslation();
@@ -40,7 +40,7 @@ const LoginPage: React.FunctionComponent<Props> = ({
                     <Typography component="h1" variant="h5">
                         {t('Login')}
                     </Typography>
-                    <form className={classes.form} onSubmit={(evt) => evt.preventDefault()}>
+                    <form className={classes.form} onSubmit={onSubmit}>
                         <TextField
                             InputProps={state.loginValid === false ? { className: classes.notValidInput } : {}}
                             variant="outlined"
@@ -75,7 +75,6 @@ const LoginPage: React.FunctionComponent<Props> = ({
                             variant="contained"
                             color="primary"
                             className={classes.submit}
-                            onClick={onSubmitForm}
                         >
                             {t('Login')}
                         </Button>

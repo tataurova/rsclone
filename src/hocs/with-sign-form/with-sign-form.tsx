@@ -9,6 +9,7 @@ import {
 } from '../with-authentication/with-authentication';
 
 const isNameValid = (input, evt) => input.current.validity.valid && evt.target.value.length >= NAME_MIN_LENGTH;
+
 const isFormValid = (state) => state.nameValid === true && state.loginValid === true && state.passwordValid === true;
 const isNameEmpty = (state) => state.nameValid === null;
 
@@ -49,6 +50,7 @@ const withSignUp = (Component) => {
         handleChange(evt) {
           evt.preventDefault();
           const { name } = evt.target;
+
           if (name === LoginInput.NAME) {
             this.setState(extend(this.state, { nameValid: isNameValid(this.nameRef, evt) }));
           }

@@ -67,9 +67,10 @@ router.post(
                 },
                 (err, token) => {
                     if (err) throw err;
-                    res.status(200).json(
+                    /*res.status(200).json(
                         'you sign up'
-                    );
+                    );*/
+                    res.redirect('http://localhost:1337/');
                 }
             );
         } catch (err) {

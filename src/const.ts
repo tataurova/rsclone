@@ -1,7 +1,7 @@
 export const RouteName = {
   MAIN: '/',
-  LOGIN: '/login',
-  SIGN_UP: '/sign-up',
+  LOGIN: '/user/login',
+  SIGN_UP: '/user/signup',
   GONE: '/gone',
   LOOKING_RELATIVES: '/looking-relatives',
   ACTIVE_SEARCHES: '/active-searches',

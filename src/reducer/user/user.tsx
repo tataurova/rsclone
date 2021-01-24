@@ -48,7 +48,7 @@ const Operation = {
       dispatch(ActionCreator.writeUser(answer.data.email));
     }),
 
-  login: (authData) => (dispatch, getState, api) => api.post(RouteName.LOGIN, {
+  login: (authData) => (dispatch, getState, api) => api.post(RouteName.BASE_SERVER + RouteName.LOGIN, {
     email: authData.login,
     password: authData.password,
   })
@@ -56,11 +56,11 @@ const Operation = {
       dispatch(ActionCreator.requireAuthorization(AuthorizationStatus.AUTH));
       dispatch(ActionCreator.writeUser(response.data.email));
     }),
-  signup: (signData) => (dispatch, getState, api) => api.post(RouteName.SIGN_UP, {
+  signup: (signData) => (dispatch, getState, api) => api.post(RouteName.BASE_SERVER + RouteName.SIGN_UP, {
     name: signData.name,
     email: signData.login,
     password: signData.password,
-  })
+  }).then(signData => console.log(signData))
     .then(() => {
       dispatch(AppCreator.changePage(PageName.MAIN));
     })

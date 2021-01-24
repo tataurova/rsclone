@@ -45,7 +45,7 @@ const SignUp: React.FunctionComponent<Props> = ({
                             <TextField
                                 InputProps={state.nameValid === false ? { className: classes.notValidInput } : {}}
                                 autoComplete="fname"
-                                name="firstName"
+                              name="username"
                                 variant="outlined"
                                 required
                                 fullWidth

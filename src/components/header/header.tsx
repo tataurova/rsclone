@@ -21,6 +21,8 @@ interface Props {
     authorizationStatus: string;
 }
 
+const logo = require('../../assets/icons/logo.svg');
+
 const Header: React.FunctionComponent<Props> = ({ page, authorizationStatus }: Props) => {
   const classes = useStyles();
   const history = useHistory();
@@ -39,7 +41,6 @@ const Header: React.FunctionComponent<Props> = ({ page, authorizationStatus }: P
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
-
     setState({ ...state, [anchor]: open });
   };
 
@@ -58,6 +59,7 @@ const Header: React.FunctionComponent<Props> = ({ page, authorizationStatus }: P
                     <Typography variant="h6" className={classes.title}>
                         {t(ActiveMenuItemName[page])}
                     </Typography>
+                    <img className={classes.img} src={ logo } width={'50px'} height={'50px'} alt='Logo'/>
                     <Button color="inherit" onClick={handleClick}>{authorizationStatus === AuthorizationStatus.AUTH ? `${t(MenuItemText.LOGOUT)}` : `${t(MenuItemText.LOGIN)}`}</Button>
                 </Toolbar>
             </AppBar>

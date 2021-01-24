@@ -12,3 +12,7 @@ export const helperForTranslate = (value) => {
             return 'Archive';
     }
 }
+
+export const mockFunction = () => {
+    // do nothing
+};

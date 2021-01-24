@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Copyright /> Render Copyright 1`] = `
+<p
+  className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
+>
+  © 
+  <a
+    className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-linkFont-2 MuiTypography-colorInherit"
+    href="https://rs.school/js/"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    target="_blank"
+  >
+    RS School
+  </a>
+   
+  <span
+    className="makeStyles-flex-1"
+  >
+    <span
+      className="makeStyles-link-3"
+    >
+      <img
+        alt="GitHub"
+        className="makeStyles-img-4"
+        src=""
+      />
+      <a
+        className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-linkColor-6 MuiTypography-colorPrimary"
+        href="https://github.com/tataurova/"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        rel="noreferrer"
+        target="_blank"
+      >
+        Olga Tataurova
+      </a>
+    </span>
+    <span
+      className="makeStyles-link-3"
+    >
+      <img
+        alt="GitHub"
+        className="makeStyles-img-4"
+        src=""
+      />
+      <a
+        className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-linkColor-6 MuiTypography-colorPrimary"
+        href="https://github.com/shuliakleonid/"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        rel="noreferrer"
+        target="_blank"
+      >
+        Leonid Shuliak
+      </a>
+    </span>
+    <span
+      className="makeStyles-link-3"
+    >
+      <img
+        alt="GitHub"
+        className="makeStyles-img-4"
+        src=""
+      />
+      <a
+        className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-linkColor-6 MuiTypography-colorPrimary"
+        href="https://github.com/andreizayaz"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        rel="noreferrer"
+        target="_blank"
+      >
+        Andrei Podyslenkau
+      </a>
+    </span>
+  </span>
+  2021
+</p>
+`;

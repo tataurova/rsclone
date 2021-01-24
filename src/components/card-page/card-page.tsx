@@ -8,11 +8,10 @@ import Footer from '../footer/footer';
 const bg = require('../../../public/assets/img/bg.jpg');
 
 interface Props {
-    loadGonePeople: () => void;
     page: string;
 }
 
-const CardPage: React.FunctionComponent<Props> = function CardPage({ loadGonePeople, page }: Props) {
+const CardPage: React.FunctionComponent<Props> = function CardPage({ page }: Props) {
   return (
         <>
             <Header page={page}/>

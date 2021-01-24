@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FilterCard /> Render Header 1`] = `
+<form
+  autoComplete="off"
+  noValidate={true}
+>
+  <div
+    className="MuiBox-root MuiBox-root-1"
+  >
+    <span
+      className="MuiBox-root MuiBox-root-2"
+    >
+      <div
+        className="MuiFormControl-root MuiTextField-root"
+      >
+        <label
+          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense MuiInputLabel-outlined"
+          data-shrink={true}
+          htmlFor="outlined-number"
+          id="outlined-number-label"
+        >
+          Age
+        </label>
+        <div
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoFocus={false}
+            className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+            disabled={false}
+            id="outlined-number"
+            onAnimationStart={[Function]}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="30"
+            required={false}
+            type="number"
+          />
+          <fieldset
+            aria-hidden={true}
+            className="PrivateNotchedOutline-root-3 MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              className="PrivateNotchedOutline-legendLabelled-5 PrivateNotchedOutline-legendNotched-6"
+            >
+              <span>
+                Age
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+      </div>
+    </span>
+    <div
+      className="MuiFormControl-root MuiTextField-root"
+    >
+      <label
+        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-marginDense MuiInputLabel-outlined"
+        data-shrink={false}
+        htmlFor="outlined-search"
+        id="outlined-search-label"
+      >
+        City
+      </label>
+      <div
+        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+        onClick={[Function]}
+      >
+        <input
+          aria-invalid={false}
+          autoFocus={false}
+          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputTypeSearch MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+          defaultValue=""
+          disabled={false}
+          id="outlined-search"
+          onAnimationStart={[Function]}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          required={false}
+          type="search"
+        />
+        <fieldset
+          aria-hidden={true}
+          className="PrivateNotchedOutline-root-3 MuiOutlinedInput-notchedOutline"
+        >
+          <legend
+            className="PrivateNotchedOutline-legendLabelled-5"
+          >
+            <span>
+              City
+            </span>
+          </legend>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</form>
+`;

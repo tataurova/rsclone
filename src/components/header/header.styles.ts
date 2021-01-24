@@ -10,4 +10,8 @@ export default makeStyles((theme) => ({
     title: {
         flexGrow: 1,
     },
+    img: {
+        position: 'absolute',
+        left: 'calc(50% - 25px)',
+    }
 }));

@@ -21,4 +21,8 @@ export default makeStyles((theme) => ({
         padding: theme.spacing(9),
 
     },
+    link: {
+        color: 'ffffff',
+        textDecoration: 'none',
+    }
 }));

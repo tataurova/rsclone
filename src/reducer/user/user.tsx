@@ -56,17 +56,17 @@ const Operation = {
       dispatch(ActionCreator.requireAuthorization(AuthorizationStatus.AUTH));
       dispatch(ActionCreator.writeUser(response.data.email));
     }),
-  signup: (signData) => (dispatch, getState, api) => api.post(RouteName.BASE_SERVER + RouteName.SIGN_UP, {
-    name: signData.name,
-    email: signData.login,
-    password: signData.password,
-  }).then(signData => console.log(signData))
-    .then(() => {
-      dispatch(AppCreator.changePage(PageName.MAIN));
+  signup: (signData) => (dispatch, getState, api) => api.post(RouteName.SIGN_UP, {
+      name: signData.name,
+      email: signData.login,
+      password: signData.password,
     })
-    .catch(() => {
-      dispatch(AppCreator.changePage(PageName.MAIN));
-    }),
+      .then(() => {
+        dispatch(AppCreator.changePage(PageName.MAIN));
+      })
+      .catch(() => {
+        dispatch(AppCreator.changePage(PageName.MAIN));
+      }),
 };
 
 export {

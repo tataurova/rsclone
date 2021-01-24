@@ -3,6 +3,7 @@ import { useState } from 'react';
 import {
   Table, TableHead, TableRow, TablePagination, TableCell, TableSortLabel,
 } from '@material-ui/core';
+import { useTranslation } from 'react-i18next';
 import { Searches, HeadCell } from '../../types';
 import useStyles from './use-table.styles';
 
@@ -27,6 +28,7 @@ export function useTable(props: Props) {
   const [rowsPerPage, setRowsPerPage] = useState(pages[page]);
   const [order, setOrder] = useState<'asc' | 'desc'>('asc');
   const [orderBy, setOrderBy] = useState<string | undefined>();
+  const { t } = useTranslation();
 
   const TblContainer: React.FunctionComponent<PropsContainer> = (containerProps: PropsContainer) => (
         <Table className={classes.table}>
@@ -46,14 +48,14 @@ export function useTable(props: Props) {
                     headCells.map((headCell, i) => (<TableCell key={i} sortDirection={orderBy === headCell.id
                       ? order
                       : false}>
-                        {headCell.disableSorting ? headCell.label
+                        {headCell.disableSorting ? t(headCell.label)
                           : <TableSortLabel
                                 active={orderBy === headCell.id}
                                 direction={orderBy === headCell.id ? order : 'asc'}
                                 onClick={() => {
                                   handleSortRequest(headCell.id);
                                 }}>
-                              {headCell.label}
+                              {t(headCell.label)}
                             </TableSortLabel>
                         }
                       </TableCell>))
@@ -79,8 +81,8 @@ export function useTable(props: Props) {
         count={searches.length}
         onChangePage={handleChangePage}
         onChangeRowsPerPage={handleChangeRowsPerPage}
-        labelRowsPerPage={'Строк на странице'}
-        labelDisplayedRows={({ from, to, count }) => `${from}-${to} из ${count}`}
+        labelRowsPerPage={t('Rows per page')}
+        labelDisplayedRows={({ from, to, count }) => `${from}-${to} ${t('from')} ${count}`}
     />);
 
   const stableSort = (array, comparator) => {

@@ -10,15 +10,15 @@ export const RouteName = {
 };
 
 export const MenuItemText = {
-  MAIN: 'Главная',
-  GONE: 'Пропали',
-  LOOKING_RELATIVES: 'Ищут родственников',
-  ACTIVE_SEARCHES: 'Активные поиски',
-  CLOSED_SEARCHES: 'Закрытые поиски',
-  STATISTIC: 'Статистика',
-  LANGUAGE: 'Язык',
-  EXIT: 'Выйти',
-  ENTER: 'Войти',
+  MAIN: 'Main',
+  GONE: 'Gone',
+  LOOKING_RELATIVES: 'Looking relatives',
+  ACTIVE_SEARCHES: 'Active searches',
+  CLOSED_SEARCHES: 'Closed searches',
+  STATISTICS: 'Statistics',
+  LANGUAGE: 'Language',
+  LOGOUT: 'Logout',
+  LOGIN: 'Login',
 };
 
 export const AuthorizationStatus = {
@@ -35,21 +35,21 @@ export const Error = {
 };
 
 export const headCells = [
-  { id: 'status', label: 'Статус' },
-  { id: 'city', label: 'Город' },
-  { id: 'name', label: 'ФИО' },
-  { id: 'age', label: 'Возраст' },
-  { id: 'date', label: 'Дата' },
-  { id: 'coordinator', label: 'Координатор' },
-  { id: 'people', label: 'Людей на поиске' },
-  { id: 'actions', label: 'Действия', disableSorting: true },
+  { id: 'status', label: 'Status' },
+  { id: 'city', label: 'City' },
+  { id: 'name', label: 'Name' },
+  { id: 'age', label: 'Age' },
+  { id: 'date', label: 'Date' },
+  { id: 'coordinator', label: 'Coordinator' },
+  { id: 'people on the search', label: 'People on the search' },
+  { id: 'actions', label: 'Actions', disableSorting: true },
 ];
 
-export const getStatusCollection = [
-  'Резерв',
-  'Поиск на месте',
-  'Стоп. Проверка информации',
-  'Архив',
+export const statusSelectItems = [
+  'Reserve',
+  'Local search',
+  'Stop. Information verification',
+  'Archive',
 ];
 
 export const SearcherStatus = {
@@ -83,11 +83,11 @@ export const PageName = {
 };
 
 export const ActiveMenuItemName = {
-  '0': 'Главная',
-  '1': 'Пропали',
-  '2': 'Ищут родственников',
-  '3': 'Активные поиски',
-  '4': 'Закрытые поиски',
+  '0': 'Main',
+  '1': 'Gone',
+  '2': 'Looking relatives',
+  '3': 'Active searches',
+  '4': 'Closed searches',
 }
 
 export const LoginInput = {

@@ -8,6 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
+import { useTranslation } from 'react-i18next';
 import useStyles from './login-page.styles';
 import { RouteName } from '../../const';
 
@@ -16,17 +17,17 @@ interface Props {
         loginValid: boolean;
         passwordValid: boolean;
     };
-    onSubmitForm: () => void;
+    onSubmit: () => void;
     onChange: () => void;
     loginRef: React.RefObject<HTMLInputElement>;
     passwordRef: React.RefObject<HTMLInputElement>;
 }
 
 const LoginPage: React.FunctionComponent<Props> = ({
-  state, onSubmitForm, onChange, loginRef, passwordRef,
+  state, onSubmit, onChange, loginRef, passwordRef,
 }: Props) => {
   const classes = useStyles();
-
+  const { t } = useTranslation();
   return (
         <Grid container component="main" className={classes.root}>
             <CssBaseline />
@@ -37,9 +38,9 @@ const LoginPage: React.FunctionComponent<Props> = ({
                         <LockOutlinedIcon />
                     </Avatar>
                     <Typography component="h1" variant="h5">
-                        Войти
+                        {t('Login')}
                     </Typography>
-                    <form className={classes.form} onSubmit={(evt) => evt.preventDefault()}>
+                    <form className={classes.form} onSubmit={onSubmit}>
                         <TextField
                             InputProps={state.loginValid === false ? { className: classes.notValidInput } : {}}
                             variant="outlined"
@@ -47,7 +48,7 @@ const LoginPage: React.FunctionComponent<Props> = ({
                             required
                             fullWidth
                             id="email"
-                            label="Электронная почта"
+                            label={t('Email')}
                             name="email"
                             autoComplete="email"
                             autoFocus
@@ -61,7 +62,7 @@ const LoginPage: React.FunctionComponent<Props> = ({
                             required
                             fullWidth
                             name="password"
-                            label="Пароль"
+                            label={t('Password')}
                             type="password"
                             id="password"
                             autoComplete="current-password"
@@ -74,21 +75,20 @@ const LoginPage: React.FunctionComponent<Props> = ({
                             variant="contained"
                             color="primary"
                             className={classes.submit}
-                            onClick={onSubmitForm}
                         >
-                            Войти
+                            {t('Login')}
                         </Button>
                         <Grid container>
                             <Grid item>
                                 <Link href={RouteName.SIGN_UP} variant="body2">
-                                    {'Нет аккаунта? Зарегистрироваться'}
+                                    {t('No account? Register')}
                                 </Link>
                             </Grid>
                         </Grid>
                         <Grid container>
                             <Grid item>
                                 <Link href={RouteName.MAIN} variant="body2">
-                                    {'На главную'}
+                                    {t('Go to the main page')}
                                 </Link>
                             </Grid>
                         </Grid>

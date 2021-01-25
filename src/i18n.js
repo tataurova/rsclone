@@ -131,11 +131,16 @@ const resources = {
     }
 };
 
+const setLanguage = () => {
+    localStorage.setItem('language', 'ru');
+    return 'ru';
+}
+
 i18n
     .use(initReactI18next) // passes i18n down to react-i18next
     .init({
         resources,
-        lng: localStorage.getItem('language') || 'ru',
+        lng: localStorage.getItem('language') ? localStorage.getItem('language') : setLanguage(),
 
         keySeparator: false, // we do not use keys in form messages.welcome
 

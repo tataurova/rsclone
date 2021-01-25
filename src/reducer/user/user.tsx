@@ -1,6 +1,10 @@
+import { useHistory } from 'react-router-dom';
 import { ActionCreator as AppCreator } from '../app/app';
 import { AuthorizationStatus, RouteName, PageName } from '../../const';
 import { extend } from '../../utils/common';
+
+/*const history = useHistory();
+history.push(RouteName.LOGIN);*/
 
 const initialState = {
   authorizationStatus: AuthorizationStatus.NO_AUTH,
@@ -48,7 +52,7 @@ const Operation = {
       dispatch(ActionCreator.writeUser(answer.data.email));
     }),
 
-  login: (authData) => (dispatch, getState, api) => api.post(RouteName.LOGIN, {
+  login: (authData) => (dispatch, getState, api) => api.post(RouteName.BASE_SERVER + RouteName.LOGIN, {
     email: authData.login,
     password: authData.password,
   })

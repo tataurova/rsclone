@@ -8,8 +8,13 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(cors({origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    headers: 'Origin, X-Requested-With, Content-Type, Accept',}));
 app.use(express.json());
+app.use(express.urlencoded({
+    extended: false
+}));
 
 const databaseURL = 'mongodb+srv://coolDeveloper:cgfhnfr2010@cluster0.iwnns.mongodb.net/RSClone';
 mongoose.connect(databaseURL, {

@@ -12,7 +12,7 @@ const User = require("../models/Users");
 router.post(
     "/signup",
     [
-        check("username", "Please Enter a Valid Username")
+        check("name", "Please Enter a Valid Username")
         .not()
         .isEmpty(),
         check("email", "Please enter a valid email").isEmail(),
@@ -29,7 +29,7 @@ router.post(
         }
 
         const {
-            username,
+            name,
             email,
             password
         } = req.body;
@@ -44,7 +44,7 @@ router.post(
             }
 
             user = new User({
-                username,
+                name,
                 email,
                 password
             });
@@ -67,9 +67,7 @@ router.post(
                 },
                 (err, token) => {
                     if (err) throw err;
-                    res.status(200).json(
-                        'you sign up'
-                    );
+                    //res.redirect('http://localhost:1337/');
                 }
             );
         } catch (err) {

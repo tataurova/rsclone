@@ -18,6 +18,7 @@ import withSignUp from '../../hocs/with-sign-form/with-sign-form';
 import { ActionCreator } from '../../reducer/app/app';
 import NameSpace from '../../reducer/name-space';
 import { Operation as UserOperation } from '../../reducer/user/user';
+import Statistics from '../statistics/statistics';
 
 const LoginWithAuthentication = withAuthentication(LoginPage);
 const SignUpWithValidate = withSignUp(SignUp);
@@ -62,6 +63,17 @@ const App: React.FunctionComponent<Props> = (props: Props) => {
                   return <ActiveSearchesPage/>;
                 }}>
                 </Route>
+
+
+              <Route exact path={'/statistics'} render={() => {
+                // onLoadByRoute('7');
+                return <Statistics/>;
+              }}>
+              </Route>
+
+
+
+
                 <Route exact path={RouteName.LOGIN} render={() => {
                   onLoadByRoute(PageName.MAIN);
                   switch (authorizationStatus) {

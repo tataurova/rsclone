@@ -3,7 +3,7 @@ export const RouteName = {
   LOGIN: '/user/login',
   SIGN_UP: '/user/signup',
   GONE: '/people-lost',
-  LOOKING_RELATIVES: '/looking-relatives',
+  LOOKING_RELATIVES: '/people-looking-relatives',
   ACTIVE_SEARCHES: '/active-searches',
   CLOSED_SEARCHES: '/closed-searches',
   BASE_SERVER: 'http://localhost:5000',

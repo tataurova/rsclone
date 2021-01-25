@@ -67,7 +67,7 @@ router.post(
                 },
                 (err, token) => {
                     if (err) throw err;
-                    res.redirect('http://localhost:1337/');
+                    //res.redirect('http://localhost:1337/');
                 }
             );
         } catch (err) {

@@ -6,6 +6,7 @@ export const RouteName = {
   LOOKING_RELATIVES: '/people-looking-relatives',
   ACTIVE_SEARCHES: '/active-searches',
   CLOSED_SEARCHES: '/closed-searches',
+  STATISTICS: '/statistics',
   BASE_SERVER: 'http://localhost:5000',
 };
 
@@ -35,14 +36,14 @@ export const Error = {
 };
 
 export const headCells = [
-  { id: 'status', label: 'Status' },
-  { id: 'city', label: 'City' },
-  { id: 'name', label: 'Name' },
-  { id: 'age', label: 'Age' },
-  { id: 'date', label: 'Date' },
-  { id: 'coordinator', label: 'Coordinator' },
-  { id: 'people on the search', label: 'People on the search' },
-  { id: 'actions', label: 'Actions', disableSorting: true },
+  {id: 'status', label: 'Status'},
+  {id: 'city', label: 'City'},
+  {id: 'name', label: 'Name'},
+  {id: 'age', label: 'Age'},
+  {id: 'date', label: 'Date'},
+  {id: 'coordinator', label: 'Coordinator'},
+  {id: 'people on the search', label: 'People on the search'},
+  {id: 'actions', label: 'Actions', disableSorting: true},
 ];
 
 export const statusSelectItems = [
@@ -80,6 +81,7 @@ export const PageName = {
   CLOSED_SEARCHES: '4',
   LOGIN: '5',
   SIGN_UP: '6',
+  STATISTICS: '7'
 };
 
 export const ActiveMenuItemName = {
@@ -100,13 +102,31 @@ export const SearchStatusName = {
   ARCHIVE: 'Архив',
 }
 
+export const SearchLocationStatus = {
+  startValue: 'start',
+  endValue: 'end'
+}
+
+export const MonthOfYear = {
+    january: 'январь',
+    february: 'февраль',
+    march: 'март',
+    april: 'апрель',
+    may: 'май',
+    june: 'июнь',
+    july: 'июль',
+    august: 'август',
+    september: 'сентябрь',
+    october: 'октябрь',
+    november: 'ноябрь',
+    december: 'декабрь'
+
+}
 export const NOT_HOME_PLACES = ['place', 'way'];
 export const FORM_FIELDS = ['city', 'name', 'age', 'coordinator', 'status', 'date'];
-
 export const MAX_TIMEOUT = 5000;
 export const SHOW_ERROR_TIMEOUT = 3000;
 export const LOGIN_MIN_LENGTH = 5;
 export const PASSWORD_MIN_LENGTH = 5;
 export const NAME_MIN_LENGTH = 2;
-
 export const HOVER_TABLE_COLOR = '#fffbf2';

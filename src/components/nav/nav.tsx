@@ -111,7 +111,11 @@ const Nav: React.FunctionComponent<Props> = ({ onMenuClick, page }: Props) => {
             </List>
             <Divider />
             <List>
-                <ListItem button>
+                <ListItem
+                    button
+                    onClick={() => { handleClick('/statistics'); }}
+                    className={page === PageName.STATISTICS ? classes.active : ''}
+                >
                     <ListItemIcon><ShowChartIcon/></ListItemIcon>
                     <ListItemText primary={t(MenuItemText.STATISTICS)} />
                 </ListItem>

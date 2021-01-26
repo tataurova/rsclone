@@ -23,3 +23,5 @@ export interface HeadCell {
     label: string,
     disableSorting?: boolean,
 }
+
+

@@ -114,10 +114,7 @@ const Nav: React.FunctionComponent<Props> = ({ onMenuClick, page }: Props) => {
                 <ListItem
                     button
                     onClick={() => { handleClick('/statistics'); }}
-                    // className={page === PageName.STATISTICS ? classes.active : ''}
-
-
-
+                    className={page === PageName.STATISTICS ? classes.active : ''}
                 >
                     <ListItemIcon><ShowChartIcon/></ListItemIcon>
                     <ListItemText primary={t(MenuItemText.STATISTICS)} />

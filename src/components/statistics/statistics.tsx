@@ -8,10 +8,29 @@ import Header from '../header/header';
 import Footer from '../footer/footer';
 import { MonthOfYear, SearchLocationStatus } from '../../const';
 import { data } from '../../mock';
+import { useTranslation } from 'react-i18next';
 
 defaults.global.legend.position = 'bottom';
+
+const numbersOfMonth = {
+  '01': 0,
+  '02': 0,
+  '03': 0,
+  '04': 0,
+  '05': 0,
+  '06': 0,
+  '07': 0,
+  '08': 0,
+  '09': 0,
+  '10': 0,
+  '11': 0,
+  '12': 0,
+}
+
 const Statistics = () => {
   const styles = useStyles();
+  const { t } = useTranslation();
+
   const monthsOfYear = Object.values(MonthOfYear);
   const arrDataLost: Array<string> = [];
   const arrDataFound: Array<string> = [];
@@ -20,20 +39,7 @@ const Statistics = () => {
       arrDataLost.push(data[i].missing.slice(3, 5));
       arrDataFound.push(data[i].found.slice(3, 5));
     }
-  const numbersOfMonth = {
-    '01': 0,
-    '02': 0,
-    '03': 0,
-    '04': 0,
-    '05': 0,
-    '06': 0,
-    '07': 0,
-    '08': 0,
-    '09': 0,
-    '10': 0,
-    '11': 0,
-    '12': 0,
-  }
+
   const numbersOfMonthWithFoundPeople = { ...numbersOfMonth };
   arrDataLost.forEach((x) => {
     numbersOfMonth[x] = (numbersOfMonth[x] || 0) + 1;
@@ -53,9 +59,10 @@ const Statistics = () => {
       arrPeopleFoundInYear.push(numbersOfMonthWithFoundPeople[`0${i}`]);
     }
   }
+
   const numberOfLostAllPeople = arrPeopleLostInAYear.reduce((a, b) => a + b);
   const numberOfFoundAllPeople = arrPeopleFoundInYear.reduce((a, b) => a + b);
-  const [rangeOfYear, setRangeOfYear] = useState({ start: MonthOfYear.january, end: MonthOfYear.december, month: monthsOfYear });
+  const [rangeOfYear, setRangeOfYear] = useState({ start: 'january', end: 'december', month: monthsOfYear });
   const [lostPeople, setLostPeople] = useState(arrPeopleLostInAYear);
 
   const selectMonthRange = (starts: string, monthValue: string) => {
@@ -96,26 +103,26 @@ const Statistics = () => {
         <Header/>
         <Container>
           <div className={styles.wrapper}>
-            <span>c</span>
+            <span>{t('fromMonth')}</span>
             <SelectMonth
-                data={SearchLocationStatus.startValue}
                 MonthOfYear={MonthOfYear}
+                data={SearchLocationStatus.startValue}
                 selectMonthRange={selectMonthRange}
             />
-            <span>по</span>
+            <span>{t('toMonth')}</span>
             <SelectMonth
                 MonthOfYear={MonthOfYear}
                 data={SearchLocationStatus.endValue}
                 selectMonthRange={selectMonthRange}
             />
-            <span>2020 года</span>
+            <span>2020 {t('year')}</span>
           </div>
           <Paper elevation={3}>
             <Line data={{
-              labels: rangeOfYear.month,
+              labels: rangeOfYear.month.map((el) => t(el)),
               datasets: [
                 {
-                  label: 'Пропали',
+                  label: t('Gone'),
                   data: lostPeople,
                   backgroundColor: [
                     'rgba(255, 99, 132, 0)',
@@ -127,7 +134,7 @@ const Statistics = () => {
                   pointBackgroundColor: 'rgb(248,0,53)',
                 },
                 {
-                  label: 'Найдены',
+                  label: t('Found'),
                   data: arrPeopleFoundInYear,
                   backgroundColor: 'rgba(153, 102, 255, 0)',
                   borderColor: 'rgba(54, 162, 235, 1)',
@@ -154,12 +161,12 @@ const Statistics = () => {
           <div className={styles.bar}>
             <div className={styles.block}>
               <span className={styles.color}> </span>
-              <span className={styles.name}>Пропали</span>
+              <span className={styles.name}>{t('Gone')}</span>
               <span className={`${styles.people} + ${styles.colorRed}`}>{numberOfLostAllPeople}</span>
             </div>
             <div className={styles.block}>
               <span className={styles.blue}> </span>
-              <span className={styles.name}>Найдены</span>
+              <span className={styles.name}>{t('Found')}</span>
               <span className={`${styles.people} + ${styles.colorBlue}`}>{numberOfFoundAllPeople}</span>
             </div>
           </div>

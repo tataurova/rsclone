@@ -20,7 +20,7 @@ describe('Popup', () => {
                 openPopup={true}
                 setOpenPopup={mockFunction}>
                 <MockComponent />
-            </Popup>
+            </Popup>,
     );
     expect(wrapper).toMatchSnapshot();
   });

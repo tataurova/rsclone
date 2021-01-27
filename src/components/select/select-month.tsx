@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
   selectEmpty: {
     marginTop: theme.spacing(2),
   },
-}),);
+}));
 
 const SelectMonth: React.FunctionComponent<Props> = ({ MonthOfYear, data, selectMonthRange }: Props) => {
   const classes = useStyles();

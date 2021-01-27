@@ -3,8 +3,8 @@ import { ActionCreator as AppCreator } from '../app/app';
 import { AuthorizationStatus, RouteName, PageName } from '../../const';
 import { extend } from '../../utils/common';
 
-/*const history = useHistory();
-history.push(RouteName.LOGIN);*/
+/* const history = useHistory();
+history.push(RouteName.LOGIN); */
 
 const initialState = {
   authorizationStatus: AuthorizationStatus.NO_AUTH,

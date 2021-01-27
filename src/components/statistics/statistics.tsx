@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useEffect, useState} from 'react';
+import { useState } from 'react';
 import { defaults, Line } from 'react-chartjs-2';
 import { Container, Paper } from '@material-ui/core';
 import SelectMonth from '../select/select-month';
@@ -16,10 +16,11 @@ const Statistics = () => {
   const arrDataLost: Array<string> = [];
   const arrDataFound: Array<string> = [];
 
-    for (let i = 0; i < data.length; i += 1) {
-      arrDataLost.push(data[i].missing.slice(3, 5));
-      arrDataFound.push(data[i].found.slice(3, 5));
-    }
+  for (let i = 0; i < data.length; i += 1) {
+    arrDataLost.push(data[i].missing.slice(3, 5));
+    arrDataFound.push(data[i].found.slice(3, 5));
+  }
+
   const numbersOfMonth = {
     '01': 0,
     '02': 0,
@@ -30,10 +31,11 @@ const Statistics = () => {
     '07': 0,
     '08': 0,
     '09': 0,
-    '10': 0,
-    '11': 0,
-    '12': 0,
-  }
+    10: 0,
+    11: 0,
+    12: 0,
+  };
+
   const numbersOfMonthWithFoundPeople = { ...numbersOfMonth };
   arrDataLost.forEach((x) => {
     numbersOfMonth[x] = (numbersOfMonth[x] || 0) + 1;
@@ -42,12 +44,12 @@ const Statistics = () => {
     numbersOfMonthWithFoundPeople[x] = (numbersOfMonthWithFoundPeople[x] || 0) + 1;
   });
 
-  const arrPeopleLostInAYear:Array<number> = [];
-  const arrPeopleFoundInYear:Array<number> = [];
+  const arrPeopleLostInAYear: Array<number> = [];
+  const arrPeopleFoundInYear: Array<number> = [];
   for (let i = 1; i <= monthsOfYear.length; i += 1) {
     if (i > 9) {
       arrPeopleLostInAYear.push(numbersOfMonth[i]);
-     arrPeopleFoundInYear.push(numbersOfMonthWithFoundPeople[i]);
+      arrPeopleFoundInYear.push(numbersOfMonthWithFoundPeople[i]);
     } else {
       arrPeopleLostInAYear.push(numbersOfMonth[`0${i}`]);
       arrPeopleFoundInYear.push(numbersOfMonthWithFoundPeople[`0${i}`]);

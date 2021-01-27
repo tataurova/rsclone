@@ -42,7 +42,7 @@ const AudioRecording = () => {
   return (
         <>
             <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-                Дабавить запись голоса
+                Добавить запись голоса
             </Button>
             <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
                 <AppBar className={classes.appBar}>

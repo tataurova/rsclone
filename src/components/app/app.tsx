@@ -1,21 +1,23 @@
 import * as React from 'react';
-import {BrowserRouter, Redirect, Route, Switch,} from 'react-router-dom';
-import {connect} from 'react-redux';
+import {
+  BrowserRouter, Redirect, Route, Switch,
+} from 'react-router-dom';
+import { connect } from 'react-redux';
 import history from '../../history';
 import Main from '../main/main';
 import CardPage from '../card-page/card-page';
 import NotFound from '../not-found/not-found';
 import LoginPage from '../login-page/login-page';
-import {AuthorizationStatus, PageName, RouteName} from '../../const';
+import { AuthorizationStatus, PageName, RouteName } from '../../const';
 import SearchingProfile from '../search-gone/search-gone-profile';
 import ActiveSearchesPage from '../active-searches-page/active-searches-page';
 import PrivateRoute from '../private-route/private-route';
 import SignUp from '../sign-up/sign-up';
 import withAuthentication from '../../hocs/with-authentication/with-authentication';
 import withSignUp from '../../hocs/with-sign-form/with-sign-form';
-import {ActionCreator} from '../../reducer/app/app';
+import { ActionCreator } from '../../reducer/app/app';
 import NameSpace from '../../reducer/name-space';
-import {Operation as UserOperation} from '../../reducer/user/user';
+import { Operation as UserOperation } from '../../reducer/user/user';
 import Statistics from '../statistics/statistics';
 
 const LoginWithAuthentication = withAuthentication(LoginPage);
@@ -63,7 +65,7 @@ const App: React.FunctionComponent<Props> = (props: Props) => {
           </Route>
           <Route exact path={RouteName.STATISTICS} render={() => {
             onLoadByRoute(PageName.STATISTICS);
-            return <Statistics/>
+            return <Statistics/>;
           }}>
           </Route>
           <Route exact path={RouteName.LOGIN} render={() => {

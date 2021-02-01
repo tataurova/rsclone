@@ -31,5 +31,5 @@ export default makeStyles((theme) => ({
     },
     notValidInput: {
         backgroundColor: 'rgba(255, 0, 0, 0.07)',
-    }
+    },
 }));

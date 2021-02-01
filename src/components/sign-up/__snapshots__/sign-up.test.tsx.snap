@@ -233,7 +233,7 @@ exports[`<SignUp /> Render SignUp 1`] = `
         >
           <a
             className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-body2 MuiTypography-colorPrimary"
-            href="/login"
+            href="/user/login"
             onBlur={[Function]}
             onFocus={[Function]}
           >

@@ -13,8 +13,10 @@ export default makeStyles((theme) => ({
             fontWeight: '300',
         },
         '& tbody tr:hover': {
-            backgroundColor: HOVER_TABLE_COLOR,
+            backgroundColor: theme.palette.type === 'light' ? HOVER_TABLE_COLOR : 'rgba(255, 255, 255, 0.08)',
             cursor: 'pointer',
         },
     },
 }));
+
+

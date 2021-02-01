@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {
@@ -7,6 +8,8 @@ import {
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import Brightness4Icon from '@material-ui/icons/Brightness4';
+import Brightness7Icon from '@material-ui/icons/Brightness7';
 import Drawer from '@material-ui/core/Drawer';
 import { useTranslation } from 'react-i18next';
 import NameSpace from '../../reducer/name-space';
@@ -15,6 +18,8 @@ import {
 } from '../../const';
 import Nav from '../nav/nav';
 import useStyles from './header.styles';
+import { ActionCreator } from '../../reducer/app/app';
+import { ThemeContext } from '../theme-provider/theme-provider';
 
 interface Props {
     page: string;
@@ -23,7 +28,9 @@ interface Props {
 
 const logo = require('../../assets/icons/logo.svg');
 
-const Header: React.FunctionComponent<Props> = ({ page, authorizationStatus }: Props) => {
+const Header: React.FunctionComponent<Props> = ({
+  page, authorizationStatus,
+}: Props) => {
   const classes = useStyles();
   const history = useHistory();
   function handleClick() {
@@ -36,6 +43,7 @@ const Header: React.FunctionComponent<Props> = ({ page, authorizationStatus }: P
     right: false,
   });
   const { t } = useTranslation();
+  const setThemeName = useContext(ThemeContext);
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -60,6 +68,13 @@ const Header: React.FunctionComponent<Props> = ({ page, authorizationStatus }: P
                         {t(ActiveMenuItemName[page])}
                     </Typography>
                     <img className={classes.img} src={ logo } width={'50px'} height={'50px'} alt='Logo'/>
+                    {
+                        localStorage.getItem('appTheme') === 'darkTheme' ? <Brightness4Icon onClick={() => {
+                          setThemeName('lightTheme');
+                        }} /> : <Brightness7Icon onClick={() => {
+                          setThemeName('darkTheme');
+                        }} />
+                    }
                     <Button color="inherit" onClick={handleClick}>{authorizationStatus === AuthorizationStatus.AUTH ? `${t(MenuItemText.LOGOUT)}` : `${t(MenuItemText.LOGIN)}`}</Button>
                 </Toolbar>
             </AppBar>
@@ -69,6 +84,13 @@ const Header: React.FunctionComponent<Props> = ({ page, authorizationStatus }: P
 
 export const mapStateToProps = (state) => ({
   authorizationStatus: state[NameSpace.AUTH].authorizationStatus,
+  darkMode: state[NameSpace.APP].darkMode,
 });
 
-export default connect(mapStateToProps, null)(Header);
+export const mapDispatchToProps = (dispatch) => ({
+  onDarkModeClick(mode) {
+    dispatch(ActionCreator.changeDarkMode(mode));
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

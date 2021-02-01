@@ -11,6 +11,7 @@ import {MonthOfYear, numbersOfMonth1, SearchLocationStatus} from '../../const';
 import {data} from '../../mock';
 
 defaults.global.legend.position = 'bottom';
+
 const Statistics = () => {
   const styles = useStyles();
   const {t} = useTranslation();

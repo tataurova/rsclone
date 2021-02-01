@@ -4,6 +4,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import { createAPI } from './api';
 import App from './components/app/app';
 import reducer from './reducer/reducer';
@@ -11,6 +12,7 @@ import { Operation as DataOperation, ActionCreator as DataActionCreator } from '
 import { Operation as UserOperation, ActionCreator, AuthorizationStatus } from './reducer/user/user';
 import { SHOW_ERROR_TIMEOUT } from './const';
 import './i18n';
+import ThemeProvider from './components/theme-provider/theme-provider';
 
 const onUnauthorized = () => {
   store.dispatch(ActionCreator.requireAuthorization(AuthorizationStatus.NO_AUTH));
@@ -33,7 +35,10 @@ const store = createStore(
 const init = () => {
   ReactDOM.render(
       <Provider store={store}>
-        <App />
+          <ThemeProvider>
+            <CssBaseline />
+            <App />
+          </ThemeProvider>
       </Provider>,
       document.querySelector('#root'),
   );

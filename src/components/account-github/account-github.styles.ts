@@ -1,6 +1,6 @@
 import {makeStyles} from "@material-ui/core/styles";
 
-export default makeStyles({
+export default makeStyles((theme) => ({
     link: {
         display: 'flex',
         alignItems: 'flex-end',
@@ -14,6 +14,6 @@ export default makeStyles({
         display: 'flex',
     },
     linkColor: {
-        color: 'rgba(0, 0, 0, 0.54)',
+        color: theme.palette.type === 'light' ? 'rgba(0, 0, 0, 0.54)' : '#ffffff',
     }
-});
+}));

@@ -110,18 +110,18 @@ export const SearchLocationStatus = {
 }
 
 export const MonthOfYear = {
-    january: 'январь',
-    february: 'февраль',
-    march: 'март',
-    april: 'апрель',
-    may: 'май',
-    june: 'июнь',
-    july: 'июль',
-    august: 'август',
-    september: 'сентябрь',
-    october: 'октябрь',
-    november: 'ноябрь',
-    december: 'декабрь'
+    january: 'january',
+    february: 'february',
+    march: 'march',
+    april: 'april',
+    may: 'may',
+    june: 'june',
+    july: 'july',
+    august: 'august',
+    september: 'september',
+    october: 'october',
+    november: 'november',
+    december: 'december'
 
 }
 export const NOT_HOME_PLACES = ['place', 'way'];

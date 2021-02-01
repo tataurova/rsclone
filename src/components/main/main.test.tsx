@@ -41,7 +41,7 @@ describe('<Main />', () => {
               <Main
                   page={'0'}
               />
-          </Provider>
+          </Provider>,
       )
       .toJSON();
 

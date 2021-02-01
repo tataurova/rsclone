@@ -46,7 +46,7 @@ describe('<CardProfile />', () => {
                        close={'Red jacket, blue jeans'}
                        with={'Sports bag'}
                     />
-                </Provider>
+                </Provider>,
       )
       .toJSON();
 

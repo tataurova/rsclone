@@ -26,8 +26,8 @@ const api = createAPI(onUnauthorized, onNoResponse);
 const store = createStore(
   reducer,
   composeWithDevTools(
-    applyMiddleware(thunk.withExtraArgument(api))
-  )
+    applyMiddleware(thunk.withExtraArgument(api)),
+  ),
 );
 
 const init = () => {
@@ -35,7 +35,7 @@ const init = () => {
       <Provider store={store}>
         <App />
       </Provider>,
-      document.querySelector('#root')
+      document.querySelector('#root'),
   );
 };
 

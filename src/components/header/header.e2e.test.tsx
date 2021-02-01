@@ -45,7 +45,7 @@ describe('<Header />', () => {
                     authorizationStatus={AuthorizationStatus.NO_AUTH}
                 />
                 </Router>
-            </Provider>
+            </Provider>,
     );
 
     expect(tree.find(Header)).toHaveLength(1);
@@ -65,7 +65,7 @@ describe('<Header />', () => {
                     page={'0'}
                     authorizationStatus={AuthorizationStatus.NO_AUTH}
                 />
-            </Provider>
+            </Provider>,
     );
 
     expect(tree.find(MenuIcon)).toHaveLength(1);

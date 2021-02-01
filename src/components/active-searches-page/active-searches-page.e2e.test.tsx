@@ -46,7 +46,7 @@ describe('When button is clicked state openPopup is changed to true', () => {
                     onAddActiveSearches={mockFunction}
                     onAddClosedSearches={mockFunction}
                 />
-            </Provider>
+            </Provider>,
     );
   });
 

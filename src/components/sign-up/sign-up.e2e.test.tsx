@@ -33,7 +33,7 @@ describe('<SignUp />', () => {
                 loginRef={loginRef}
                 passwordRef={passwordRef}
                 nameRef={nameRef}
-            />
+            />,
     );
 
     expect(main.find(SignUp)).toHaveLength(1);

@@ -32,7 +32,7 @@ export function useForm(initialFValues, validateOnChange = false, validate) {
         coordinator: '',
         status: '',
         date: new Date(),
-      }
+      },
     );
   };
 

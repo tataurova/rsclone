@@ -35,7 +35,7 @@ describe('<Copyright />', () => {
       .create(
                 <Provider store={store}>
                     <Copyright />
-                </Provider>
+                </Provider>,
       )
       .toJSON();
 

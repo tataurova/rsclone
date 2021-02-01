@@ -39,7 +39,7 @@ const Statistics = () => {
     arrDataLost.push(data[i].missing.slice(3, 5));
     arrDataFound.push(data[i].found.slice(3, 5));
   }
-
+  
   const numbersOfMonthWithFoundPeople = { ...numbersOfMonth };
   arrDataLost.forEach((x) => {
     numbersOfMonth[x] = (numbersOfMonth[x] || 0) + 1;

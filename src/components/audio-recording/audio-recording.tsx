@@ -9,7 +9,10 @@ import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import { TransitionProps } from '@material-ui/core/transitions';
 import KeyboardVoiceIcon from '@material-ui/icons/KeyboardVoice';
+import { connect } from 'react-redux';
 import useRecorder from './useRecorder';
+import NameSpace from '../../reducer/name-space';
+import { Operation as DataOperation } from '../../reducer/data/data';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
   appBar: {
@@ -37,58 +40,68 @@ const AudioRecording = () => {
   const handleClose = () => {
     setOpen(false);
   };
+
   const [audioURL, isRecording, startRecording, stopRecording] = useRecorder();
 
   return (
-        <>
-            <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-                Добавить запись голоса
-            </Button>
-            <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
-                <AppBar className={classes.appBar}>
-                    <Toolbar>
-                        <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
-                            <CloseIcon/>
-                        </IconButton>
-                        <Typography variant="h6" className={classes.title}>
-                            Запись голоса
-                        </Typography>
-                        <Button autoFocus color="inherit" onClick={handleClose}>
-                            Сохранить
-                        </Button>
-                    </Toolbar>
-                </AppBar>
-                <Box mt={3}
-                     display='flex'
-                     justifyContent="center">
-                    <Box>
-                        <audio src={audioURL} controls/>
-                        <Box
-                            display="flex"
-                            mt={3}
-                            p={2}>
-                            <Button
-
-                                variant="contained"
-                                color="secondary"
-                                startIcon={<KeyboardVoiceIcon/>}
-                                onClick={startRecording}
-                                disabled={isRecording}>
-                                Запись
-                            </Button>
-                            <Button
-                                onClick={stopRecording}
-                                disabled={!isRecording}
-                                variant="contained"
-                                color="primary">
-                                Остановить
-                            </Button>
-                        </Box>
-                    </Box>
-                </Box>
-            </Dialog>
-        </>
+      <>
+        <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+          Добавить запись голоса
+        </Button>
+        <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
+          <AppBar className={classes.appBar}>
+            <Toolbar>
+              <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
+                <CloseIcon/>
+              </IconButton>
+              <Typography variant="h6" className={classes.title}>
+                Запись голоса
+              </Typography>
+              <Button autoFocus color="inherit">
+                Сохранить
+              </Button>
+            </Toolbar>
+          </AppBar>
+          <Box mt={3}
+               display='flex'
+               justifyContent="center">
+            <Box>
+              <audio src={audioURL} controls/>
+              <Box
+                  display="flex"
+                  mt={3}
+                  p={2}>
+                <Button
+                    variant="contained"
+                    color="secondary"
+                    startIcon={<KeyboardVoiceIcon/>}
+                    onClick={startRecording}
+                    disabled={isRecording}>
+                  Запись
+                </Button>
+                <Button
+                    onClick={stopRecording}
+                    disabled={!isRecording}
+                    variant="contained"
+                    color="primary">
+                  Остановить
+                </Button>
+              </Box>
+            </Box>
+          </Box>
+        </Dialog>
+      </>
   );
 };
 
-export default AudioRecording;
+export const mapStateToProps = (state) => ({
+  audio: state[NameSpace.AUTH].audio,
+});
+
+export const mapDispatchToProps = (dispatch) => ({
+  loadRecordingAudio(audio) {
+    dispatch(DataOperation.loadRecordingAudio(audio));
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(AudioRecording);

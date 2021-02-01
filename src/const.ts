@@ -8,6 +8,8 @@ export const RouteName = {
   CLOSED_SEARCHES: '/closed-searches',
   STATISTICS: '/statistics',
   BASE_SERVER: 'http://localhost:5000',
+  UPLOAD_AUDIO: '/upload-audio'
+
 };
 
 export const MenuItemText = {

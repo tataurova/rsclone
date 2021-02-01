@@ -9,6 +9,7 @@ const initialState = {
   closedSearches: mockClosedSearches,
   isFetching: false,
   error: false,
+  audio: [],
 };
 
 const ActionType = {
@@ -20,6 +21,7 @@ const ActionType = {
   WRITE_ERROR: 'WRITE_ERROR',
   ADD_ACTIVE_SEARCHES: 'ADD_ACTIVE_SEARCHES',
   ADD_CLOSED_SEARCHES: 'ADD_CLOSED_SEARCHES',
+  ADD_NEW_AUDIO: 'ADD_NEW_AUDIO',
 };
 
 const ActionCreator = {
@@ -54,6 +56,10 @@ const ActionCreator = {
   onAddClosedSearches: (searches) => ({
     type: ActionType.ADD_CLOSED_SEARCHES,
     payload: searches,
+  }),
+  loadRecordingAudio: (audio) => ({
+    type: ActionType.ADD_NEW_AUDIO,
+    payload: audio,
   }),
 };
 
@@ -114,6 +120,21 @@ const Operation = {
         setTimeout(() => dispatch(ActionCreator.writeError(false)), SHOW_ERROR_TIMEOUT);
       });
   },
+  loadRecordingAudio: (audio) => (dispatch, getState, api) => {
+    dispatch(ActionCreator.setFetchingStatus(true));
+    return api.post(RouteName.UPLOAD_AUDIO, { audio: 'checked', id: 'number' })
+      .then((audio) => {
+        dispatch(ActionCreator.setFetchingStatus(false));
+        dispatch(ActionCreator.writeError(initialState.error));
+        dispatch(ActionCreator.loadRecordingAudio(audio));//
+      })
+      .catch(() => {
+        dispatch(ActionCreator.writeError(true));
+        dispatch(ActionCreator.setFetchingStatus(false));
+        setTimeout(() => dispatch(ActionCreator.writeError(false)), SHOW_ERROR_TIMEOUT);
+      });
+  },
+
 };
 
 const reducer = (state = initialState, action) => {
@@ -145,6 +166,10 @@ const reducer = (state = initialState, action) => {
     case ActionType.ADD_CLOSED_SEARCHES:
       return extend(state, {
         closedSearches: action.payload,
+      });
+    case ActionType.ADD_NEW_AUDIO:
+      return extend(state, {
+        audio: action.payload,
       });
   }
 

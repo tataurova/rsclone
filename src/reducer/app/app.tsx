@@ -6,6 +6,7 @@ const initialState = {
 
 const ActionType = {
   CHANGE_PAGE: 'CHANGE_PAGE',
+  ADD_NEW_AUDIO: 'ADD_NEW_AUDIO',
 };
 
 export const ActionCreator = {

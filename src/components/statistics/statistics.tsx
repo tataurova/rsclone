@@ -1,35 +1,19 @@
 import * as React from 'react';
-import { useState } from 'react';
-import { defaults, Line } from 'react-chartjs-2';
-import { Container, Paper } from '@material-ui/core';
-import { useTranslation } from 'react-i18next';
+import {useState} from 'react';
+import {defaults, Line} from 'react-chartjs-2';
+import {Container, Paper} from '@material-ui/core';
+import {useTranslation} from 'react-i18next';
 import SelectMonth from '../select/select-month';
 import useStyles from './statistics.style';
 import Header from '../header/header';
 import Footer from '../footer/footer';
-import { MonthOfYear, SearchLocationStatus } from '../../const';
-import { data } from '../../mock';
+import {MonthOfYear, numbersOfMonth1, SearchLocationStatus} from '../../const';
+import {data} from '../../mock';
 
 defaults.global.legend.position = 'bottom';
-
-const numbersOfMonth = {
-  '01': 0,
-  '02': 0,
-  '03': 0,
-  '04': 0,
-  '05': 0,
-  '06': 0,
-  '07': 0,
-  '08': 0,
-  '09': 0,
-  '10': 0,
-  '11': 0,
-  '12': 0,
-};
-
 const Statistics = () => {
   const styles = useStyles();
-  const { t } = useTranslation();
+  const {t} = useTranslation();
 
   const monthsOfYear = Object.values(MonthOfYear);
   const arrDataLost: Array<string> = [];
@@ -39,15 +23,14 @@ const Statistics = () => {
     arrDataLost.push(data[i].missing.slice(3, 5));
     arrDataFound.push(data[i].found.slice(3, 5));
   }
-  
-  const numbersOfMonthWithFoundPeople = { ...numbersOfMonth };
+  const numbersOfMonth = {...numbersOfMonth1}
+  const numbersOfMonthWithFoundPeople = {...numbersOfMonth1}
   arrDataLost.forEach((x) => {
     numbersOfMonth[x] = (numbersOfMonth[x] || 0) + 1;
   });
   arrDataFound.forEach((x) => {
     numbersOfMonthWithFoundPeople[x] = (numbersOfMonthWithFoundPeople[x] || 0) + 1;
   });
-
   const arrPeopleLostInAYear: Array<number> = [];
   const arrPeopleFoundInYear: Array<number> = [];
   for (let i = 1; i <= monthsOfYear.length; i += 1) {
@@ -59,10 +42,9 @@ const Statistics = () => {
       arrPeopleFoundInYear.push(numbersOfMonthWithFoundPeople[`0${i}`]);
     }
   }
-
   const numberOfLostAllPeople = arrPeopleLostInAYear.reduce((a, b) => a + b);
   const numberOfFoundAllPeople = arrPeopleFoundInYear.reduce((a, b) => a + b);
-  const [rangeOfYear, setRangeOfYear] = useState({ start: 'january', end: 'december', month: monthsOfYear });
+  const [rangeOfYear, setRangeOfYear] = useState({start: 'january', end: 'december', month: monthsOfYear});
   const [lostPeople, setLostPeople] = useState(arrPeopleLostInAYear);
 
   const selectMonthRange = (starts: string, monthValue: string) => {

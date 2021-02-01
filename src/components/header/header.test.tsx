@@ -38,7 +38,7 @@ describe('<Header />', () => {
                         page={'0'}
                         authorizationStatus={AuthorizationStatus.NO_AUTH}
                     />
-                </Provider>
+                </Provider>,
       )
       .toJSON();
 
@@ -72,7 +72,7 @@ describe('<Header />', () => {
                         page={'0'}
                         authorizationStatus={AuthorizationStatus.AUTH}
                     />
-                </Provider>
+                </Provider>,
       )
       .toJSON();
 

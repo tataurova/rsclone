@@ -53,7 +53,7 @@ describe('<SignUp />', () => {
                         loginRef={loginRef}
                         passwordRef={passwordRef}
                     />
-                    </Provider>
+                    </Provider>,
       )
       .toJSON();
 

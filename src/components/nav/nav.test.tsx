@@ -35,7 +35,7 @@ describe('<Nav />', () => {
                   page={'0'}
                   onMenuClick={mockFunction}
               />
-          </Provider>
+          </Provider>,
       )
       .toJSON();
 

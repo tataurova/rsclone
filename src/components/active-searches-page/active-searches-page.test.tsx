@@ -38,7 +38,7 @@ describe('<ActiveSearchesPage />', () => {
                         onAddActiveSearches={mockFunction}
                         onAddClosedSearches={mockFunction}
                     />
-                </Provider>
+                </Provider>,
       )
       .toJSON();
 

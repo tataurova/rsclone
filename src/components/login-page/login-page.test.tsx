@@ -49,7 +49,7 @@ describe('<LoginPage />', () => {
                         loginRef={loginRef}
                         passwordRef={passwordRef}
                     />
-                </Provider>
+                </Provider>,
       )
       .toJSON();
 

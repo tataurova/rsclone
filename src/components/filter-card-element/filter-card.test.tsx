@@ -14,7 +14,7 @@ describe('<FilterCard />', () => {
                     <FilterCard
                         filterAge={mockFunction}
                         filterCity={mockFunction}
-                    />
+                    />,
       )
       .toJSON();
 

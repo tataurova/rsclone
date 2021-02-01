@@ -30,7 +30,7 @@ describe('<LoginPage />', () => {
                 onChange={mockFunction}
                 loginRef={loginRef}
                 passwordRef={passwordRef}
-            />
+            />,
     );
 
     expect(main.find(LoginPage)).toHaveLength(1);

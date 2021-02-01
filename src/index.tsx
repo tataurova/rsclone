@@ -28,8 +28,8 @@ const api = createAPI(onUnauthorized, onNoResponse);
 const store = createStore(
   reducer,
   composeWithDevTools(
-    applyMiddleware(thunk.withExtraArgument(api))
-  )
+    applyMiddleware(thunk.withExtraArgument(api)),
+  ),
 );
 
 const init = () => {
@@ -40,7 +40,7 @@ const init = () => {
             <App />
           </ThemeProvider>
       </Provider>,
-      document.querySelector('#root')
+      document.querySelector('#root'),
   );
 };
 

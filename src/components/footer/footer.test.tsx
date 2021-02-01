@@ -35,7 +35,7 @@ describe('<Footer />', () => {
       .create(
                 <Provider store={store}>
                     <Footer />
-                </Provider>
+                </Provider>,
       )
       .toJSON();
 

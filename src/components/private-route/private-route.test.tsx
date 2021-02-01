@@ -31,7 +31,7 @@ describe('<PrivateRoute />', () => {
                             />
                     )}
                 />
-            </BrowserRouter>
+            </BrowserRouter>,
     ).toJSON();
 
     expect(tree).toMatchSnapshot();
@@ -57,7 +57,7 @@ describe('<PrivateRoute />', () => {
                             />
                     )}
                 />
-            </BrowserRouter>
+            </BrowserRouter>,
     );
     expect(privateRoute.length).toEqual(1);
   });

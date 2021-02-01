@@ -8,6 +8,7 @@ import PopupTable from '../popup-table/popup-table';
 import { statusSelectItems, FORM_FIELDS } from '../../const';
 import { helperForTranslate } from '../../utils/common';
 import { Searches } from '../../types';
+import AudioRecording from '../audio-recording/audio-recording';
 
 const initialFValues = {
   id: 0,
@@ -125,6 +126,7 @@ const SearchForm: React.FunctionComponent<Props> = ({ addOrEdit, recordForEdit }
                             value={values.date}
                             onChange={handleInputChange}
                         />
+                        <AudioRecording/>
                     </Grid>
                 </Grid>
             </Form>

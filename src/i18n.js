@@ -76,6 +76,16 @@ const resources = {
             "october": "октябрь",
             "november": "ноябрь",
             "december": "декабрь",
+            "Add voice recording": "Добавить запись голоса",
+            "Voice recording": "Запись голоса",
+            "Save": "Сохранить",
+            "Recording": "Запись",
+            "Stop": "Остановить",
+            "The status of the searchers": "Статус поисковиков",
+            "Transport": "Транспорт",
+            "Seats in the car": "Места в машине",
+            "District of departure": "Район выезда",
+            "Arrival time": "Время прибытия",
         }
     },
 
@@ -163,6 +173,16 @@ const resources = {
             "october": "オクトーバ",
             "november": "ノベンバー",
             "december": "月",
+            "Add voice recording": "音声録音を追加",
+            "Voice recording": "音声録音",
+            "Save": "保存",
+            "Recording": "録音",
+            "Stop": "止まれ！",
+            "The status of the searchers": "サーチャーのステータス",
+            "Transport": "交通",
+            "Seats in the car": "車の中の座席",
+            "District of departure": "出発の地区",
+            "Arrival time": "到着時間",
         }
     }
 };

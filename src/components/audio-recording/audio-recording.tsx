@@ -13,6 +13,7 @@ import { connect } from 'react-redux';
 import useRecorder from './useRecorder';
 import NameSpace from '../../reducer/name-space';
 import { Operation as DataOperation } from '../../reducer/data/data';
+import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
   appBar: {
@@ -22,6 +23,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     marginLeft: theme.spacing(2),
     flex: 1,
   },
+  addRecord: {
+    margin: '8px',
+  }
 }));
 
 const Transition = React.forwardRef((
@@ -32,6 +36,7 @@ const Transition = React.forwardRef((
 const AudioRecording = () => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const { t } = useTranslation();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -45,8 +50,8 @@ const AudioRecording = () => {
 
   return (
       <>
-        <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-          Добавить запись голоса
+        <Button className={classes.addRecord} variant="outlined" color="primary" onClick={handleClickOpen}>
+          {t('Add voice recording')}
         </Button>
         <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
           <AppBar className={classes.appBar}>
@@ -55,10 +60,10 @@ const AudioRecording = () => {
                 <CloseIcon/>
               </IconButton>
               <Typography variant="h6" className={classes.title}>
-                Запись голоса
+                {t('Voice recording')}
               </Typography>
               <Button autoFocus color="inherit">
-                Сохранить
+                {t('Save')}
               </Button>
             </Toolbar>
           </AppBar>
@@ -77,14 +82,14 @@ const AudioRecording = () => {
                     startIcon={<KeyboardVoiceIcon/>}
                     onClick={startRecording}
                     disabled={isRecording}>
-                  Запись
+                  {t('Recording')}
                 </Button>
                 <Button
                     onClick={stopRecording}
                     disabled={!isRecording}
                     variant="contained"
                     color="primary">
-                  Остановить
+                  {t('Stop')}
                 </Button>
               </Box>
             </Box>
@@ -97,7 +102,7 @@ const AudioRecording = () => {
 export const mapStateToProps = (state) => ({
   audio: state[NameSpace.AUTH].audio,
 });
-
+  
 export const mapDispatchToProps = (dispatch) => ({
   loadRecordingAudio(audio) {
     dispatch(DataOperation.loadRecordingAudio(audio));

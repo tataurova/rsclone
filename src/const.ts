@@ -7,7 +7,7 @@ export const RouteName = {
   ACTIVE_SEARCHES: '/active-searches',
   CLOSED_SEARCHES: '/closed-searches',
   STATISTICS: '/statistics',
-  BASE_SERVER: 'http://localhost:5000',
+  BASE_SERVER: 'https://backendforrscloneproject.herokuapp.com',
   UPLOAD_AUDIO: '/upload-audio'
 
 };

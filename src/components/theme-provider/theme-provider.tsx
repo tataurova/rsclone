@@ -4,7 +4,7 @@ import { MuiThemeProvider } from '@material-ui/core';
 import { getThemeByName } from '../../themes/base';
 
 interface Props {
-  children: React.ReactNode,
+  children: React.ReactNode;
 }
 /* eslint-disable */
 

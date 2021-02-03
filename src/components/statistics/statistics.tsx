@@ -1,20 +1,20 @@
 import * as React from 'react';
-import {useState} from 'react';
-import {defaults, Line} from 'react-chartjs-2';
-import {Container, Paper} from '@material-ui/core';
-import {useTranslation} from 'react-i18next';
+import { useState } from 'react';
+import { defaults, Line } from 'react-chartjs-2';
+import { Container, Paper } from '@material-ui/core';
+import { useTranslation } from 'react-i18next';
 import SelectMonth from '../select/select-month';
 import useStyles from './statistics.style';
 import Header from '../header/header';
 import Footer from '../footer/footer';
-import {MonthOfYear, numbersOfMonth1, SearchLocationStatus} from '../../const';
-import {data} from '../../mock';
+import { MonthOfYear, numbersOfMonth1, SearchLocationStatus } from '../../const';
+import { data } from '../../mock';
 
 defaults.global.legend.position = 'bottom';
 
 const Statistics = () => {
   const styles = useStyles();
-  const {t} = useTranslation();
+  const { t } = useTranslation();
 
   const monthsOfYear = Object.values(MonthOfYear);
   const arrDataLost: Array<string> = [];
@@ -24,8 +24,8 @@ const Statistics = () => {
     arrDataLost.push(data[i].missing.slice(3, 5));
     arrDataFound.push(data[i].found.slice(3, 5));
   }
-  const numbersOfMonth = {...numbersOfMonth1}
-  const numbersOfMonthWithFoundPeople = {...numbersOfMonth1}
+  const numbersOfMonth = { ...numbersOfMonth1 };
+  const numbersOfMonthWithFoundPeople = { ...numbersOfMonth1 };
   arrDataLost.forEach((x) => {
     numbersOfMonth[x] = (numbersOfMonth[x] || 0) + 1;
   });
@@ -45,7 +45,7 @@ const Statistics = () => {
   }
   const numberOfLostAllPeople = arrPeopleLostInAYear.reduce((a, b) => a + b);
   const numberOfFoundAllPeople = arrPeopleFoundInYear.reduce((a, b) => a + b);
-  const [rangeOfYear, setRangeOfYear] = useState({start: 'january', end: 'december', month: monthsOfYear});
+  const [rangeOfYear, setRangeOfYear] = useState({ start: 'january', end: 'december', month: monthsOfYear });
   const [lostPeople, setLostPeople] = useState(arrPeopleLostInAYear);
 
   const selectMonthRange = (starts: string, monthValue: string) => {

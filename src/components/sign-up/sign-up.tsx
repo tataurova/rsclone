@@ -106,8 +106,8 @@ const SignUp: React.FunctionComponent<Props> = ({
                     <Grid container>
                         <Grid item>
                             <Link href={`${RouteName.PUBLIC_URL}${RouteName.PUBLIC_LOGIN}`} onClick={(evt) => {
-                                evt.preventDefault();
-                                handleClick(RouteName.PUBLIC_LOGIN);
+                              evt.preventDefault();
+                              handleClick(RouteName.PUBLIC_LOGIN);
                             }} variant="body2">
                                 {t('Already have an account? Login')}
                             </Link>
@@ -116,8 +116,8 @@ const SignUp: React.FunctionComponent<Props> = ({
                     <Grid container>
                         <Grid item>
                             <Link href={`${RouteName.PUBLIC_URL}${RouteName.MAIN}`} onClick={(evt) => {
-                                evt.preventDefault();
-                                handleClick(RouteName.MAIN);
+                              evt.preventDefault();
+                              handleClick(RouteName.MAIN);
                             }} variant="body2">
                                 {t('Go to the main page')}
                             </Link>

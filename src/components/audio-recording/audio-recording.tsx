@@ -10,10 +10,10 @@ import Slide from '@material-ui/core/Slide';
 import { TransitionProps } from '@material-ui/core/transitions';
 import KeyboardVoiceIcon from '@material-ui/icons/KeyboardVoice';
 import { connect } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import useRecorder from './useRecorder';
 import NameSpace from '../../reducer/name-space';
 import { Operation as DataOperation } from '../../reducer/data/data';
-import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
   appBar: {
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
   },
   addRecord: {
     margin: '8px',
-  }
+  },
 }));
 
 const Transition = React.forwardRef((
@@ -102,7 +102,7 @@ const AudioRecording = () => {
 export const mapStateToProps = (state) => ({
   audio: state[NameSpace.AUTH].audio,
 });
-  
+
 export const mapDispatchToProps = (dispatch) => ({
   loadRecordingAudio(audio) {
     dispatch(DataOperation.loadRecordingAudio(audio));

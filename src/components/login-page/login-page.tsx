@@ -88,8 +88,8 @@ const LoginPage: React.FunctionComponent<Props> = ({
                         <Grid container>
                             <Grid item>
                                 <Link href={`${RouteName.PUBLIC_URL}${RouteName.PUBLIC_SIGN_UP}`} onClick={(evt) => {
-                                    evt.preventDefault();
-                                    handleClick(RouteName.PUBLIC_SIGN_UP);
+                                  evt.preventDefault();
+                                  handleClick(RouteName.PUBLIC_SIGN_UP);
                                 }} variant="body2">
                                     {t('No account? Register')}
                                 </Link>
@@ -98,8 +98,8 @@ const LoginPage: React.FunctionComponent<Props> = ({
                         <Grid container>
                             <Grid item>
                                 <Link href={`${RouteName.PUBLIC_URL}${RouteName.MAIN}`} onClick={(evt) => {
-                                    evt.preventDefault();
-                                    handleClick(RouteName.MAIN);
+                                  evt.preventDefault();
+                                  handleClick(RouteName.MAIN);
                                 }} variant="body2">
                                     {t('Go to the main page')}
                                 </Link>

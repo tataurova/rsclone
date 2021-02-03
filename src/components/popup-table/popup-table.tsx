@@ -2,7 +2,7 @@ import * as React from 'react';
 import {
   TableBody, TableCell, TableRow, Table, TableHead, Typography,
 } from '@material-ui/core';
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 import {
   SearcherStatus, TransportStatus, TransportName, WayStatus,
 } from '../../const';
@@ -13,9 +13,9 @@ interface Props {
 }
 
 const PopupTable: React.FunctionComponent<Props> = ({ values: { people } }: Props) => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
-    return (
+  return (
         <React.Fragment>
             {people && people.length > 0
             && <React.Fragment>
@@ -35,10 +35,10 @@ const PopupTable: React.FunctionComponent<Props> = ({ values: { people } }: Prop
                     </TableHead>
                     <TableBody>
                         {people.map((men, i) => {
-                            const {
-                                name, status, transport, places, district, time,
-                            } = men;
-                            return (<TableRow key={i}>
+                          const {
+                            name, status, transport, places, district, time,
+                          } = men;
+                          return (<TableRow key={i}>
                                     <TableCell>{name}</TableCell>
                                     <TableCell>{SearcherStatus[status]}</TableCell>
                                     <TableCell>{transport === TransportName.CAR && TransportStatus[transport]}</TableCell>
@@ -46,13 +46,13 @@ const PopupTable: React.FunctionComponent<Props> = ({ values: { people } }: Prop
                                     <TableCell>{district}</TableCell>
                                     <TableCell>{status === WayStatus.WAY && time}</TableCell>
                                 </TableRow>
-                            );
+                          );
                         })}
                     </TableBody>
                 </Table>
             </React.Fragment>
             }
         </React.Fragment>);
-}
+};
 
 export default PopupTable;

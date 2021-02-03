@@ -7,6 +7,7 @@ import * as Adapter from 'enzyme-adapter-react-16';
 import Header from './header';
 import { mockActiveSearches, mockClosedSearches } from '../../mock';
 import { AuthorizationStatus } from '../../const';
+import { mockFunction } from "../../utils/common";
 
 configure({ adapter: new Adapter() });
 
@@ -37,6 +38,7 @@ describe('<Header />', () => {
                     <Header
                         page={'0'}
                         authorizationStatus={AuthorizationStatus.NO_AUTH}
+                        logout={mockFunction}
                     />
                 </Provider>,
       )
@@ -71,6 +73,7 @@ describe('<Header />', () => {
                     <Header
                         page={'0'}
                         authorizationStatus={AuthorizationStatus.AUTH}
+                        logout={mockFunction}
                     />
                 </Provider>,
       )

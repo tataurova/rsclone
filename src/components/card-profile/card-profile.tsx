@@ -11,6 +11,8 @@ import { useTranslation } from 'react-i18next';
 import { CardType } from '../search-gone/search-gone-profile';
 import useStyles from './card-profile.styles';
 
+const person = require('../../../public/assets/img/person.jpg');
+
 const CardProfile = (props: CardType) => {
   const classes = useStyles();
   const { t } = useTranslation();
@@ -20,7 +22,7 @@ const CardProfile = (props: CardType) => {
             <Card className={classes.root}>
                 <CardMedia
                     className={classes.media}
-                    image={props.image}
+                    image={person.default}
                     title={props.name}/>
                 <CardContent>
                     <Box>

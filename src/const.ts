@@ -1,6 +1,7 @@
 export const RouteName = {
   MAIN: '/',
   LOGIN: '/user/login',
+  LOGOUT: '/logout',
   SIGN_UP: '/user/signup',
   GONE: '/people-lost',
   LOOKING_RELATIVES: '/people-looking-relatives',
@@ -144,6 +145,6 @@ export const FORM_FIELDS = ['city', 'name', 'age', 'coordinator', 'status', 'dat
 export const MAX_TIMEOUT = 5000;
 export const SHOW_ERROR_TIMEOUT = 3000;
 export const LOGIN_MIN_LENGTH = 5;
-export const PASSWORD_MIN_LENGTH = 5;
+export const PASSWORD_MIN_LENGTH = 8;
 export const NAME_MIN_LENGTH = 2;
 export const HOVER_TABLE_COLOR = '#fffbf2';

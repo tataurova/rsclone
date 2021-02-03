@@ -95,6 +95,7 @@ const SignUp: React.FunctionComponent<Props> = ({
                         </Grid>
                     </Grid>
                     <Button
+                        onClick={() => setTimeout(() => handleClick(RouteName.PUBLIC_LOGIN), 1000)}
                         type="submit"
                         fullWidth
                         variant="contained"

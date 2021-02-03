@@ -19,22 +19,24 @@ import {
 import Nav from '../nav/nav';
 import useStyles from './header.styles';
 import { ActionCreator } from '../../reducer/app/app';
+import { Operation as UserOperation } from '../../reducer/user/user';
 import { ThemeContext } from '../theme-provider/theme-provider';
 
 interface Props {
     page: string;
     authorizationStatus: string;
+    logout: () => void;
 }
 
 const logo = require('../../assets/icons/logo.svg');
 
 const Header: React.FunctionComponent<Props> = ({
-  page, authorizationStatus,
+  page, authorizationStatus, logout,
 }: Props) => {
   const classes = useStyles();
   const history = useHistory();
   function handleClick() {
-    history.push(RouteName.PUBLIC_LOGIN);
+    authorizationStatus === AuthorizationStatus.NO_AUTH ? history.push(RouteName.PUBLIC_LOGIN) : logout();
   }
   const [state, setState] = React.useState({
     top: false,
@@ -90,6 +92,9 @@ export const mapStateToProps = (state) => ({
 export const mapDispatchToProps = (dispatch) => ({
   onDarkModeClick(mode) {
     dispatch(ActionCreator.changeDarkMode(mode));
+  },
+  logout() {
+    dispatch(UserOperation.logout());
   },
 });
 

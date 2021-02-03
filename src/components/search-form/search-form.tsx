@@ -101,7 +101,7 @@ const SearchForm: React.FunctionComponent<Props> = ({ addOrEdit, recordForEdit }
                         <div>
                             <Controls.Button
                                 type="submit"
-                                text={'Submit'} />
+                                text={t('Submit')} />
                         </div>
                     </Grid>
                     <Grid item xs={6}>
@@ -121,7 +121,7 @@ const SearchForm: React.FunctionComponent<Props> = ({ addOrEdit, recordForEdit }
                             error={errors.status}
                         />
                         <Controls.DatePicker
-                            label={'Date'}
+                            label={t('Date')}
                             name="date"
                             value={values.date}
                             onChange={handleInputChange}

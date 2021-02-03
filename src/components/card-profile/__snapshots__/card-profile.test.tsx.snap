@@ -9,11 +9,6 @@ exports[`<CardProfile /> Render CardProfile 1`] = `
   >
     <div
       className="MuiCardMedia-root makeStyles-media-2"
-      style={
-        Object {
-          "backgroundImage": "url(\\"test.jpg\\")",
-        }
-      }
       title="Test"
     />
     <div

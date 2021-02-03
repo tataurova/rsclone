@@ -206,6 +206,7 @@ exports[`<SignUp /> Render SignUp 1`] = `
         className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-submit-4 MuiButton-containedPrimary MuiButton-fullWidth"
         disabled={false}
         onBlur={[Function]}
+        onClick={[Function]}
         onDragLeave={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
@@ -233,8 +234,9 @@ exports[`<SignUp /> Render SignUp 1`] = `
         >
           <a
             className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-body2 MuiTypography-colorPrimary"
-            href="/user/login"
+            href="/tataurova-JS2020Q3/rsclone/login"
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
           >
             Already have an account? Login
@@ -249,8 +251,9 @@ exports[`<SignUp /> Render SignUp 1`] = `
         >
           <a
             className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-body2 MuiTypography-colorPrimary"
-            href="/"
+            href="/tataurova-JS2020Q3/rsclone/"
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
           >
             Go to the main page

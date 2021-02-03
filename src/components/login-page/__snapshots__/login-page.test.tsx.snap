@@ -171,8 +171,9 @@ exports[`<LoginPage /> Render LoginPage 1`] = `
           >
             <a
               className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-body2 MuiTypography-colorPrimary"
-              href="/user/signup"
+              href="/tataurova-JS2020Q3/rsclone/signup"
               onBlur={[Function]}
+              onClick={[Function]}
               onFocus={[Function]}
             >
               No account? Register
@@ -187,8 +188,9 @@ exports[`<LoginPage /> Render LoginPage 1`] = `
           >
             <a
               className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-body2 MuiTypography-colorPrimary"
-              href="/"
+              href="/tataurova-JS2020Q3/rsclone/"
               onBlur={[Function]}
+              onClick={[Function]}
               onFocus={[Function]}
             >
               Go to the main page

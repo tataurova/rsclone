@@ -13,5 +13,10 @@ export default makeStyles((theme) => ({
     img: {
         position: 'absolute',
         left: 'calc(50% - 25px)',
-    }
+    },
+    [theme.breakpoints.down('xs')]: {
+        img: {
+            display: 'none',
+        }
+    },
 }));

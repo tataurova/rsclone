@@ -9,7 +9,7 @@ import { createAPI } from './api';
 import App from './components/app/app';
 import reducer from './reducer/reducer';
 import { Operation as DataOperation, ActionCreator as DataActionCreator } from './reducer/data/data';
-import { Operation as UserOperation, ActionCreator, AuthorizationStatus } from './reducer/user/user';
+import { ActionCreator, AuthorizationStatus } from './reducer/user/user';
 import { SHOW_ERROR_TIMEOUT } from './const';
 import './i18n';
 import ThemeProvider from './components/theme-provider/theme-provider';
@@ -44,9 +44,7 @@ const init = () => {
   );
 };
 
-store.dispatch(UserOperation.checkAuth())
-  .finally(() => {
-    store.dispatch(DataOperation.loadGonePeople());
-    store.dispatch(DataOperation.loadLookingRelativesPeople());
-    init();
-  });
+store.dispatch(DataOperation.loadGonePeople());
+store.dispatch(DataOperation.loadLookingRelativesPeople());
+
+init();

@@ -5,7 +5,6 @@ import {
 import { connect } from 'react-redux';
 import history from '../../history';
 import Main from '../main/main';
-import CardPage from '../card-page/card-page';
 import NotFound from '../not-found/not-found';
 import LoginPage from '../login-page/login-page';
 import { AuthorizationStatus, PageName, RouteName } from '../../const';
@@ -40,7 +39,7 @@ const App: React.FunctionComponent<Props> = (props: Props) => {
         <Switch>
           <PrivateRoute path={RouteName.GONE} render={() => {
             onLoadByRoute(PageName.GONE);
-            return <CardPage page={PageName.GONE}/>;
+            return <SearchingProfile page={PageName.LOOKING_RELATIVES}/>;
           }}>
           </PrivateRoute>
           <Route path={RouteName.LOOKING_RELATIVES} render={() => {

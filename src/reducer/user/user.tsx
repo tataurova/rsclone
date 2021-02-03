@@ -52,9 +52,9 @@ const Operation = {
     email: authData.login,
     password: authData.password,
   })
-    .then((response) => {
+    .then(() => {
       dispatch(ActionCreator.requireAuthorization(AuthorizationStatus.AUTH));
-      dispatch(ActionCreator.writeUser(response.data.email));
+      dispatch(ActionCreator.writeUser(authData.login));
     }),
   signup: (signData) => (dispatch, getState, api) => api.post(RouteName.BASE_SERVER + RouteName.SIGN_UP, {
     name: signData.name,
@@ -66,6 +66,13 @@ const Operation = {
     })
     .catch(() => {
       dispatch(AppCreator.changePage(PageName.MAIN));
+    }),
+  logout: () => (dispatch, getState, api) => api.post(RouteName.BASE_SERVER + RouteName.LOGOUT, {
+    email: getState().AUTH.user,
+  })
+    .finally(() => {
+      dispatch(ActionCreator.requireAuthorization(AuthorizationStatus.NO_AUTH));
+      dispatch(ActionCreator.writeUser(''));
     }),
 };
 

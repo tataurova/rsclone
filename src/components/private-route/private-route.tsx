@@ -20,7 +20,7 @@ const PrivateRoute: React.FunctionComponent<Props> = ({
             render={() => (
               authorizationStatus === AuthorizationStatus.AUTH
                 ? render()
-                : <Redirect to={RouteName.LOGIN} />
+                : <Redirect to={RouteName.PUBLIC_LOGIN} />
             )}
         />
 );

@@ -8,8 +8,10 @@ export const RouteName = {
   CLOSED_SEARCHES: '/closed-searches',
   STATISTICS: '/statistics',
   BASE_SERVER: 'https://backendforrscloneproject.herokuapp.com',
-  UPLOAD_AUDIO: '/upload-audio'
-
+  UPLOAD_AUDIO: '/upload-audio',
+  PUBLIC_URL: '/tataurova-JS2020Q3/rsclone',
+  PUBLIC_LOGIN: '/login',
+  PUBLIC_SIGN_UP: '/signup',
 };
 
 export const MenuItemText = {

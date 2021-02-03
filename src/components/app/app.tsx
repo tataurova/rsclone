@@ -36,39 +36,34 @@ const App: React.FunctionComponent<Props> = (props: Props) => {
   } = props;
 
   return (
-      <BrowserRouter history={history}>
+      <BrowserRouter basename={RouteName.PUBLIC_URL} history={history}>
         <Switch>
-          <Route exact path={RouteName.MAIN} render={() => {
-            onLoadByRoute(PageName.MAIN);
-            return <Main page={PageName.MAIN}/>;
-          }}>
-          </Route>
-          <PrivateRoute exact path={RouteName.GONE} render={() => {
+          <PrivateRoute path={RouteName.GONE} render={() => {
             onLoadByRoute(PageName.GONE);
             return <CardPage page={PageName.GONE}/>;
           }}>
           </PrivateRoute>
-          <Route exact path={RouteName.LOOKING_RELATIVES} render={() => {
+          <Route path={RouteName.LOOKING_RELATIVES} render={() => {
             onLoadByRoute(PageName.LOOKING_RELATIVES);
             return <SearchingProfile page={PageName.LOOKING_RELATIVES}/>;
           }}>
           </Route>
-          <Route exact path={RouteName.ACTIVE_SEARCHES} render={() => {
+          <Route path={RouteName.ACTIVE_SEARCHES} render={() => {
             onLoadByRoute(PageName.ACTIVE_SEARCHES);
             return <ActiveSearchesPage/>;
           }}>
           </Route>
-          <Route exact path={RouteName.CLOSED_SEARCHES} render={() => {
+          <Route path={RouteName.CLOSED_SEARCHES} render={() => {
             onLoadByRoute(PageName.CLOSED_SEARCHES);
             return <ActiveSearchesPage/>;
           }}>
           </Route>
-          <Route exact path={RouteName.STATISTICS} render={() => {
+          <Route path={RouteName.STATISTICS} render={() => {
             onLoadByRoute(PageName.STATISTICS);
             return <Statistics/>;
           }}>
           </Route>
-          <Route exact path={RouteName.LOGIN} render={() => {
+          <Route path={RouteName.PUBLIC_LOGIN} render={() => {
             onLoadByRoute(PageName.MAIN);
             switch (authorizationStatus) {
               case AuthorizationStatus.AUTH:
@@ -82,7 +77,7 @@ const App: React.FunctionComponent<Props> = (props: Props) => {
             }
           }}>
           </Route>
-          <Route exact path={RouteName.SIGN_UP} render={() => {
+          <Route path={RouteName.PUBLIC_SIGN_UP} render={() => {
             onLoadByRoute(PageName.MAIN);
             switch (authorizationStatus) {
               case AuthorizationStatus.AUTH:
@@ -94,6 +89,11 @@ const App: React.FunctionComponent<Props> = (props: Props) => {
               default:
                 throw new Error(`Unknown AuthorizationStatus ${authorizationStatus}`);
             }
+          }}>
+          </Route>
+          <Route exact path={RouteName.MAIN} render={() => {
+            onLoadByRoute(PageName.MAIN);
+            return <Main page={PageName.MAIN}/>;
           }}>
           </Route>
           <Route render={() => {

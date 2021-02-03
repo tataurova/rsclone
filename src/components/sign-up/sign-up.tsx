@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useHistory } from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -30,6 +31,11 @@ const SignUp: React.FunctionComponent<Props> = ({
 }: Props) => {
   const classes = useStyles();
   const { t } = useTranslation();
+  const history = useHistory();
+
+  function handleClick(route) {
+    history.push(route);
+  }
 
   return (
         <Container component="main" maxWidth="xs">
@@ -99,14 +105,20 @@ const SignUp: React.FunctionComponent<Props> = ({
                     </Button>
                     <Grid container>
                         <Grid item>
-                            <Link href={RouteName.LOGIN} variant="body2">
+                            <Link href={`${RouteName.PUBLIC_URL}${RouteName.PUBLIC_LOGIN}`} onClick={(evt) => {
+                                evt.preventDefault();
+                                handleClick(RouteName.PUBLIC_LOGIN);
+                            }} variant="body2">
                                 {t('Already have an account? Login')}
                             </Link>
                         </Grid>
                     </Grid>
                     <Grid container>
                         <Grid item>
-                            <Link href={RouteName.MAIN} variant="body2">
+                            <Link href={`${RouteName.PUBLIC_URL}${RouteName.MAIN}`} onClick={(evt) => {
+                                evt.preventDefault();
+                                handleClick(RouteName.MAIN);
+                            }} variant="body2">
                                 {t('Go to the main page')}
                             </Link>
                         </Grid>

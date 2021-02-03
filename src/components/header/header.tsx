@@ -34,7 +34,7 @@ const Header: React.FunctionComponent<Props> = ({
   const classes = useStyles();
   const history = useHistory();
   function handleClick() {
-    history.push(RouteName.LOGIN);
+    history.push(RouteName.PUBLIC_LOGIN);
   }
   const [state, setState] = React.useState({
     top: false,

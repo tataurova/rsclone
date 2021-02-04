@@ -1,0 +1,13 @@
+.footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(77, 128, 179);
+}
+
+.account {
+    list-style-type: none;
+}
+
+.logo {
+    margin-right: 20px;
+}

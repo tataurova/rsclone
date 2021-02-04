@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> Render Footer 1`] = `
+<footer
+  className="makeStyles-footer-1"
+>
+  <div
+    className="MuiContainer-root MuiContainer-maxWidthLg"
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
+    >
+      © 
+      <a
+        className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-linkFont-3 MuiTypography-colorInherit"
+        href="https://rs.school/js/"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        target="_blank"
+      >
+        RS School
+      </a>
+       
+      <span
+        className="makeStyles-flex-2"
+      >
+        <span
+          className="makeStyles-link-4"
+        >
+          <img
+            alt="GitHub"
+            className="makeStyles-img-5"
+            src=""
+          />
+          <a
+            className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-linkColor-7 MuiTypography-colorPrimary"
+            href="https://github.com/tataurova/"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            rel="noreferrer"
+            target="_blank"
+          >
+            Olga Tataurova
+          </a>
+        </span>
+        <span
+          className="makeStyles-link-4"
+        >
+          <img
+            alt="GitHub"
+            className="makeStyles-img-5"
+            src=""
+          />
+          <a
+            className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-linkColor-7 MuiTypography-colorPrimary"
+            href="https://github.com/shuliakleonid/"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            rel="noreferrer"
+            target="_blank"
+          >
+            Leonid Shuliak
+          </a>
+        </span>
+        <span
+          className="makeStyles-link-4"
+        >
+          <img
+            alt="GitHub"
+            className="makeStyles-img-5"
+            src=""
+          />
+          <a
+            className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-linkColor-7 MuiTypography-colorPrimary"
+            href="https://github.com/andreizayaz"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            rel="noreferrer"
+            target="_blank"
+          >
+            Andrei Podyslenkau
+          </a>
+        </span>
+      </span>
+      2021
+    </p>
+  </div>
+</footer>
+`;

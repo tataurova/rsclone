@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardProfile /> Render CardProfile 1`] = `
+<div
+  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+>
+  <div
+    className="MuiPaper-root MuiCard-root makeStyles-root-1 MuiPaper-elevation1 MuiPaper-rounded"
+  >
+    <div
+      className="MuiCardMedia-root makeStyles-media-2"
+      title="Test"
+    />
+    <div
+      className="MuiCardContent-root"
+    >
+      <div
+        className="MuiBox-root MuiBox-root-4"
+      >
+        <h6
+          className="MuiTypography-root MuiTypography-h6"
+        >
+          Test
+        </h6>
+        <div>
+          <ul
+            className="MuiList-root makeStyles-values-3 MuiList-padding MuiList-subheader"
+          >
+            <li
+              className="MuiListSubheader-root MuiListSubheader-sticky MuiListSubheader-gutters"
+            >
+              City
+            </li>
+            <div
+              className="MuiListItemText-root"
+            >
+              <span
+                className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+              >
+                Test
+              </span>
+            </div>
+          </ul>
+          <ul
+            className="MuiList-root makeStyles-values-3 MuiList-padding MuiList-subheader"
+          >
+            <li
+              className="MuiListSubheader-root MuiListSubheader-sticky MuiListSubheader-gutters"
+            >
+              Year of birth
+            </li>
+            <div
+              className="MuiListItemText-root"
+            >
+              <span
+                className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+              >
+                01.01.2000
+              </span>
+            </div>
+          </ul>
+          <ul
+            className="MuiList-root makeStyles-values-3 MuiList-padding MuiList-subheader"
+          >
+            <li
+              className="MuiListSubheader-root MuiListSubheader-sticky MuiListSubheader-gutters"
+            >
+              Age
+            </li>
+            <div
+              className="MuiListItemText-root"
+            >
+              <span
+                className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+              >
+                21
+              </span>
+            </div>
+          </ul>
+          <ul
+            className="MuiList-root makeStyles-values-3 MuiList-padding MuiList-subheader"
+          >
+            <li
+              className="MuiListSubheader-root MuiListSubheader-sticky MuiListSubheader-gutters"
+            >
+              Date of loss
+            </li>
+            <div
+              className="MuiListItemText-root"
+            >
+              <span
+                className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+              >
+                10.01.2021
+              </span>
+            </div>
+          </ul>
+          <ul
+            className="MuiList-root makeStyles-values-3 MuiList-padding MuiList-subheader"
+          >
+            <li
+              className="MuiListSubheader-root MuiListSubheader-sticky MuiListSubheader-gutters"
+            >
+              Signs
+            </li>
+          </ul>
+          <div
+            className="MuiBox-root MuiBox-root-5"
+          >
+            Scar on the left cheek
+          </div>
+          <ul
+            className="MuiList-root makeStyles-values-3 MuiList-padding MuiList-subheader"
+          >
+            <li
+              className="MuiListSubheader-root MuiListSubheader-sticky MuiListSubheader-gutters"
+            >
+              Clothes
+            </li>
+          </ul>
+          <div
+            className="MuiBox-root MuiBox-root-6"
+          >
+            Red jacket, blue jeans
+          </div>
+          <ul
+            className="MuiList-root makeStyles-values-3 MuiList-padding MuiList-subheader"
+          >
+            <li
+              className="MuiListSubheader-root MuiListSubheader-sticky MuiListSubheader-gutters"
+            >
+              Had taken
+            </li>
+          </ul>
+          <div
+            className="MuiBox-root MuiBox-root-7"
+          >
+            Sports bag
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

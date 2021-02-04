@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AccountGithub /> Render AccountGithub 1`] = `
+<span
+  className="makeStyles-link-1"
+>
+  <img
+    alt="GitHub"
+    className="makeStyles-img-2"
+    src=""
+  />
+  <a
+    className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-linkColor-4 MuiTypography-colorPrimary"
+    href="test@test.ru"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    rel="noreferrer"
+    target="_blank"
+  >
+    Test Test
+  </a>
+</span>
+`;

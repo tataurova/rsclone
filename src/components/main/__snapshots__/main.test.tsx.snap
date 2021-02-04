@@ -1,0 +1,375 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Main /> Render Main 1`] = `
+Array [
+  <div
+    className="makeStyles-root-6"
+  >
+    <header
+      className="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"
+    >
+      <div
+        className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+      >
+        <button
+          aria-label="menu"
+          className="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-7 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+          disabled={false}
+          onBlur={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span
+            className="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root"
+              focusable="false"
+              onClick={[Function]}
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+              />
+            </svg>
+          </span>
+        </button>
+        <h6
+          className="MuiTypography-root makeStyles-title-8 MuiTypography-h6"
+        >
+          Main
+        </h6>
+        <img
+          alt="Logo"
+          className="makeStyles-img-9"
+          height="50px"
+          src=""
+          width="50px"
+        />
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root"
+          focusable="false"
+          onClick={[Function]}
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zM12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"
+          />
+        </svg>
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span
+            className="MuiButton-label"
+          >
+            Login
+          </span>
+        </button>
+      </div>
+    </header>
+  </div>,
+  <main>
+    <div
+      className="MuiPaper-root makeStyles-mainSectionPost-3 MuiPaper-elevation1 MuiPaper-rounded"
+      style={
+        Object {
+          "backgroundImage": "url(https://source.unsplash.com/random)",
+        }
+      }
+    >
+      <div
+        className="MuiContainer-root MuiContainer-fixed MuiContainer-maxWidthLg"
+      >
+        <div
+          className="MuiGrid-root MuiGrid-container"
+        >
+          <div
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-md-8"
+          >
+            <div
+              className="makeStyles-mainSectionPostContent-4"
+            >
+              <h1
+                className="MuiTypography-root MuiTypography-h3 MuiTypography-colorInherit MuiTypography-gutterBottom"
+              >
+                If you get lost in the woods
+              </h1>
+              <p
+                className="MuiTypography-root MuiTypography-h5 MuiTypography-colorInherit MuiTypography-paragraph"
+              >
+                If you get lost in the forest and do not see suitable landmarks, it is best to go out on the water and move downstream. The stream will definitely lead to the river, the river - to the people. If you get lost and know that you will be searched for, stay in one place and make a fire so the search engines will be easier to navigate.
+              </p>
+              <button
+                className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary"
+                disabled={false}
+                onBlur={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                <span
+                  className="MuiButton-label"
+                >
+                  <a
+                    className="makeStyles-link-5"
+                  >
+                    Leave a request
+                  </a>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiPaper-root makeStyles-mainSectionPost-3 MuiPaper-elevation1 MuiPaper-rounded"
+      style={
+        Object {
+          "backgroundImage": "url(https://source.unsplash.com/random)",
+        }
+      }
+    >
+      <div
+        className="MuiContainer-root MuiContainer-fixed MuiContainer-maxWidthLg"
+      >
+        <div
+          className="MuiGrid-root MuiGrid-container"
+        >
+          <div
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-md-8"
+          >
+            <div
+              className="makeStyles-mainSectionPostContent-4"
+            >
+              <h1
+                className="MuiTypography-root MuiTypography-h3 MuiTypography-colorInherit MuiTypography-gutterBottom"
+              >
+                Rules of behavior of the child, if he is lost
+              </h1>
+              <p
+                className="MuiTypography-root MuiTypography-h5 MuiTypography-colorInherit MuiTypography-paragraph"
+              >
+                If the child realized that he was left alone, but his mother was just there, you need to call her loudly. The most important rule that you need to teach your baby do not agree to the suggestions of strangers to go look for parents. However, it is important that the child can ask for help from the seller, representatives of the security service or the police
+              </p>
+              <button
+                className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary"
+                disabled={false}
+                onBlur={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                <span
+                  className="MuiButton-label"
+                >
+                  <a
+                    className="makeStyles-link-5"
+                  >
+                    Leave a request
+                  </a>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiPaper-root makeStyles-mainSectionPost-3 MuiPaper-elevation1 MuiPaper-rounded"
+      style={
+        Object {
+          "backgroundImage": "url(https://source.unsplash.com/random)",
+        }
+      }
+    >
+      <div
+        className="MuiContainer-root MuiContainer-fixed MuiContainer-maxWidthLg"
+      >
+        <div
+          className="MuiGrid-root MuiGrid-container"
+        >
+          <div
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-md-8"
+          >
+            <div
+              className="makeStyles-mainSectionPostContent-4"
+            >
+              <h1
+                className="MuiTypography-root MuiTypography-h3 MuiTypography-colorInherit MuiTypography-gutterBottom"
+              >
+                Rules that will help the elderly
+              </h1>
+              <p
+                className="MuiTypography-root MuiTypography-h5 MuiTypography-colorInherit MuiTypography-paragraph"
+              >
+                If a person has problems with orientation and sense of space, they should always have identification documents or a special bracelet with their name and address engraved on it. Before leaving, a person should warn where he is going and when he will return approximately. You need to take your phone with you and put it in your inner pocket. When an elderly person has a phone with them, it is possible to keep in touch with them or track their location using a GPS signal.
+              </p>
+              <button
+                className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary"
+                disabled={false}
+                onBlur={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                <span
+                  className="MuiButton-label"
+                >
+                  <a
+                    className="makeStyles-link-5"
+                  >
+                    Leave a request
+                  </a>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>,
+  <footer
+    className="makeStyles-footer-10"
+  >
+    <div
+      className="MuiContainer-root MuiContainer-maxWidthLg"
+    >
+      <p
+        className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
+      >
+        © 
+        <a
+          className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-linkFont-12 MuiTypography-colorInherit"
+          href="https://rs.school/js/"
+          onBlur={[Function]}
+          onFocus={[Function]}
+          target="_blank"
+        >
+          RS School
+        </a>
+         
+        <span
+          className="makeStyles-flex-11"
+        >
+          <span
+            className="makeStyles-link-13"
+          >
+            <img
+              alt="GitHub"
+              className="makeStyles-img-14"
+              src=""
+            />
+            <a
+              className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-linkColor-16 MuiTypography-colorPrimary"
+              href="https://github.com/tataurova/"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              rel="noreferrer"
+              target="_blank"
+            >
+              Olga Tataurova
+            </a>
+          </span>
+          <span
+            className="makeStyles-link-13"
+          >
+            <img
+              alt="GitHub"
+              className="makeStyles-img-14"
+              src=""
+            />
+            <a
+              className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-linkColor-16 MuiTypography-colorPrimary"
+              href="https://github.com/shuliakleonid/"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              rel="noreferrer"
+              target="_blank"
+            >
+              Leonid Shuliak
+            </a>
+          </span>
+          <span
+            className="makeStyles-link-13"
+          >
+            <img
+              alt="GitHub"
+              className="makeStyles-img-14"
+              src=""
+            />
+            <a
+              className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-linkColor-16 MuiTypography-colorPrimary"
+              href="https://github.com/andreizayaz"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              rel="noreferrer"
+              target="_blank"
+            >
+              Andrei Podyslenkau
+            </a>
+          </span>
+        </span>
+        2021
+      </p>
+    </div>
+  </footer>,
+]
+`;
